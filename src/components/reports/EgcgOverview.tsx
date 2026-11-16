@@ -79,7 +79,7 @@ export function EgcgOverview() {
           <p className="eyebrow text-[0.6rem] text-muted-foreground">Weekly signal</p>
           <p className="mt-1 text-xl font-medium leading-snug">Get EGCG updates every week</p>
           <Button variant="ink" className="mt-auto rounded-full" asChild>
-            <a href="#weekly-signal">Subscribe</a>
+            <a href="#weekly-signal">Get weekly signals</a>
           </Button>
         </section>
         <section className="flex flex-col rounded-3xl bg-ink p-5 text-ink-foreground">

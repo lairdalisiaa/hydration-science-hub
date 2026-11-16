@@ -43,7 +43,7 @@ export function PartnerCard({ className }: { className?: string }) {
       </div>
       <Button variant="blush" className="mt-4 self-start rounded-full" asChild>
         <a href="#weekly-signal">
-          Subscribe <ArrowUpRight className="size-4" />
+          Get weekly signals <ArrowUpRight className="size-4" />
         </a>
       </Button>
     </section>
