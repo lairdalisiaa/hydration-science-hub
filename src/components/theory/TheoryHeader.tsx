@@ -22,7 +22,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
             height={816}
             className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24"
           />
-          <p className={cn("min-w-0 max-w-2xl font-script text-xl font-bold capitalize leading-[1.35] sm:text-2xl", dark ? "text-crimson-bright" : "text-crimson")}>
+          <p className={cn("min-w-0 max-w-2xl font-script text-xl font-normal capitalize leading-[1.35] sm:text-2xl", dark ? "text-crimson-bright" : "text-crimson")}>
             {theoryIntro}
           </p>
         </div>
