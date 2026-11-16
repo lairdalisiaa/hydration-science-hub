@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { articlePreviews, filterArticlePreviews, relatedArticles, routineSteps } from "./article-data";
+import { article, articlePreviews, filterArticlePreviews, relatedArticles, routineSteps } from "./article-data";
 
 describe("green tea routine options", () => {
   it("includes cleanser as a green tea option", () => {
@@ -18,6 +18,9 @@ describe("related articles availability", () => {
 });
 
 describe("article library", () => {
+  it("uses the corrected article date", () => {
+    expect(article.date).toBe("16 Nov 2026");
+  });
   it("offers Green Tea for Glass Skin as the only available article", () => {
     expect(articlePreviews.filter((item) => item.available).map((item) => item.title)).toEqual(["Green Tea for Glass Skin"]);
   });

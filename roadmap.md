@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Articles: widen featured image/text, restore glass theme, correct date, and remove Browse All
+
 - [x] Articles: reference-style browsing page, Green Tea detail link, and Coming soon previews
 
 - [x] Home: Skin Performance scores in one horizontal row on desktop
