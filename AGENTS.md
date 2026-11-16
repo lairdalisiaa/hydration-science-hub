@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Homepage dashboard sections live in `src/components/dashboard/`, with display data in `src/lib/dashboard-data.ts` so it can later be swapped for live data in one place.
+- TEWL band logic lives in `src/lib/tewl.ts` (tested in `tewl.test.ts`); components never hardcode band cutoffs.
