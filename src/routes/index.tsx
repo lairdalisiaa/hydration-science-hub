@@ -44,7 +44,7 @@ function Index() {
           <div className="contents lg:flex lg:flex-col lg:gap-4">
             <div className="contents lg:flex lg:items-start lg:gap-4">
               <SkinomicFocus className="order-6 lg:order-none lg:flex-1" />
-              <GoalsRail className="order-7 lg:order-none lg:shrink-0" />
+              <GoalsRail className="order-7 lg:order-none lg:mt-8 lg:shrink-0" />
             </div>
             <IngredientCard className="order-8 lg:order-none" />
           </div>

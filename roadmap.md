@@ -17,5 +17,6 @@
 - [x] Home: toolbar vertical, fixed at centre-left of the screen on desktop
 - [x] Home: swap New York Top Searches / Green Tea for Glass Skin positions
 - [x] Home: EGCG card shortened to one line + report link
-- [x] Home: featured article card made taller
+- [x] Home: featured article card made taller (photo now square)
+- [x] Home: goals card dropped below the Skinomic Focus top
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
