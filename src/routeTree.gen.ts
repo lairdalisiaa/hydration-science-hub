@@ -18,6 +18,7 @@ import { Route as TheoryIndexRouteImport } from './routes/theory.index'
 import { Route as TheoryBioinformaticsRouteImport } from './routes/theory.bioinformatics'
 import { Route as TheoryTrendSignalRouteImport } from './routes/theory.trend-signal'
 import { Route as TheoryTrendingProductsRouteImport } from './routes/theory.trending-products'
+import { Route as ReportsEyeSerumIndexRouteImport } from './routes/reports.eye-serum.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +65,11 @@ const TheoryTrendingProductsRoute = TheoryTrendingProductsRouteImport.update({
   path: '/trending-products',
   getParentRoute: () => TheoryRoute,
 } as any)
+const ReportsEyeSerumIndexRoute = ReportsEyeSerumIndexRouteImport.update({
+  id: '/reports/eye-serum/',
+  path: '/reports/eye-serum/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports': typeof ReportsIndexRoute
   '/theory': typeof TheoryIndexRoute
+  '/reports/eye-serum': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/theory/trending-products'
     | '/reports/'
     | '/theory/'
+    | '/reports/eye-serum/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/theory/trending-products'
     | '/reports'
     | '/theory'
+    | '/reports/eye-serum'
   id:
     | '__root__'
     | '/'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/theory/trending-products'
     | '/reports/'
     | '/theory/'
+    | '/reports/eye-serum/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   SkincareRoute: typeof SkincareRoute
   TheoryRoute: typeof TheoryRouteWithChildren
   ReportsIndexRoute: typeof ReportsIndexRoute
+  ReportsEyeSerumIndexRoute: typeof ReportsEyeSerumIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -206,6 +219,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheoryTrendingProductsRouteImport
       parentRoute: typeof TheoryRoute
     }
+    '/reports/eye-serum/': {
+      id: '/reports/eye-serum/'
+      path: '/reports/eye-serum'
+      fullPath: '/reports/eye-serum/'
+      preLoaderRoute: typeof ReportsEyeSerumIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -232,6 +252,7 @@ const rootRouteChildren: RootRouteChildren = {
   SkincareRoute: SkincareRoute,
   TheoryRoute: TheoryRouteWithChildren,
   ReportsIndexRoute: ReportsIndexRoute,
+  ReportsEyeSerumIndexRoute: ReportsEyeSerumIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
