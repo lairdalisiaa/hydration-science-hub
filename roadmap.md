@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Articles: reference-style browsing page, Green Tea detail link, and Coming soon previews
+
 - [x] Home: Skin Performance scores in one horizontal row on desktop
 - [x] Home: EGCG ingredient card widened to sit under Skinomic Focus + Goals tracker
 - [x] Home: "How well skin is holding water" chart → line graph, oxidation (y) vs chelation (x)

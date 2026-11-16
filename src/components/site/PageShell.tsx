@@ -12,14 +12,15 @@ type Props = {
   className?: string;
   /** "ink" switches the page body to the dark theme (Theory · Trending Products). */
   tone?: "light" | "ink";
+  headerTone?: "light" | "ink";
 };
 
 /** Shared frame for every page: rounded canvas, site header, page body. */
-export function PageShell({ children, footer, signup = true, className, tone = "light" }: Props) {
+export function PageShell({ children, footer, signup = true, className, tone = "light", headerTone = "light" }: Props) {
   return (
     <div className="min-h-screen bg-muted/40 lg:p-6">
       <div className="mx-auto max-w-[1400px] overflow-hidden bg-background lg:rounded-3xl lg:shadow-soft">
-        <SiteHeader />
+        <SiteHeader tone={headerTone} />
         <div className={cn(tone === "ink" ? "bg-page-ink text-ink-foreground" : "bg-page", className)}>
           {children}
           {signup && <WeeklySignal />}

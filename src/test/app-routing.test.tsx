@@ -19,6 +19,7 @@ describe("App routing", () => {
     ["/theory", "/theory/"],
     ["/theory/trending-products", "/theory/trending-products"],
     ["/article", "/article"],
+    ["/articles", "/articles"],
     ["/skincare", "/skincare"],
     ["/reports", "/reports/"],
     ["/reports/egcg", "/reports/egcg"],
