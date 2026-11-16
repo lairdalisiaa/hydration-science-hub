@@ -4,9 +4,9 @@ import { topSearches } from "@/lib/dashboard-data";
 import { cn } from "@/lib/utils";
 import articleImg from "@/assets/green-tea-glass-skin.jpg";
 
-export function MiddleColumn() {
+export function MiddleColumn({ className }: { className?: string }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={cn("flex flex-col gap-4", className)}>
       <div className="flex items-center justify-between rounded-2xl bg-card px-4 py-3 shadow-soft">
         <span className="flex items-center gap-3 text-sm font-medium">
           <span className="size-3.5 rounded-sm bg-primary" /> New York
