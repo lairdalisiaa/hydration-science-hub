@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { CalendarDays, ChevronDown, Droplet, FileText, FlaskConical, TrendingUp } from "lucide-react";
+import { CalendarDays, Droplet, FileText, FlaskConical, TrendingUp } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { tewlTrend } from "@/lib/dashboard-data";
@@ -48,15 +48,15 @@ function MarketStrip() {
   const [chip, setChip] = useState<(typeof chips)[number]>("Market");
   return (
     <div className="grid gap-4 border-b border-border bg-card px-4 py-4 lg:grid-cols-[220px_1fr] lg:px-8">
-      <button type="button" className="flex items-center gap-3 rounded-2xl bg-muted px-3 py-3 text-left">
+      <div className="flex items-center gap-3 rounded-2xl bg-muted px-3 py-3">
         <span className="size-9 rounded-lg bg-secondary" aria-hidden />
         <span className="flex-1">
           <span className="eyebrow block text-[0.55rem] text-muted-foreground">Market</span>
           <span className="flex items-center gap-1 font-medium">
-            New York <ChevronDown className="size-3.5" />
+            New York
           </span>
         </span>
-      </button>
+      </div>
       <div className="flex flex-col gap-3">
         <dl className="grid grid-cols-3 gap-3 md:grid-cols-6">
           {marketStrip.map((m) => (
