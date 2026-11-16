@@ -7,7 +7,7 @@ export function SkinPerformance({ className }: { className?: string }) {
     <section className={cn("flex flex-col gap-5 rounded-3xl bg-card p-5 shadow-soft lg:flex-row lg:items-center lg:justify-between lg:gap-8", className)}>
       <div className="lg:max-w-56">
         <div className="flex items-baseline justify-between gap-3 lg:block">
-          <h2 className="font-serif text-3xl italic text-primary">Skin Performance</h2>
+          <h2 className="font-script text-4xl leading-[1.15] text-crimson lg:text-5xl">Skin Performance</h2>
           <span className="eyebrow text-muted-foreground lg:mt-1 lg:block">This week</span>
         </div>
         <p className="mt-1 text-sm text-muted-foreground">0–100 scores across the New York panel.</p>
