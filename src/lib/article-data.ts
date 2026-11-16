@@ -5,7 +5,7 @@ export const article = {
   dek: "Why a familiar tea-leaf antioxidant is showing up in the move from instant glow to hydrated, resilient, translucent-looking skin.",
   author: { name: "Addottee", bio: "Hydration Science Hub" },
   readTime: "3 min read",
-  date: "7 Aug 2026",
+  date: "16 Nov 2026",
 };
 
 export const toc = [

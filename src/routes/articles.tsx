@@ -11,5 +11,5 @@ export const Route = createFileRoute("/articles")({
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
-  component: () => <PageShell headerTone="ink" className="bg-background bg-none"><ArticlesIndex /></PageShell>,
+  component: () => <PageShell><ArticlesIndex /></PageShell>,
 });
