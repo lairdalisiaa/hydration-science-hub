@@ -12,13 +12,13 @@ export function SkinomicFocus({ className }: { className?: string }) {
       <p className="mt-1 text-sm text-muted-foreground">What everyone's asking. 0–100 index of 12-month search demand.</p>
       <div className="mt-4 grid grid-cols-2 gap-2">
         {skinomicFocus.map((f, i) => (
-          <div key={f.concern} className={cn("flex min-h-32 flex-col rounded-2xl p-4", i === 0 ? "bg-ink text-ink-foreground" : "bg-muted/60")}>
+          <div key={f.concern} className={cn("flex flex-col rounded-2xl px-4 py-3", i === 0 ? "bg-ink text-ink-foreground" : "bg-muted/60")}>
             <div className="flex items-baseline justify-between">
               <span className="font-medium">{f.concern}</span>
               <span className="tabular text-2xl">{f.score}</span>
             </div>
             <p className={cn("mt-1 text-xs italic", i === 0 ? "text-ink-muted" : "text-muted-foreground")}>"{f.query}"</p>
-            <div className={cn("mt-3 h-1 rounded-full", i === 0 ? "bg-ink-raised" : "bg-border")}>
+            <div className={cn("mt-2 h-1 rounded-full", i === 0 ? "bg-ink-raised" : "bg-border")}>
               <div className={cn("h-full rounded-full", i === 0 ? "bg-secondary" : "bg-primary")} style={{ width: `${f.score}%` }} />
             </div>
           </div>

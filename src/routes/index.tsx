@@ -28,16 +28,26 @@ function Index() {
     <PageShell footer={<Ticker />}>
       <main className="px-4 py-6 lg:px-8">
         <ToolRail className="mb-4 hidden lg:flex" />
-        {/* DOM order = mobile order; desktop placement is explicit. */}
-        <div className="grid gap-4 lg:grid-cols-[1fr_1fr_1.3fr_76px] lg:grid-rows-[auto_1fr_auto]">
-          <LocationPill className="lg:col-start-2 lg:row-start-1" />
-          <ExploreMarket className="lg:col-start-1 lg:row-span-2 lg:row-start-1" />
-          <PartnerCard className="lg:col-start-1 lg:row-start-3" />
-          <TopSearches className="lg:col-start-2 lg:row-start-3" />
-          <FeaturedArticle className="lg:col-start-2 lg:row-start-2" />
-          <SkinomicFocus className="lg:col-start-3 lg:row-span-2 lg:row-start-1" />
-          <GoalsRail className="lg:col-start-4 lg:row-span-2 lg:row-start-1" />
-          <IngredientCard className="lg:col-span-2 lg:col-start-3 lg:row-start-3" />
+        {/* Mobile: one column ordered by order-*. Desktop: three stacked columns sized to content. */}
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_1fr_1.4fr] lg:items-start">
+          <div className="contents lg:flex lg:flex-col lg:gap-4">
+            <ExploreMarket className="order-2 lg:order-none" />
+            <PartnerCard className="order-3 lg:order-none" />
+          </div>
+          <div className="contents lg:flex lg:flex-col lg:gap-4">
+            <LocationPill className="order-1 lg:order-none" />
+            <TopSearches className="order-4 lg:order-none" />
+            <FeaturedArticle className="order-5 lg:order-none" />
+          </div>
+          <div className="contents lg:flex lg:flex-col lg:gap-4">
+            <div className="contents lg:flex lg:items-start lg:gap-4">
+              <SkinomicFocus className="order-6 lg:order-none lg:flex-1" />
+              <GoalsRail className="order-7 lg:order-none lg:shrink-0" />
+            </div>
+            <IngredientCard className="order-8 lg:order-none" />
+          </div>
+        </div>
+        <div className="mt-4 flex flex-col gap-4">
           <SkinPerformance className="lg:col-span-4" />
           <TewlTrend className="lg:col-span-4" />
         </div>
