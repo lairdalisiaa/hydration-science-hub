@@ -32,5 +32,5 @@
 - [x] Theory introduction: smaller script beside the photo, vertically centred on its right
 - [x] Theory introduction: remove standalone Theory heading and bolden the adjacent script text
 - [x] Theory introduction: capitalise the first letter of every word
-- [ ] Theory introduction: reduce script text to around 14 pt, preserving photo alignment
+- [x] Theory introduction: reduce script text to around 14 pt, preserving photo alignment
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
