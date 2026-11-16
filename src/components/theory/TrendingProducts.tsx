@@ -153,7 +153,7 @@ export function TrendingProducts() {
                 <img src={p.image} alt={p.name} width={816} height={816} loading="lazy" className="mt-2 h-24 w-full rounded-xl object-cover" />
                 <h3 className="mt-3 font-medium">{p.name}</h3>
                 <p className="text-xs text-ink-muted">{p.brand} · {p.country}</p>
-                <p className="font-mono text-[0.6rem] text-ink-muted">NYY · {p.ingredient} · {p.ingredientScore}/100</p>
+                <p className="font-mono text-[0.6rem] text-ink-muted">NY · {p.ingredient} · {p.ingredientScore}/100</p>
                 <div className="mt-auto flex items-center justify-between pt-3 text-xs">
                   <span className="tabular">{p.price} · {p.unitsPerWeek}/wk</span>
                   <SaveButton saved={saved.includes(p.id)} onClick={() => toggle(p.id)} />
