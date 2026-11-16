@@ -24,10 +24,10 @@ export const takeaways = [
 ];
 
 export const routineSteps = [
-  { step: "Cleanser", greenTea: false },
+  { step: "Cleanser", greenTea: true },
   { step: "Toner", greenTea: true },
   { step: "Essence / Serum", greenTea: true },
-  { step: "Gel cream", greenTea: false },
+  { step: "Gel cream", greenTea: true },
   { step: "Sheet mask", greenTea: true },
 ];
 
