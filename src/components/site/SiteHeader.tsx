@@ -3,19 +3,20 @@ import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/theory", label: "Theory" },
-  { to: "/article", label: "Article" },
+  { to: "/articles", label: "Articles" },
   { to: "/reports", label: "Report & Guides" },
   { to: "/skincare", label: "Skincare" },
 ] as const;
 
-export function SiteHeader() {
+export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
   const [open, setOpen] = useState(false);
   return (
-    <header className="flex items-center justify-between gap-4 border-b border-border bg-card px-6 py-4 lg:px-8">
+    <header className={cn("flex items-center justify-between gap-4 border-b border-border px-6 py-4 lg:px-8", tone === "ink" ? "bg-ink text-ink-foreground" : "bg-card")}>
       <Link to="/" className="font-display text-3xl font-extrabold tracking-tight">
         addottee.
       </Link>

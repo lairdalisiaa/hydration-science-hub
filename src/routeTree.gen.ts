@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArticleRouteImport } from './routes/article'
+import { Route as ArticlesRouteImport } from './routes/articles'
 import { Route as SkincareRouteImport } from './routes/skincare'
 import { Route as TheoryRouteImport } from './routes/theory'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
@@ -30,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const ArticleRoute = ArticleRouteImport.update({
   id: '/article',
   path: '/article',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArticlesRoute = ArticlesRouteImport.update({
+  id: '/articles',
+  path: '/articles',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SkincareRoute = SkincareRouteImport.update({
@@ -87,6 +93,7 @@ const ReportsEyeSerumBioinformaticsRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/article': typeof ArticleRoute
+  '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
   '/reports/egcg': typeof ReportsEgcgRoute
@@ -101,6 +108,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/article': typeof ArticleRoute
+  '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
   '/reports/egcg': typeof ReportsEgcgRoute
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/article': typeof ArticleRoute
+  '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
   '/reports/egcg': typeof ReportsEgcgRoute
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/article'
+    | '/articles'
     | '/skincare'
     | '/theory'
     | '/reports/egcg'
@@ -145,6 +155,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/article'
+    | '/articles'
     | '/skincare'
     | '/reports/egcg'
     | '/theory/bioinformatics'
@@ -158,6 +169,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/article'
+    | '/articles'
     | '/skincare'
     | '/theory'
     | '/reports/egcg'
@@ -173,6 +185,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArticleRoute: typeof ArticleRoute
+  ArticlesRoute: typeof ArticlesRoute
   SkincareRoute: typeof SkincareRoute
   TheoryRoute: typeof TheoryRouteWithChildren
   ReportsEgcgRoute: typeof ReportsEgcgRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/article'
       fullPath: '/article'
       preLoaderRoute: typeof ArticleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/articles': {
+      id: '/articles'
+      path: '/articles'
+      fullPath: '/articles'
+      preLoaderRoute: typeof ArticlesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/skincare': {
@@ -290,6 +310,7 @@ const TheoryRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArticleRoute: ArticleRoute,
+  ArticlesRoute: ArticlesRoute,
   SkincareRoute: SkincareRoute,
   TheoryRoute: TheoryRouteWithChildren,
   ReportsEgcgRoute: ReportsEgcgRoute,

@@ -37,3 +37,20 @@ export const relatedArticles = [
 
 /** Product ids from products-data that contain green tea. */
 export const greenTeaProductIds = ["pdrn-serum", "lip-treatment", "cleanser"];
+
+export const articleCategories = ["All", "Trends", "Ingredients", "Products", "Science", "Market"] as const;
+export type ArticleCategory = (typeof articleCategories)[number];
+export const articlePreviews = [
+  { id: "green-tea", title: article.title, category: "Ingredients", label: "Ingredient Intelligence", available: true },
+  { id: "trend-preview", title: "Coming soon", category: "Trends", label: "Trend Report", available: false },
+  { id: "product-preview", title: "Coming soon", category: "Products", label: "Product Review", available: false },
+  { id: "market-preview", title: "Coming soon", category: "Market", label: "Market Analysis", available: false },
+] as const;
+
+export function filterArticlePreviews(query: string, category: ArticleCategory, sort: string) {
+  const filtered = articlePreviews.filter((item) =>
+    (category === "All" || item.category === category) &&
+    `${item.title} ${item.label}`.toLowerCase().includes(query.trim().toLowerCase()),
+  );
+  return sort === "title" ? [...filtered].sort((a, b) => Number(b.available) - Number(a.available) || a.title.localeCompare(b.title)) : filtered;
+}
