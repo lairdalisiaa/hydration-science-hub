@@ -23,10 +23,10 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
             className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24"
           />
           <div className="min-w-0 max-w-3xl">
-            <p className={cn("font-sans text-xs font-semibold uppercase", dark ? "text-crimson-bright" : "text-crimson")}>
+            <p className={cn("font-script text-3xl font-normal", dark ? "text-crimson-bright" : "text-crimson")}>
               Our theory
             </p>
-            <p className={cn("mt-5 font-sans text-[14pt] font-normal leading-relaxed", dark ? "text-ink-foreground" : "text-foreground")}>
+            <p className={cn("mt-2 font-sans text-sm font-normal leading-relaxed", dark ? "text-crimson-bright" : "text-crimson")}>
               {theoryIntro}
             </p>
           </div>
