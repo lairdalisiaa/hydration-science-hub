@@ -17,9 +17,9 @@ export function IngredientLibrary() {
 
   return (
     <main className="px-4 py-6 lg:px-8">
-      <p className="eyebrow text-[0.6rem] text-muted-foreground">Ingredient library · {libraryTotals.all} ingredients</p>
+      <p className="eyebrow text-[0.6rem] text-muted-foreground">Ingredient library · {libraryTotals.available} ingredient available</p>
       <h1 className="mt-1 text-4xl font-medium tracking-tight">Skincare</h1>
-      <p className="mt-1 text-muted-foreground">Every ingredient we track, by what it does for skin.</p>
+      <p className="mt-1 text-muted-foreground">Epigallocatechin gallate · more ingredients coming soon.</p>
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">
         <label className="flex h-11 flex-1 items-center gap-2 rounded-full border border-border bg-card px-4">
@@ -79,20 +79,32 @@ export function IngredientLibrary() {
                 <p className="font-mono text-[0.65rem] text-muted-foreground">{i.inci}</p>
               </div>
               <div className="flex flex-wrap gap-1">{i.concerns.map((c) => <Tag key={c}>{c}</Tag>)}</div>
-              <Metric label="Searches" value={i.searches} />
+              <Metric label={i.searchesAreSample ? "Searches · sample" : "Searches"} value={i.searches} />
               <Metric label="Saves" value={i.saves} />
-              <Metric label="Products" value={String(i.products)} />
+              <Metric label="Products" value={i.products === null ? "Coming soon" : String(i.products)} />
               <Score item={i} />
             </li>
           ))}
         </ul>
       )}
-      <p className="mt-5 text-center text-xs text-muted-foreground">Showing the top {libraryIngredients.length} tracked ingredients.</p>
+      <p className="mt-5 text-center text-xs text-muted-foreground">{libraryTotals.available} available · {libraryTotals.all - libraryTotals.available} coming soon</p>
     </main>
   );
 }
 
 function IngredientCard({ item: i }: { item: LibraryIngredient }) {
+  if (i.comingSoon) return (
+    <div className="flex h-full flex-col rounded-3xl bg-card p-3 shadow-soft">
+      <FormulaTile formula="Coming soon" />
+      <p className="mt-3 font-medium leading-tight">{i.name}</p>
+      <p className="mt-2 text-xs text-muted-foreground">Coming soon</p>
+      <div className="mt-auto grid grid-cols-3 gap-2 border-t border-border pt-2">
+        <Metric label="Searches" value="Coming soon" />
+        <Metric label="Saves" value="Coming soon" />
+        <Metric label="Products" value="Coming soon" />
+      </div>
+    </div>
+  );
   const body = (
     <>
       <div className="relative">
@@ -108,9 +120,9 @@ function IngredientCard({ item: i }: { item: LibraryIngredient }) {
       </div>
       <div className="mt-2 flex flex-wrap gap-1">{i.concerns.map((c) => <Tag key={c}>{c}</Tag>)}</div>
       <div className="mt-3 grid grid-cols-3 border-t border-border pt-2">
-        <Metric label="Searches" value={i.searches} />
+        <Metric label={i.searchesAreSample ? "Searches · sample" : "Searches"} value={i.searches} />
         <Metric label="Saves" value={i.saves} />
-        <Metric label="Products" value={String(i.products)} />
+        <Metric label="Products" value={i.products === null ? "Coming soon" : String(i.products)} />
       </div>
       {i.report && (
         <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary">
@@ -141,12 +153,13 @@ function Metric({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <p className="eyebrow text-[0.55rem] text-muted-foreground">{label}</p>
-      <p className="tabular text-sm">{value}</p>
+      <p className={cn("tabular", value === "Coming soon" ? "text-xs text-muted-foreground" : "text-sm")}>{value}</p>
     </div>
   );
 }
 
 function Score({ item: i }: { item: LibraryIngredient }) {
+  if (i.comingSoon) return <span className="text-xs text-muted-foreground">Coming soon</span>;
   if (i.score === null || i.change === null) return <span className="text-right text-xl text-muted-foreground">—</span>;
   return (
     <div className="flex flex-col items-end gap-0.5">

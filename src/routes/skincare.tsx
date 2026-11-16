@@ -6,9 +6,9 @@ export const Route = createFileRoute("/skincare")({
   head: () => ({
     meta: [
       { title: "Skincare Ingredient Library — Addottee" },
-      { name: "description", content: "Search 248 tracked skincare ingredients by what they do for skin, with trend scores, searches and product counts." },
+      { name: "description", content: "Explore Epigallocatechin gallate, its ingredient report and product count. More skincare ingredients coming soon." },
       { property: "og:title", content: "Skincare Ingredient Library — Addottee" },
-      { property: "og:description", content: "Search 248 tracked skincare ingredients by what they do for skin, with trend scores, searches and product counts." },
+      { property: "og:description", content: "Explore Epigallocatechin gallate, its ingredient report and product count. More skincare ingredients coming soon." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

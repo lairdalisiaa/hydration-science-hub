@@ -27,4 +27,5 @@
 - [x] Theory Ingredient Trend Signal: show trend data for Epigallocatechin gallate
 - [x] Theory Bioinformatics: Key Synergies pair EGCG with other ingredients, with sample-evidence caveat
 - [x] Theory Trending Products: Ingredient Scanner uses EGCG molecular details and imagery
+- [x] Skincare: EGCG first with 1 product, 0 saves and sample search volume; other ingredient names retained with coming-soon details
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
