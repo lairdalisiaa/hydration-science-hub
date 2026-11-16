@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { theoryIntro } from "@/lib/theory-data";
-import skinImg from "@/assets/dewy-skin.jpg";
+import skinImg from "@/assets/theory-skin-equals.jpg";
 
 const tabs = [
   { to: "/theory", n: "01", label: "Cell Simulation" },
@@ -17,7 +17,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
         <div className="flex items-center gap-4 sm:gap-6 lg:ml-[114px]">
           <img
             src={skinImg}
-            alt="Close-up of hydrated skin"
+            alt="Black-and-white close-up of hydrated skin with an equals sign in the centre"
             width={816}
             height={816}
             className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24"
