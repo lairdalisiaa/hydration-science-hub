@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deliveryModes, keyTakeaway, performanceSignal } from "./theory-data";
+import { deliveryModes, keyTakeaway, performanceSignal, signalCards, trendIngredient, trendStats } from "./theory-data";
 
 describe("EGCG cell simulation sample", () => {
   it("uses epigallocatechin gallate with its molecular formula", () => {
@@ -20,5 +20,15 @@ describe("EGCG cell simulation sample", () => {
 
   it("keeps the default TEWL measurement consistent with the serum sample", () => {
     expect(performanceSignal.find(({ label }) => label === "TEWL")?.value).toBe(deliveryModes["Leave-on serum"].tewl);
+  });
+});
+
+describe("Ingredient Trend Signal sample", () => {
+  it("is about Epigallocatechin gallate, not another ingredient", () => {
+    expect(trendIngredient.name).toBe("Epigallocatechin gallate");
+    expect(trendIngredient.formula).toBe("C22H18O11");
+    expect(trendStats.some((s) => s.note.includes("Epigallocatechin gallate"))).toBe(true);
+    expect(signalCards.some((c) => c.note.includes("Epigallocatechin gallate") || c.note.includes("EGCG"))).toBe(true);
+    for (const card of signalCards) expect(card.note.toLowerCase()).not.toContain("azelaic");
   });
 });

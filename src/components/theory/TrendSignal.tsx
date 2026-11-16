@@ -3,7 +3,7 @@ import { CartesianGrid, Line, LineChart, ReferenceArea, ReferenceLine, Responsiv
 import { ScoreRing } from "@/components/dashboard/ScoreRing";
 import { Bar, Eyebrow, Panel, Segmented } from "@/components/site/ui";
 import { cn } from "@/lib/utils";
-import { signalCards, signalScore, trendNow, trendSeries, trendStats, type TrendRange } from "@/lib/theory-data";
+import { signalCards, signalScore, trendIngredient, trendMeaning, trendNow, trendSeries, trendStats, type TrendRange } from "@/lib/theory-data";
 
 const ranges = ["12 months", "30 days", "7 days"] as const satisfies readonly TrendRange[];
 const statTones = ["bg-accent", "bg-blush/70", "bg-accent", "bg-accent"];
@@ -18,6 +18,12 @@ export function TrendSignal() {
 
   return (
     <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <h2 className="font-script text-3xl leading-none text-crimson">{trendIngredient.name}</h2>
+        <span className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
+          {trendIngredient.formula} · {trendIngredient.family}
+        </span>
+      </div>
       <ul className="flex flex-wrap gap-4 text-xs text-muted-foreground">
         <li className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-primary" /> Rising trend</li>
         <li className="flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-secondary" /> Ingredient interest</li>
@@ -42,7 +48,7 @@ export function TrendSignal() {
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <h2 className="font-medium">Trend Over Time</h2>
-              <Eyebrow className="text-[0.6rem]">Search interest index · 2026 · sample data</Eyebrow>
+              <Eyebrow className="text-[0.6rem]">{trendIngredient.name} · search interest index · 2026 · sample data</Eyebrow>
             </div>
             <Segmented label="Time range" options={ranges} value={range} onChange={setRange} />
           </div>
@@ -67,7 +73,7 @@ export function TrendSignal() {
         </Panel>
         <Panel className="bg-muted/80">
           <Eyebrow className="text-[0.6rem]">What this means</Eyebrow>
-          <p className="mt-2 text-lg leading-snug">A high-potential ingredient with rising momentum. Growing interest in serums points to room for new products.</p>
+          <p className="mt-2 text-lg leading-snug">{trendMeaning}</p>
         </Panel>
       </div>
 

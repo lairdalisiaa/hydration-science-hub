@@ -81,10 +81,20 @@ export const compatibilityRings = [
 ];
 
 // Tab 02 — Ingredient Trend Signal
+export const trendIngredient = {
+  name: "Epigallocatechin gallate",
+  short: "EGCG",
+  formula: "C22H18O11",
+  family: "Gallated catechin · green tea",
+};
+
+export const trendMeaning =
+  "EGCG is a gallated catechin with rising interest in antioxidant and barrier-focused serums. It is poorly soluble in water, so the products that solve delivery are the ones gaining share.";
+
 export const trendStats = [
   { eyebrow: "Rising trend", value: "+29%", note: "vs last 6 months", positive: true },
   { eyebrow: "Top market", value: "Global", note: "Active interest across all 7 hubs" },
-  { eyebrow: "Most common format", value: "Serum", note: "Serum products featuring Azelaic Acid are growing" },
+  { eyebrow: "Most common format", value: "Serum", note: "Serum products featuring Epigallocatechin gallate are growing" },
   { eyebrow: "12-month forecast", value: "+18%", note: "Gaining market attention" },
 ];
 
@@ -115,7 +125,7 @@ export const trendNow: Record<TrendRange, string> = { "12 months": "Nov", "30 da
 export const signalCards = [
   {
     title: "Ingredient Interest",
-    note: "Interest is high and still climbing.",
+    note: "Interest in Epigallocatechin gallate is high and still climbing.",
     rows: [
       ["Interest level", "High"],
       ["Growth · 6 months", "+29%"],
@@ -124,7 +134,7 @@ export const signalCards = [
   },
   {
     title: "Category Signal",
-    note: "Serums lead every other format for this ingredient.",
+    note: "Serums lead every other format for EGCG.",
     rows: [
       ["Category", "Serum"],
       ["Category rank", "#1"],
