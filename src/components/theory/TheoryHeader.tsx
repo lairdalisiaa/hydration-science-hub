@@ -15,8 +15,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
     <div className="flex flex-col gap-5">
       <div className="px-4 sm:px-6">
         <h1 className={cn("font-script text-5xl leading-[1.25]", dark ? "text-crimson-bright" : "text-crimson")}>Theory</h1>
-        <p className={cn("mt-1.5 max-w-2xl text-sm", dark ? "text-ink-muted" : "text-muted-foreground")}>
-          <span className={cn("font-script text-2xl leading-none", dark ? "text-crimson-bright" : "text-crimson")}>our theory</span>{" "}
+        <p className={cn("mt-1.5 max-w-2xl font-script text-3xl leading-[1.35]", dark ? "text-crimson-bright" : "text-crimson")}>
           {theoryIntro}
         </p>
         <img

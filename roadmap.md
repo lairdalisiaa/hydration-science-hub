@@ -28,4 +28,5 @@
 - [x] Theory Bioinformatics: Key Synergies pair EGCG with other ingredients, with sample-evidence caveat
 - [x] Theory Trending Products: Ingredient Scanner uses EGCG molecular details and imagery
 - [x] Skincare: EGCG first with 1 product, 0 saves and sample search volume; other ingredient names retained with coming-soon details
+- [x] Theory introduction: remove opening buying sentence and style the full Our theory measures sentence in red script
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)

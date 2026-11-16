@@ -1,7 +1,7 @@
 // Cell Simulation uses EGCG; other theory tabs retain their independent sample datasets.
 
 export const theoryIntro =
-  "What people buy and what people talk about are rarely the same products. Our theory measures the gap between the two, then uses formulation chemistry and bioinformatics to explain why one product earns the sale while another only earns the conversation.";
+  "Our theory measures the gap between what people buy and what they talk about, then uses formulation chemistry and bioinformatics to explain why one product earns the sale while another only earns the conversation.";
 
 export const keyTakeaway = {
   ingredient: "Epigallocatechin gallate",
