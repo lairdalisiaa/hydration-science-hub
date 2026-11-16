@@ -1,5 +1,5 @@
 # Roadmap
-- [ ] EGCG report list: 1 product, 78 signal, 0 readers
+- [x] EGCG report list: 1 product, 78 signal, 0 readers
 - [x] Theory: script Our theory heading, smaller red description, and replace explain with further analyze
 - [x] Reports: only EGCG available; others coming soon without data or expected dates
 - [x] Reports: set EGCG publication date to today
