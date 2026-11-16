@@ -1,4 +1,6 @@
 # Roadmap
+- [ ] Report pages: vertical icon toolbar fixed at centre-left, matching the homepage
+- [ ] EGCG: email field above Subscribe matching the reference
 
 - [x] Articles: widen featured image/text, restore glass theme, correct date, and remove Browse All
 
