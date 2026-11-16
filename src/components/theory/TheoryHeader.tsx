@@ -26,9 +26,6 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
             <p className={cn("font-sans text-xs font-semibold uppercase", dark ? "text-crimson-bright" : "text-crimson")}>
               Our theory
             </p>
-            <h1 className={cn("mt-1 font-script text-[2rem] font-normal leading-tight sm:text-4xl", dark ? "text-crimson-bright" : "text-crimson")}>
-              Why one product earns the sale
-            </h1>
             <p className={cn("mt-5 font-sans text-[14pt] font-normal leading-relaxed", dark ? "text-ink-foreground" : "text-foreground")}>
               {theoryIntro}
             </p>
