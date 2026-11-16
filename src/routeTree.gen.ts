@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TheoryRouteImport } from './routes/theory'
+import { Route as TheoryIndexRouteImport } from './routes/theory.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,38 @@ const TheoryRoute = TheoryRouteImport.update({
   path: '/theory',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TheoryIndexRoute = TheoryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TheoryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/theory': typeof TheoryRoute
+  '/theory': typeof TheoryRouteWithChildren
+  '/theory/': typeof TheoryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/theory': typeof TheoryRoute
+  '/theory': typeof TheoryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/theory': typeof TheoryRoute
+  '/theory': typeof TheoryRouteWithChildren
+  '/theory/': typeof TheoryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/theory'
+  fullPaths: '/' | '/theory' | '/theory/'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/theory'
-  id: '__root__' | '/' | '/theory'
+  id: '__root__' | '/' | '/theory' | '/theory/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  TheoryRoute: typeof TheoryRoute
+  TheoryRoute: typeof TheoryRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +73,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/theory/': {
+      id: '/theory/'
+      path: '/'
+      fullPath: '/theory/'
+      preLoaderRoute: typeof TheoryIndexRouteImport
+      parentRoute: typeof TheoryRoute
+    }
   }
 }
 
+interface TheoryRouteChildren {
+  TheoryIndexRoute: typeof TheoryIndexRoute
+}
+
+const TheoryRouteChildren: TheoryRouteChildren = {
+  TheoryIndexRoute: TheoryIndexRoute,
+}
+
+const TheoryRouteWithChildren =
+  TheoryRoute._addFileChildren(TheoryRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  TheoryRoute: TheoryRoute,
+  TheoryRoute: TheoryRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
