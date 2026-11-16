@@ -29,8 +29,8 @@ export function ReportShell({ children }: { children: ReactNode }) {
     <PageShell>
       <MarketStrip />
       <TimeBar />
-      <main className="grid gap-4 px-4 py-6 lg:grid-cols-[56px_1fr] lg:px-8">
-        <nav aria-label="Report sections" className="flex gap-2 self-start rounded-2xl bg-card p-2 shadow-soft lg:sticky lg:top-6 lg:flex-col">
+      <main className="px-4 py-6 md:pl-28 lg:pr-8">
+        <nav aria-label="Report sections" className="fixed left-[max(36px,calc((100vw-1400px)/2+12px))] top-1/2 z-20 hidden w-14 -translate-y-1/2 flex-col gap-5 rounded-2xl bg-card px-2 py-4 shadow-soft md:flex">
           {rail.map(({ to, icon: Icon, label }) => (
             <Link
               key={to}

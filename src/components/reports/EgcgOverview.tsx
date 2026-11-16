@@ -13,6 +13,7 @@ const years = ["2024", "2025", "2026"] as const;
 
 export function EgcgOverview() {
   const [saved, setSaved] = useState(false);
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [year, setYear] = useState<(typeof years)[number]>("2026");
   const lead = productById("pdrn-serum");
   const max = Math.max(...e.searchInterest.map((s) => s.v));
@@ -78,9 +79,28 @@ export function EgcgOverview() {
         <section className="flex flex-col rounded-3xl bg-accent p-5">
           <p className="eyebrow text-[0.6rem] text-muted-foreground">Weekly signal</p>
           <p className="mt-1 text-xl font-medium leading-snug">Get EGCG updates every week</p>
-          <Button variant="ink" className="mt-auto rounded-full" asChild>
-            <a href="#weekly-signal">Subscribe</a>
-          </Button>
+          <form
+            aria-label="EGCG weekly updates"
+            className="mt-auto flex flex-col gap-2 pt-6"
+            onSubmit={(event) => {
+              event.preventDefault();
+              setNewsletterSubmitted(true);
+            }}
+          >
+            <label htmlFor="egcg-weekly-email" className="sr-only">Email address</label>
+            <input
+              id="egcg-weekly-email"
+              type="email"
+              autoComplete="email"
+              required
+              placeholder="Email address"
+              className="h-10 w-full min-w-0 rounded-full border border-transparent bg-card px-4 text-sm text-card-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            />
+            <Button type="submit" variant="ink" className="h-10 w-full rounded-full">Subscribe</Button>
+            {newsletterSubmitted && (
+              <p role="status" className="text-xs text-muted-foreground">Newsletter sign-ups are coming soon. Your email has not been saved.</p>
+            )}
+          </form>
         </section>
         <section className="flex flex-col rounded-3xl bg-ink p-5 text-ink-foreground">
           <div className="flex items-center justify-between">
