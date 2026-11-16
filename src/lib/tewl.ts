@@ -19,7 +19,7 @@ export function tewlMarkerPosition(value: number): number {
   const clamped = Math.min(Math.max(value, 0), 35);
   let index = TEWL_BANDS.findIndex((b) => clamped < b.max);
   if (index === -1) index = TEWL_BANDS.length - 1;
-  const band = TEWL_BANDS[index];
+  const band = TEWL_BANDS[index] ?? TEWL_BANDS[TEWL_BANDS.length - 1]!;
   const within = (clamped - band.min) / (band.max - band.min);
   return (index + within) / TEWL_BANDS.length;
 }

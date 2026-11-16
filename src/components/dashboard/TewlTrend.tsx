@@ -3,8 +3,8 @@ import { tewlTrend } from "@/lib/dashboard-data";
 import { TEWL_BANDS, classifyTewl, tewlMarkerPosition } from "@/lib/tewl";
 
 export function TewlTrend() {
-  const current = tewlTrend[tewlTrend.length - 1].tewl;
-  const start = tewlTrend[0].tewl;
+  const current = tewlTrend.at(-1)?.tewl ?? 0;
+  const start = tewlTrend[0]?.tewl ?? current;
   const delta = current - start;
   const marker = tewlMarkerPosition(current) * 100;
 
