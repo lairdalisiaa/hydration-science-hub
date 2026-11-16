@@ -66,7 +66,8 @@ export function ArticlePage() {
           <div className="flex items-center gap-3 text-sm">
             <span className="size-9 rounded-full bg-blush" aria-hidden />
             <div>
-              <p className="font-medium">Written by {article.author.name}</p>
+              <p className="font-medium">{article.author.name}</p>
+              <p className="text-xs text-muted-foreground">{article.author.bio}</p>
               <p className="text-xs text-muted-foreground">
                 {article.readTime} · {article.date}
               </p>
@@ -210,13 +211,12 @@ export function ArticlePage() {
             <div className="flex items-center gap-3 rounded-2xl bg-card p-4">
               <span className="size-12 shrink-0 rounded-full bg-blush" aria-hidden />
               <div>
-                <p className="font-medium">Written by {article.author.name}</p>
+                <p className="font-medium">{article.author.name}</p>
                 <p className="text-xs text-muted-foreground">{article.author.bio}</p>
               </div>
             </div>
             <div className="rounded-2xl bg-card p-4">
               <p className="eyebrow text-[0.6rem] text-muted-foreground">Next article · coming soon</p>
-              <p className="mt-1 font-medium">PDRN Explained</p>
             </div>
           </div>
         </article>
@@ -245,13 +245,11 @@ export function ArticlePage() {
                 <li key={r.title} className="flex gap-3 py-2.5">
                   <span className="size-10 shrink-0 rounded-lg bg-accent" aria-hidden />
                   <div>
-                    <p className="eyebrow text-[0.55rem] text-primary">{r.kicker}</p>
                     <p className="text-sm leading-snug">{r.title}</p>
                   </div>
                 </li>
               ))}
             </ul>
-            <p className="mt-1 text-xs text-muted-foreground">More articles coming soon.</p>
           </Panel>
           <div className="rounded-3xl bg-ink p-5 text-ink-foreground">
             <p className="eyebrow text-[0.6rem] text-secondary">Plan with it</p>
