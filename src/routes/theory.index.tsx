@@ -5,9 +5,9 @@ export const Route = createFileRoute("/theory/")({
   head: () => ({
     meta: [
       { title: "Cell Simulation — Addottee Theory" },
-      { name: "description", content: "See how deep Azelaic Acid travels into skin, its TEWL effect, ingredient profile and formulation signal." },
+      { name: "description", content: "Explore Epigallocatechin gallate (EGCG), sample delivery and TEWL readings, molecular weight, pKa, solubility and log Kp." },
       { property: "og:title", content: "Cell Simulation — Addottee Theory" },
-      { property: "og:description", content: "See how deep Azelaic Acid travels into skin, its TEWL effect, ingredient profile and formulation signal." },
+      { property: "og:description", content: "Explore Epigallocatechin gallate (EGCG), sample delivery and TEWL readings, molecular weight, pKa, solubility and log Kp." },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
