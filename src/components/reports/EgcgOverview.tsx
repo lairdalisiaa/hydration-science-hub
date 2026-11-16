@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ScoreRing } from "@/components/dashboard/ScoreRing";
-import { Bar, ChangeChip, Formula, Panel, Segmented, Tag } from "@/components/site/ui";
+import { Bar, ChangeChip, Panel, Segmented } from "@/components/site/ui";
 import { cn } from "@/lib/utils";
 import { egcgOverview as e, eyeSerum } from "@/lib/reports-data";
 
@@ -11,7 +11,6 @@ const factTones = ["bg-accent", "bg-card", "bg-card", "bg-blush/70", "bg-muted",
 const years = ["2024", "2025", "2026"] as const;
 
 export function EgcgOverview() {
-  const [saved, setSaved] = useState(false);
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [year, setYear] = useState<(typeof years)[number]>("2026");
   const lead = eyeSerum;
@@ -20,28 +19,6 @@ export function EgcgOverview() {
 
   return (
     <div className="flex flex-col gap-4">
-      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4">
-        <div className="flex items-center gap-3">
-          <span className="size-11 rounded-full bg-secondary" aria-hidden />
-          <div>
-            <h1 className="text-3xl font-medium">{e.name}</h1>
-            <p className="font-mono text-xs text-muted-foreground">
-              {e.code} · <Formula value={e.formula} />
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Tag tone="ink" className="py-1.5">Role: Active</Tag>
-          <Tag className="py-1.5">Evidence: High (Human RCT)</Tag>
-          <Button variant="outline" size="sm" className="rounded-full" aria-pressed={saved} onClick={() => setSaved((v) => !v)}>
-            {saved ? "Saved ✓" : "Save report"}
-          </Button>
-          <Button variant="outline" size="sm" className="rounded-full" onClick={() => window.print()}>
-            PDF <Download className="size-3.5" />
-          </Button>
-        </div>
-      </header>
-
       <section>
         <p className="eyebrow text-[0.6rem] text-muted-foreground">Overview</p>
         <p className="mt-1 max-w-3xl">{e.overview}</p>
