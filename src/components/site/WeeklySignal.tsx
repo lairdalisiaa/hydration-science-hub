@@ -28,7 +28,7 @@ export function WeeklySignal() {
               className="h-10 min-w-0 flex-1 rounded-full border border-border bg-background px-4 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
             />
             <Button type="submit" variant="blush" className="h-10 rounded-full px-5">
-              Get weekly signals
+              Subscribe
             </Button>
           </div>
         )}

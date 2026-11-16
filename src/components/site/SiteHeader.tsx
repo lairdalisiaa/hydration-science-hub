@@ -35,7 +35,7 @@ export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
       </nav>
       <div className="flex items-center gap-2">
         <Button variant="blush" className="rounded-full px-5" asChild>
-          <a href="#weekly-signal">Get weekly signals</a>
+          <a href="#weekly-signal">Subscribe</a>
         </Button>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
