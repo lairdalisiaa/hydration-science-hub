@@ -67,3 +67,23 @@ export const skinPerformance = [
   { label: "Soothing", value: 64 },
   { label: "Oil", value: 38, unit: "%" },
 ];
+
+// Sample data: oxidation left in the formula at each chelation level (New York panel).
+// Chelation = share of free metal ions bound by the chelator; oxidation = share of
+// antioxidants (EGCG) oxidised after 12 weeks. Both 0–100%.
+export const oxidationVsChelation = [
+  { chelation: 0, oxidation: 64 },
+  { chelation: 10, oxidation: 55 },
+  { chelation: 20, oxidation: 46 },
+  { chelation: 30, oxidation: 38 },
+  { chelation: 40, oxidation: 31 },
+  { chelation: 50, oxidation: 25 },
+  { chelation: 60, oxidation: 20 },
+  { chelation: 70, oxidation: 17 },
+  { chelation: 80, oxidation: 15 },
+  { chelation: 90, oxidation: 14 },
+  { chelation: 100, oxidation: 13 },
+];
+
+/** Where the panel's current routine sits on the curve. */
+export const currentChelation = { chelation: 70, oxidation: 17 };

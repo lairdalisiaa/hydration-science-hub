@@ -108,6 +108,9 @@
     radial-gradient(60% 50% at 0% 0%, oklch(0.92 0.05 345 / 0.9), transparent 70%),
     radial-gradient(50% 60% at 100% 35%, oklch(0.9 0.06 345 / 0.75), transparent 70%),
     radial-gradient(40% 40% at 55% 100%, oklch(0.94 0.035 345 / 0.7), transparent 70%);
+  --gradient-page-ink:
+    radial-gradient(55% 45% at 100% 0%, oklch(0.42 0.12 357 / 0.55), transparent 70%),
+    radial-gradient(40% 40% at 0% 60%, oklch(0.34 0.06 345 / 0.4), transparent 70%);
   --gradient-ingredient: linear-gradient(160deg, oklch(0.93 0.04 345), oklch(0.88 0.06 345));
   --gradient-healthy: linear-gradient(90deg, oklch(0.86 0.065 345), oklch(0.61 0.23 357));
   --shadow-soft: 0 12px 32px -18px oklch(0.45 0.12 350 / 0.35);
@@ -149,6 +152,10 @@
 
 @utility bg-page {
   background-image: var(--gradient-page);
+}
+@utility bg-page-ink {
+  background-color: var(--ink);
+  background-image: var(--gradient-page-ink);
 }
 @utility bg-ingredient {
   background-image: var(--gradient-ingredient);

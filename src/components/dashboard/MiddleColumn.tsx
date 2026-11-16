@@ -1,12 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ChevronDown, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { topSearches } from "@/lib/dashboard-data";
 import { cn } from "@/lib/utils";
 import articleImg from "@/assets/green-tea-glass-skin.jpg";
 
-export function MiddleColumn() {
+export function MiddleColumn({ className }: { className?: string }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={cn("flex flex-col gap-4", className)}>
       <div className="flex items-center justify-between rounded-2xl bg-card px-4 py-3 shadow-soft">
         <span className="flex items-center gap-3 text-sm font-medium">
           <span className="size-3.5 rounded-sm bg-primary" /> New York
@@ -20,7 +21,11 @@ export function MiddleColumn() {
           <span className="eyebrow absolute left-3 top-3 rounded-md bg-secondary px-2 py-1 text-secondary-foreground">Featured article</span>
         </div>
         <div className="px-2 pb-2 pt-3">
-          <h3 className="text-xl font-medium">Green Tea for Glass Skin</h3>
+          <h3 className="text-xl font-medium">
+            <Link to="/article" className="hover:underline hover:underline-offset-4">
+              Green Tea for Glass Skin
+            </Link>
+          </h3>
           <div className="mt-2 flex items-center justify-between text-sm text-muted-foreground">
             <span className="flex items-center gap-2 text-foreground">
               <span className="size-6 rounded-full bg-blush" /> Albert Neilsen
@@ -63,8 +68,10 @@ export function MiddleColumn() {
             </li>
           ))}
         </ol>
-        <Button variant="ink" className="mt-4 w-full rounded-full">
-          All trending products <ArrowUpRight className="size-4" />
+        <Button variant="ink" className="mt-4 w-full rounded-full" asChild>
+          <Link to="/theory/trending-products">
+            All trending products <ArrowUpRight className="size-4" />
+          </Link>
         </Button>
       </section>
     </div>

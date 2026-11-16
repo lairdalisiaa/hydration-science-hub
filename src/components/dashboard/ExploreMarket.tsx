@@ -1,10 +1,11 @@
+import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hubs } from "@/lib/dashboard-data";
 
-export function ExploreMarket() {
+export function ExploreMarket({ className }: { className?: string }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={cn("flex flex-col gap-4", className)}>
       <section className="rounded-3xl bg-card p-5 shadow-soft">
         <div className="flex items-baseline justify-between">
           <h2 className="text-xl font-medium">Explore Market</h2>

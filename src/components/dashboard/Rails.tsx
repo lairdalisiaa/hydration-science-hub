@@ -11,9 +11,9 @@ const tools = [
   { icon: Droplet, label: "Hydration" },
 ];
 
-export function ToolRail() {
+export function ToolRail({ className }: { className?: string }) {
   return (
-    <nav aria-label="Dashboard tools" className="flex gap-2 self-start rounded-2xl bg-card p-2 shadow-soft lg:flex-col">
+    <nav aria-label="Dashboard tools" className={cn("flex gap-2 self-start rounded-2xl bg-card p-2 shadow-soft lg:flex-col", className)}>
       {tools.map(({ icon: Icon, label }, i) => (
         <button
           key={label}
@@ -31,9 +31,9 @@ export function ToolRail() {
   );
 }
 
-export function GoalsRail() {
+export function GoalsRail({ className }: { className?: string }) {
   return (
-    <aside className="flex items-center gap-4 self-start rounded-full bg-ink p-3 text-ink-foreground lg:flex-col lg:py-4">
+    <aside className={cn("flex items-center gap-4 self-start rounded-full bg-ink p-3 text-ink-foreground lg:flex-col lg:py-4", className)}>
       <span className="eyebrow text-[0.6rem] text-ink-muted">Goals</span>
       {goals.map((g) => (
         <div key={g.label} className="flex flex-col items-center gap-1 text-center">
