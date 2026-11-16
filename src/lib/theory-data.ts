@@ -189,10 +189,10 @@ export const mechanisms = [
 ];
 
 export const synergies = [
-  { pair: "Azelaic Acid + Niacinamide", note: "Complementary routes to even tone; well tolerated together.", level: "High" },
-  { pair: "Azelaic Acid + Hyaluronic Acid", note: "Offsets the dryness an acid can bring.", level: "High" },
-  { pair: "Azelaic Acid + Retinol", note: "Both support cell turnover; alternate nights.", level: "Medium" },
-  { pair: "Azelaic Acid + Vitamin C", note: "Shared brightening target; watch total acidity.", level: "Medium" },
+  { ingredient: "Epigallocatechin gallate", partner: "Niacinamide", note: "EGCG offers antioxidant support; niacinamide complements barrier and uneven-tone care." },
+  { ingredient: "Epigallocatechin gallate", partner: "Hyaluronic Acid", note: "Pairs EGCG's antioxidant role with a humectant that helps retain water at the skin surface." },
+  { ingredient: "Epigallocatechin gallate", partner: "Ceramides", note: "Combines antioxidant support with barrier lipids; any TEWL benefit requires finished-product testing." },
+  { ingredient: "Epigallocatechin gallate", partner: "Vitamin C", note: "Potential antioxidant pairing; EGCG stability, pH and the vitamin C form need formulation testing." },
 ] as const;
 
 export const literature = [

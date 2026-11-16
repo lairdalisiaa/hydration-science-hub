@@ -86,15 +86,12 @@ export function Bioinformatics() {
       <div className="grid gap-4 lg:grid-cols-[1.6fr_1fr]">
         <Panel>
           <h2 className="text-lg font-medium">Key Synergies</h2>
+          <p className="mt-1 text-xs text-muted-foreground">Illustrative EGCG pairings · complementary roles, not clinically verified synergy.</p>
           <ul className="mt-3 flex flex-col divide-y divide-border">
-            {synergies.map((s, i) => (
-              <li key={s.pair} className="grid gap-2 py-3 text-sm sm:grid-cols-[1fr_1.3fr_auto] sm:items-center">
-                <span className="font-medium">{s.pair}</span>
-                <span>
-                  {s.note}
-                  <span className="eyebrow mt-0.5 block text-[0.55rem] text-muted-foreground">Sample citation {String(i + 1).padStart(2, "0")}</span>
-                </span>
-                <Tag tone={s.level === "High" ? "ink" : "soft"}>{s.level} synergy</Tag>
+            {synergies.map((s) => (
+              <li key={s.partner} className="grid gap-2 py-3 text-sm sm:grid-cols-[1fr_1.3fr] sm:items-center">
+                <span className="font-medium">{s.ingredient} + {s.partner}</span>
+                <span>{s.note}</span>
               </li>
             ))}
           </ul>
