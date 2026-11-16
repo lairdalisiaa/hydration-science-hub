@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Articles: reference-style browsing page, Green Tea detail link, and Coming soon previews
+- [x] Articles: reference-style browsing page, Green Tea detail link, and Coming soon previews
 
 - [x] Home: Skin Performance scores in one horizontal row on desktop
 - [x] Home: EGCG ingredient card widened to sit under Skinomic Focus + Goals tracker
