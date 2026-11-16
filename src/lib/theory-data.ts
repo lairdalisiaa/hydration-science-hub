@@ -1,7 +1,7 @@
 // Cell Simulation uses EGCG; other theory tabs retain their independent sample datasets.
 
 export const theoryIntro =
-  "Our theory measures the gap between what people buy and what they talk about, then uses formulation chemistry and bioinformatics to explain.";
+  "Our theory measures the gap between what people buy and what they talk about, then uses formulation chemistry and bioinformatics to further analyze.";
 
 export const keyTakeaway = {
   ingredient: "Epigallocatechin gallate",
