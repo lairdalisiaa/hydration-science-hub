@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { topSearches } from "@/lib/dashboard-data";
+import { article } from "@/lib/article-data";
 import { cn } from "@/lib/utils";
 import articleImg from "@/assets/green-tea-glass-skin.jpg";
 
@@ -20,9 +21,9 @@ export function FeaturedArticle({ className }: { className?: string }) {
         </h3>
         <div className="mt-2 flex items-center justify-between text-sm text-muted-foreground">
           <span className="flex items-center gap-2 text-foreground">
-            <span className="size-6 rounded-full bg-blush" /> Albert Neilsen
+            <span className="size-6 rounded-full bg-blush" /> {article.author.name}
           </span>
-          <span>7 Aug 2026</span>
+          <span>{article.date}</span>
         </div>
       </div>
     </article>
