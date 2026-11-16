@@ -100,7 +100,7 @@ export function ReportsIndex() {
                 key={r.title}
                 className={cn(
                   "gap-3 rounded-2xl bg-card p-3 shadow-soft",
-                  view === "List" ? "grid items-center sm:grid-cols-[56px_1.6fr_repeat(3,64px)_1fr_auto]" : "flex flex-col",
+                  view === "List" ? (r.status === "Published" ? "grid items-center sm:grid-cols-[56px_1.6fr_repeat(3,64px)_1fr_auto]" : "grid items-center sm:grid-cols-[56px_1fr_auto]") : "flex flex-col",
                   r.status === "Coming soon" && "opacity-80",
                 )}
               >
@@ -109,14 +109,18 @@ export function ReportsIndex() {
                 </div>
                 <div>
                   <p className="font-medium">{r.title}</p>
-                  <p className="text-xs text-muted-foreground">{r.summary}</p>
-                  <div className="mt-1 flex flex-wrap gap-1">{r.types.map((t) => <Tag key={t} className="text-[0.65rem]">{t}</Tag>)}</div>
+                  {r.status === "Published" && <>
+                    <p className="text-xs text-muted-foreground">{r.summary}</p>
+                    <div className="mt-1 flex flex-wrap gap-1">{r.types.map((t) => <Tag key={t} className="text-[0.65rem]">{t}</Tag>)}</div>
+                  </>}
                 </div>
-                <Stat label="Signal" value={r.signal} />
-                <Stat label="Readers" value={r.readers} />
-                <Stat label="Products" value={r.products} />
-                <p className="text-xs text-muted-foreground">{r.status === "Published" ? `Published ${r.date}` : `Coming ${r.date}`}</p>
-                {r.to ? (
+                {r.status === "Published" && <>
+                  <Stat label="Signal" value={r.signal} />
+                  <Stat label="Readers" value={r.readers} />
+                  <Stat label="Products" value={r.products} />
+                  <p className="text-xs text-muted-foreground">Published {r.date}</p>
+                </>}
+                {r.status === "Published" && r.to ? (
                   <Button variant="ink" size="sm" className="rounded-full" asChild>
                     <Link to={r.to}>
                       Open <ArrowUpRight className="size-3.5" />

@@ -1,5 +1,31 @@
 import { describe, expect, it } from "vitest";
-import { eyeSerum } from "./reports-data";
+import { eyeSerum, featuredReport, howToGuides, reports } from "./reports-data";
+
+describe("report availability", () => {
+  it("only offers the EGCG report to open", () => {
+    expect(reports.filter((r) => r.to).map((r) => [r.title, r.to])).toEqual([
+      ["Epigallocatechin Gallate", "/reports/egcg"],
+    ]);
+    expect(howToGuides.filter((g) => g.to)).toHaveLength(0);
+  });
+
+  it("keeps all five other reports coming soon without numbers or publication dates", () => {
+    const upcoming = reports.filter((r) => r.title !== "Epigallocatechin Gallate");
+    expect(upcoming).toHaveLength(5);
+    for (const r of upcoming) {
+      expect(r.status).toBe("Coming soon");
+      expect(r.date).toBeUndefined();
+      expect(r.signal).toBeUndefined();
+      expect(r.readers).toBeUndefined();
+      expect(r.products).toBeUndefined();
+    }
+  });
+
+  it("uses 16 November 2026 as today's EGCG publication date", () => {
+    expect(featuredReport.published).toBe("16 Nov 2026");
+    expect(reports.find((r) => r.title === "Epigallocatechin Gallate")?.date).toBe("16 Nov 2026");
+  });
+});
 
 describe("EGCG featured product", () => {
   it("uses The Ordinary Caffeine 5% + EGCG eye serum", () => {
