@@ -30,4 +30,5 @@
 - [x] Skincare: EGCG first with 1 product, 0 saves and sample search volume; other ingredient names retained with coming-soon details
 - [x] Theory introduction: remove opening buying sentence and style the full Our theory measures sentence in red script
 - [x] Theory introduction: smaller script beside the photo, vertically centred on its right
+- [ ] Theory introduction: remove standalone Theory heading and bolden the adjacent script text
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
