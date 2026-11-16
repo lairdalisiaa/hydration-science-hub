@@ -34,4 +34,5 @@
 - [x] Theory introduction: capitalise the first letter of every word
 - [x] Theory introduction: reduce script text to around 14 pt, preserving photo alignment
 - [ ] Article: credit Written by addottee and remove the next article’s descriptive subtitle
+- [ ] Article: show green tea in cleanser and gel cream routine steps
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
