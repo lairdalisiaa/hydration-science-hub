@@ -32,3 +32,7 @@ use the editor.
 ## Project rules
 - Homepage dashboard sections live in `src/components/dashboard/`, with display data in `src/lib/dashboard-data.ts` so it can later be swapped for live data in one place.
 - TEWL band logic lives in `src/lib/tewl.ts` (tested in `tewl.test.ts`); components never hardcode band cutoffs.
+- Every page wraps its body in `PageShell` (`src/components/site/`), which owns the header nav, page background and weekly sign-up strip, so site chrome changes happen once.
+- Non-home pages keep components in `src/components/<area>/` and display data in `src/lib/<area>-data.ts` (theory, article, ingredients, reports, products), mirroring the dashboard split so sample data can be swapped for live data in one place.
+- Report detail pages render inside `ReportShell` (market strip, live New York time bar, report icon rail); add new report routes to its rail rather than duplicating the frame.
+- Theory tabs are separate child routes of the `theory.tsx` layout, which switches the page to the ink theme for Trending Products.

@@ -10,19 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArticleRouteImport } from './routes/article'
+import { Route as SkincareRouteImport } from './routes/skincare'
 import { Route as TheoryRouteImport } from './routes/theory'
+import { Route as ReportsIndexRouteImport } from './routes/reports.index'
+import { Route as ReportsEgcgRouteImport } from './routes/reports.egcg'
 import { Route as TheoryIndexRouteImport } from './routes/theory.index'
 import { Route as TheoryBioinformaticsRouteImport } from './routes/theory.bioinformatics'
 import { Route as TheoryTrendSignalRouteImport } from './routes/theory.trend-signal'
+import { Route as TheoryTrendingProductsRouteImport } from './routes/theory.trending-products'
+import { Route as ReportsEyeSerumIndexRouteImport } from './routes/reports.eye-serum.index'
+import { Route as ReportsEyeSerumBioinformaticsRouteImport } from './routes/reports.eye-serum.bioinformatics'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticleRoute = ArticleRouteImport.update({
+  id: '/article',
+  path: '/article',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkincareRoute = SkincareRouteImport.update({
+  id: '/skincare',
+  path: '/skincare',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TheoryRoute = TheoryRouteImport.update({
   id: '/theory',
   path: '/theory',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsIndexRoute = ReportsIndexRouteImport.update({
+  id: '/reports/',
+  path: '/reports/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsEgcgRoute = ReportsEgcgRouteImport.update({
+  id: '/reports/egcg',
+  path: '/reports/egcg',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TheoryIndexRoute = TheoryIndexRouteImport.update({
@@ -40,50 +67,118 @@ const TheoryTrendSignalRoute = TheoryTrendSignalRouteImport.update({
   path: '/trend-signal',
   getParentRoute: () => TheoryRoute,
 } as any)
+const TheoryTrendingProductsRoute = TheoryTrendingProductsRouteImport.update({
+  id: '/trending-products',
+  path: '/trending-products',
+  getParentRoute: () => TheoryRoute,
+} as any)
+const ReportsEyeSerumIndexRoute = ReportsEyeSerumIndexRouteImport.update({
+  id: '/reports/eye-serum/',
+  path: '/reports/eye-serum/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsEyeSerumBioinformaticsRoute =
+  ReportsEyeSerumBioinformaticsRouteImport.update({
+    id: '/reports/eye-serum/bioinformatics',
+    path: '/reports/eye-serum/bioinformatics',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/article': typeof ArticleRoute
+  '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
+  '/reports/egcg': typeof ReportsEgcgRoute
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
+  '/theory/trending-products': typeof TheoryTrendingProductsRoute
+  '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/article': typeof ArticleRoute
+  '/skincare': typeof SkincareRoute
+  '/reports/egcg': typeof ReportsEgcgRoute
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
+  '/theory/trending-products': typeof TheoryTrendingProductsRoute
+  '/reports': typeof ReportsIndexRoute
   '/theory': typeof TheoryIndexRoute
+  '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/eye-serum': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/article': typeof ArticleRoute
+  '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
+  '/reports/egcg': typeof ReportsEgcgRoute
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
+  '/theory/trending-products': typeof TheoryTrendingProductsRoute
+  '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/article'
+    | '/skincare'
     | '/theory'
+    | '/reports/egcg'
     | '/theory/bioinformatics'
     | '/theory/trend-signal'
+    | '/theory/trending-products'
+    | '/reports/'
     | '/theory/'
+    | '/reports/eye-serum/bioinformatics'
+    | '/reports/eye-serum/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/theory/bioinformatics' | '/theory/trend-signal' | '/theory'
+  to:
+    | '/'
+    | '/article'
+    | '/skincare'
+    | '/reports/egcg'
+    | '/theory/bioinformatics'
+    | '/theory/trend-signal'
+    | '/theory/trending-products'
+    | '/reports'
+    | '/theory'
+    | '/reports/eye-serum/bioinformatics'
+    | '/reports/eye-serum'
   id:
     | '__root__'
     | '/'
+    | '/article'
+    | '/skincare'
     | '/theory'
+    | '/reports/egcg'
     | '/theory/bioinformatics'
     | '/theory/trend-signal'
+    | '/theory/trending-products'
+    | '/reports/'
     | '/theory/'
+    | '/reports/eye-serum/bioinformatics'
+    | '/reports/eye-serum/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArticleRoute: typeof ArticleRoute
+  SkincareRoute: typeof SkincareRoute
   TheoryRoute: typeof TheoryRouteWithChildren
+  ReportsEgcgRoute: typeof ReportsEgcgRoute
+  ReportsIndexRoute: typeof ReportsIndexRoute
+  ReportsEyeSerumBioinformaticsRoute: typeof ReportsEyeSerumBioinformaticsRoute
+  ReportsEyeSerumIndexRoute: typeof ReportsEyeSerumIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -95,11 +190,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/article': {
+      id: '/article'
+      path: '/article'
+      fullPath: '/article'
+      preLoaderRoute: typeof ArticleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skincare': {
+      id: '/skincare'
+      path: '/skincare'
+      fullPath: '/skincare'
+      preLoaderRoute: typeof SkincareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/theory': {
       id: '/theory'
       path: '/theory'
       fullPath: '/theory'
       preLoaderRoute: typeof TheoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports/': {
+      id: '/reports/'
+      path: '/reports'
+      fullPath: '/reports/'
+      preLoaderRoute: typeof ReportsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports/egcg': {
+      id: '/reports/egcg'
+      path: '/reports/egcg'
+      fullPath: '/reports/egcg'
+      preLoaderRoute: typeof ReportsEgcgRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/theory/': {
@@ -123,18 +246,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheoryTrendSignalRouteImport
       parentRoute: typeof TheoryRoute
     }
+    '/theory/trending-products': {
+      id: '/theory/trending-products'
+      path: '/trending-products'
+      fullPath: '/theory/trending-products'
+      preLoaderRoute: typeof TheoryTrendingProductsRouteImport
+      parentRoute: typeof TheoryRoute
+    }
+    '/reports/eye-serum/': {
+      id: '/reports/eye-serum/'
+      path: '/reports/eye-serum'
+      fullPath: '/reports/eye-serum/'
+      preLoaderRoute: typeof ReportsEyeSerumIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports/eye-serum/bioinformatics': {
+      id: '/reports/eye-serum/bioinformatics'
+      path: '/reports/eye-serum/bioinformatics'
+      fullPath: '/reports/eye-serum/bioinformatics'
+      preLoaderRoute: typeof ReportsEyeSerumBioinformaticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 interface TheoryRouteChildren {
   TheoryBioinformaticsRoute: typeof TheoryBioinformaticsRoute
   TheoryTrendSignalRoute: typeof TheoryTrendSignalRoute
+  TheoryTrendingProductsRoute: typeof TheoryTrendingProductsRoute
   TheoryIndexRoute: typeof TheoryIndexRoute
 }
 
 const TheoryRouteChildren: TheoryRouteChildren = {
   TheoryBioinformaticsRoute: TheoryBioinformaticsRoute,
   TheoryTrendSignalRoute: TheoryTrendSignalRoute,
+  TheoryTrendingProductsRoute: TheoryTrendingProductsRoute,
   TheoryIndexRoute: TheoryIndexRoute,
 }
 
@@ -143,7 +289,13 @@ const TheoryRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArticleRoute: ArticleRoute,
+  SkincareRoute: SkincareRoute,
   TheoryRoute: TheoryRouteWithChildren,
+  ReportsEgcgRoute: ReportsEgcgRoute,
+  ReportsIndexRoute: ReportsIndexRoute,
+  ReportsEyeSerumBioinformaticsRoute: ReportsEyeSerumBioinformaticsRoute,
+  ReportsEyeSerumIndexRoute: ReportsEyeSerumIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

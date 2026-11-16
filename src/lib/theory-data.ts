@@ -92,7 +92,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const monthValues = [38, 39, 41, 41, 44, 47, 49, 52, 55, 59, 63, 67];
 
 /** Search-interest index; points after "now" are forecast. Sample data. */
-export const trendSeries: Record<TrendRange, { label: string; actual?: number; forecast?: number }[]> = {
+export const trendSeries: Record<TrendRange, { label: string; actual: number | undefined; forecast: number | undefined }[]> = {
   "12 months": months.map((m, i) => ({
     label: m,
     actual: i <= 10 ? monthValues[i] : undefined,

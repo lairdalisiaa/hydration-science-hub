@@ -52,7 +52,7 @@ export function TrendSignal() {
                 <CartesianGrid stroke="var(--border)" vertical={false} />
                 {last && <ReferenceArea x1={now} x2={last} fill="var(--accent)" fillOpacity={0.8} />}
                 <XAxis dataKey="label" tickLine={false} axisLine={false} tick={tick} interval={range === "30 days" ? 4 : 0} />
-                <YAxis tickLine={false} axisLine={false} tick={tick} domain={["dataMin - 4", "dataMax + 4"]} />
+                <YAxis tickLine={false} axisLine={false} tick={tick} domain={["auto", "auto"]} allowDecimals={false} />
                 <ReferenceLine x={now} stroke="var(--primary)" />
                 <Tooltip contentStyle={{ borderRadius: 12, border: "none", fontFamily: "var(--font-mono)", fontSize: 12 }} />
                 <Line type="monotone" dataKey="actual" name="Index" stroke="var(--foreground)" strokeWidth={2} dot={false} connectNulls={false} />
