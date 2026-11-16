@@ -66,7 +66,8 @@ export function ArticlePage() {
           <div className="flex items-center gap-3 text-sm">
             <span className="size-9 rounded-full bg-blush" aria-hidden />
             <div>
-              <p className="font-medium">Written by {article.author.name}</p>
+              <p className="font-medium">{article.author.name}</p>
+              <p className="text-xs text-muted-foreground">{article.author.bio}</p>
               <p className="text-xs text-muted-foreground">
                 {article.readTime} · {article.date}
               </p>
@@ -210,7 +211,7 @@ export function ArticlePage() {
             <div className="flex items-center gap-3 rounded-2xl bg-card p-4">
               <span className="size-12 shrink-0 rounded-full bg-blush" aria-hidden />
               <div>
-                <p className="font-medium">Written by {article.author.name}</p>
+                <p className="font-medium">{article.author.name}</p>
                 <p className="text-xs text-muted-foreground">{article.author.bio}</p>
               </div>
             </div>
