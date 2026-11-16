@@ -31,4 +31,5 @@
 - [x] Theory introduction: remove opening buying sentence and style the full Our theory measures sentence in red script
 - [x] Theory introduction: smaller script beside the photo, vertically centred on its right
 - [x] Theory introduction: remove standalone Theory heading and bolden the adjacent script text
+- [ ] Theory introduction: capitalise the first letter of every word
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
