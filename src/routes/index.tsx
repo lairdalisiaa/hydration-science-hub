@@ -27,7 +27,8 @@ function Index() {
   return (
     <PageShell footer={<Ticker />}>
       <main className="px-4 py-6 lg:flex lg:gap-4 lg:px-8">
-        <ToolRail className="sticky top-[calc(50vh-186px)] hidden shrink-0 self-start lg:flex" />
+        <div aria-hidden className="hidden w-16 shrink-0 lg:block" />
+        <ToolRail className="fixed left-[max(36px,calc((100vw-1400px)/2+12px))] top-1/2 z-20 hidden w-14 -translate-y-1/2 lg:flex" />
         <div className="min-w-0 flex-1">
         {/* Mobile: one column ordered by order-*. Desktop: three stacked columns sized to content. */}
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_1fr_1.4fr] lg:items-start">
