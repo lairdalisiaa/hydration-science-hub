@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -10,12 +13,13 @@ const nav = [
 ] as const;
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="flex flex-wrap items-center justify-between gap-4 border-b border-border bg-card px-6 py-4 lg:px-8">
+    <header className="flex items-center justify-between gap-4 border-b border-border bg-card px-6 py-4 lg:px-8">
       <Link to="/" className="font-display text-3xl font-extrabold tracking-tight">
         addottee.
       </Link>
-      <nav aria-label="Main" className="order-3 flex w-full gap-1 overflow-x-auto rounded-full bg-muted p-1 lg:order-none lg:w-auto">
+      <nav aria-label="Main" className="hidden gap-1 rounded-full bg-muted p-1 lg:flex">
         {nav.map((item) => (
           <Link
             key={item.to}
@@ -28,9 +32,35 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <Button variant="blush" className="rounded-full px-5" asChild>
-        <a href="#weekly-signal">Subscribe</a>
-      </Button>
+      <div className="flex items-center gap-2">
+        <Button variant="blush" className="rounded-full px-5" asChild>
+          <a href="#weekly-signal">Subscribe</a>
+        </Button>
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="rounded-full lg:hidden" aria-label="Open menu">
+              <Menu className="size-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-72">
+            <SheetTitle className="font-display text-3xl font-extrabold tracking-tight">addottee.</SheetTitle>
+            <nav aria-label="Mobile" className="mt-6 flex flex-col gap-1">
+              {nav.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  activeOptions={{ exact: item.to === "/" }}
+                  className="rounded-xl px-4 py-3 text-base text-muted-foreground hover:bg-muted hover:text-foreground"
+                  activeProps={{ className: "bg-muted font-medium text-foreground" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   );
 }

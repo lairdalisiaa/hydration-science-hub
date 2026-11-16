@@ -1,3 +1,6 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { CartesianGrid, Line, LineChart, ReferenceDot, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { currentChelation, oxidationVsChelation, tewlTrend } from "@/lib/dashboard-data";
 import { classifyTewl } from "@/lib/tewl";
@@ -87,6 +90,11 @@ export function TewlTrend({ className }: { className?: string }) {
         <div>
           <TewlScale value={current} />
           <p className="mt-3 text-xs text-ink-muted">Lower is better. Healthy skin sits at 5–15 g/m²/h.</p>
+          <Button variant="blush" className="mt-4 w-full rounded-full" asChild>
+            <Link to="/theory">
+              Explore TEWL in Theory <ArrowUpRight className="size-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
