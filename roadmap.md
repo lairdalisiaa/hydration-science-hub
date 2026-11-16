@@ -11,3 +11,4 @@
 - [x] Skincare ingredient library
 - [x] Reports & Guides index
 - [x] Report details: EGCG ingredient overview, eye serum skincare guide, eye serum bioinformatics
+- [x] Home: live NY time pill, aligned card heights, newsletter card, new score names & goals, TEWL→Theory button, centred desktop toolbar, mobile side menu & card order
