@@ -9,7 +9,7 @@ export type ReportEntry = {
   concerns: string[];
   evidence: Evidence;
   status: ReportStatus;
-  date: string;
+  date?: string;
   signal?: number;
   readers?: string;
   products?: number;
@@ -19,21 +19,21 @@ export type ReportEntry = {
 export const reportTypes: ReportType[] = ["Ingredient overview", "Bioinformatics", "Trend signal", "Product analysis", "Skincare guide", "How-to guide"];
 export const reportConcerns = ["Barrier care", "Hydration", "Brightening", "Soothing", "Firming", "Clarifying"];
 
-export const featuredReport = { title: "EGCG Ingredient Overview", published: "10 Aug 2026", tags: ["Ingredient overview", "Bioinformatics", "Trend signal"], signal: 78, change: 18.1 };
+export const featuredReport = { title: "EGCG Ingredient Overview", published: "16 Nov 2026", tags: ["Ingredient overview", "Bioinformatics", "Trend signal"], signal: 78, change: 18.1 };
 
 // Sample report index (Week 46).
 export const reports: ReportEntry[] = [
-  { title: "Epigallocatechin Gallate", summary: "Green-tea catechin for antioxidant and soothing care", types: ["Ingredient overview", "Bioinformatics", "Trend signal"], concerns: ["Soothing", "Brightening"], evidence: "High", status: "Published", date: "10 Aug 2026", signal: 78, readers: "1.2K", products: 128, to: "/reports/egcg" },
-  { title: "PDRN", summary: "Sodium DNA behind this week's top serum", types: ["Trend signal"], concerns: ["Hydration", "Firming"], evidence: "Medium", status: "Published", date: "11 Aug 2026", signal: 84, readers: "2.4K", products: 96, to: "/theory/trend-signal" },
-  { title: "Azelaic Acid", summary: "Dicarboxylic acid for tone and clarity", types: ["Ingredient overview", "Trend signal"], concerns: ["Brightening", "Clarifying"], evidence: "High", status: "Published", date: "3 Sep 2026", signal: 66, readers: "980", products: 74, to: "/theory" },
-  { title: "Caffeine 5% + EGCG Eye Serum", summary: "Skincare guide and product-level bioinformatics", types: ["Skincare guide", "Product analysis", "Bioinformatics"], concerns: ["Firming", "Soothing"], evidence: "Medium", status: "Published", date: "15 Nov 2026", signal: 71, readers: "640", products: 3, to: "/reports/eye-serum" },
-  { title: "Tannin", summary: "Astringent tea polyphenol", types: ["Ingredient overview"], concerns: ["Clarifying"], evidence: "Emerging", status: "Coming soon", date: "1 Dec" },
-  { title: "Theobromine & Theophylline", summary: "Conditioning xanthines from tea", types: ["Ingredient overview"], concerns: ["Firming"], evidence: "Emerging", status: "Coming soon", date: "8 Dec" },
+  { title: "Epigallocatechin Gallate", summary: "Green-tea catechin for antioxidant and soothing care", types: ["Ingredient overview", "Bioinformatics", "Trend signal"], concerns: ["Soothing", "Brightening"], evidence: "High", status: "Published", date: "16 Nov 2026", signal: 78, readers: "1.2K", products: 128, to: "/reports/egcg" },
+  { title: "PDRN", summary: "", types: ["Trend signal"], concerns: ["Hydration", "Firming"], evidence: "Medium", status: "Coming soon" },
+  { title: "Azelaic Acid", summary: "", types: ["Ingredient overview", "Trend signal"], concerns: ["Brightening", "Clarifying"], evidence: "High", status: "Coming soon" },
+  { title: "Caffeine 5% + EGCG Eye Serum", summary: "", types: ["Skincare guide", "Product analysis", "Bioinformatics"], concerns: ["Firming", "Soothing"], evidence: "Medium", status: "Coming soon" },
+  { title: "Tannin", summary: "", types: ["Ingredient overview"], concerns: ["Clarifying"], evidence: "Emerging", status: "Coming soon" },
+  { title: "Theobromine & Theophylline", summary: "", types: ["Ingredient overview"], concerns: ["Firming"], evidence: "Emerging", status: "Coming soon" },
 ];
 
-export const howToGuides = [
+export const howToGuides: { kicker: string; title: string; to?: "/reports/eye-serum" }[] = [
   { kicker: "Guide", title: "Building an AM routine" },
-  { kicker: "Guide · Skincare guide report", title: "Your eye cream routine", to: "/reports/eye-serum" as const },
+  { kicker: "Guide · Skincare guide report", title: "Your eye cream routine" },
   { kicker: "Guide", title: "Reading an ingredient list" },
 ];
 

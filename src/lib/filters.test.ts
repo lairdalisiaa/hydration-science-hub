@@ -44,7 +44,7 @@ describe("report filters", () => {
   it("hides coming-soon reports when only Published is picked", () => {
     const shown = filterReports(reports, { ...none, status: ["Published"] });
     expect(shown.every((r) => r.status === "Published")).toBe(true);
-    expect(shown).toHaveLength(4);
+    expect(shown.map((r) => r.title)).toEqual(["Epigallocatechin Gallate"]);
   });
 
   it("finds the eye serum guide under Skincare guide", () => {
