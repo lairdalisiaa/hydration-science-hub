@@ -30,7 +30,7 @@ export function SkinomicFocus({ className }: { className?: string }) {
 
 export function IngredientCard({ className }: { className?: string }) {
   return (
-    <section className={cn("bg-ingredient rounded-3xl p-5 shadow-soft", className)}>
+    <section className={cn("bg-ingredient flex flex-col rounded-3xl p-5 shadow-soft", className)}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <div className="flex flex-wrap gap-2 text-xs">
@@ -46,8 +46,8 @@ export function IngredientCard({ className }: { className?: string }) {
           <Link to="/skincare">+1 products</Link>
         </Button>
       </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)]">
-        <img src={moleculeImg} alt="3D render of the EGCG molecule" width={768} height={896} loading="lazy" className="h-full max-h-60 min-h-48 w-full rounded-2xl object-cover" />
+      <div className="mt-4 grid flex-1 gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)]">
+        <img src={moleculeImg} alt="3D render of the EGCG molecule" width={768} height={896} loading="lazy" className="h-full min-h-48 w-full rounded-2xl object-cover" />
         <div className="flex flex-col gap-2 text-sm">
           <Stat label="pKa" value="7.65" />
           <Stat label="Optimal range" value="0.10–2.00%" />
