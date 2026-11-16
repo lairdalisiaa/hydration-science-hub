@@ -64,6 +64,9 @@ export const marketStrip = [
 
 export const eyeSerum = {
   name: "Caffeine 5% + EGCG Eye Serum",
+  brand: "The Ordinary",
+  country: "Canada",
+  category: "Serum",
   kicker: "Eye cream · Serum · 26 ingredients",
   tags: ["Caffeine 5%", "EGCG glucoside", "Hyaluronic acid"],
   use: "AM & PM",
