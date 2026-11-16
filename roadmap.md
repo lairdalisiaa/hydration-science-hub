@@ -35,6 +35,6 @@
 - [x] Theory introduction: reduce script text to around 14 pt, preserving photo alignment
 - [x] Article: credit Written by addottee and remove the next article’s descriptive subtitle
 - [x] Article: show green tea in cleanser and gel cream routine steps
-- [ ] Article: remove PDRN Explained from the next article card
-- [ ] Article: replace related articles with one Coming soon entry
+- [x] Article: remove PDRN Explained from the next article card
+- [x] Article: replace related articles with one Coming soon entry
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
