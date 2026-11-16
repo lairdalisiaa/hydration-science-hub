@@ -11,9 +11,9 @@ export function Eyebrow({ className, children }: { className?: string; children:
   return <p className={cn("eyebrow text-muted-foreground", className)}>{children}</p>;
 }
 
-/** Instrument Serif italic pink title, used for editorial section headings. */
+/** Red Pinyon Script title, used for editorial section headings. */
 export function SerifTitle({ className, children }: { className?: string; children: ReactNode }) {
-  return <h2 className={cn("font-serif text-3xl italic text-primary", className)}>{children}</h2>;
+  return <h2 className={cn("font-script text-4xl leading-[1.15] text-crimson", className)}>{children}</h2>;
 }
 
 export function Tag({ className, children, tone = "soft" }: { className?: string; children: ReactNode; tone?: "soft" | "ink" | "outline" }) {
