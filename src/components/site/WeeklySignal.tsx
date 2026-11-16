@@ -10,7 +10,7 @@ export function WeeklySignal() {
           e.preventDefault();
           setSent(true);
         }}
-        className="flex flex-col gap-3 rounded-3xl bg-card px-6 py-5 shadow-soft sm:flex-row sm:items-center sm:justify-between"
+        className="flex flex-col gap-3 rounded-3xl bg-card px-6 py-5 text-card-foreground shadow-soft sm:flex-row sm:items-center sm:justify-between"
       >
         <h2 className="text-lg font-medium">Get the weekly signal</h2>
         {sent ? (
