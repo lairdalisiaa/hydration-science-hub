@@ -32,10 +32,7 @@ export const routineSteps = [
 ];
 
 export const relatedArticles = [
-  { kicker: "Ingredient Intelligence", title: "PDRN Explained: Why This Ingredient Is Everywhere" },
-  { kicker: "Product Intelligence", title: "The New Generation of Barrier Repair Products" },
-  { kicker: "Market Analysis", title: "The New Beauty Consumer Wants Proof" },
-  { kicker: "Market Analysis", title: "What's Trending Across Seoul, Tokyo, and New York?" },
+  { title: "Coming soon" },
 ];
 
 /** Product ids from products-data that contain green tea. */
