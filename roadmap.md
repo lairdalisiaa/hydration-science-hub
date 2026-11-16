@@ -21,4 +21,5 @@
 - [x] Home: restore readable Skinomic Focus tiles without crowded labels and scores
 - [x] Home: goals card dropped below the Skinomic Focus top
 - [x] Home: make the Goals card smaller
+- [ ] Home: reduce the Wrinkles label size
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
