@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ScoreRing } from "@/components/dashboard/ScoreRing";
 import { Bar, ChangeChip, Formula, Panel, Segmented, Tag } from "@/components/site/ui";
 import { cn } from "@/lib/utils";
-import { egcgOverview as e } from "@/lib/reports-data";
-import { productById } from "@/lib/products-data";
+import { egcgOverview as e, eyeSerum } from "@/lib/reports-data";
 
 const factTones = ["bg-accent", "bg-card", "bg-card", "bg-blush/70", "bg-muted", "bg-ink text-ink-foreground"];
 const years = ["2024", "2025", "2026"] as const;
@@ -15,7 +14,7 @@ export function EgcgOverview() {
   const [saved, setSaved] = useState(false);
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
   const [year, setYear] = useState<(typeof years)[number]>("2026");
-  const lead = productById("pdrn-serum");
+  const lead = eyeSerum;
   const max = Math.max(...e.searchInterest.map((s) => s.v));
   const milestones = e.milestones[year];
 
@@ -60,14 +59,13 @@ export function EgcgOverview() {
       {lead && (
         <section>
           <p className="eyebrow text-[0.6rem] text-muted-foreground">Product trend signal</p>
-          <div className="mt-2 grid items-center gap-3 rounded-2xl bg-card p-3 shadow-soft sm:grid-cols-[24px_40px_1.4fr_repeat(3,1fr)_auto_auto]">
+          <div className="mt-2 grid items-center gap-3 rounded-2xl bg-card p-3 shadow-soft sm:grid-cols-[24px_1.4fr_repeat(3,1fr)_auto_auto]">
             <span className="font-mono text-xs text-muted-foreground">01</span>
-            <img src={lead.image} alt={lead.name} width={816} height={816} loading="lazy" className="size-10 rounded-lg object-cover" />
             <span className="font-medium">{lead.name}</span>
             <span className="text-primary">{lead.brand}</span>
             <span className="text-sm">{lead.country}</span>
-            <span className="text-sm">{lead.category} · PDRN · Hyaluronic Acid</span>
-            <ChangeChip value={lead.change} />
+            <span className="text-sm">{lead.category} · Caffeine 5% · EGCG</span>
+            <span className="text-xs text-muted-foreground">Trend data coming soon</span>
             <Link to="/theory/trending-products" className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-xs hover:bg-muted">
               All trending <ArrowUpRight className="size-3" />
             </Link>
