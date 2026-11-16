@@ -13,3 +13,4 @@
 - [x] Report details: EGCG ingredient overview, eye serum skincare guide, eye serum bioinformatics
 - [x] Home: live NY time pill, aligned card heights, newsletter card, new score names & goals, TEWL→Theory button, centred desktop toolbar, mobile side menu & card order
 - [x] Desktop home: cards hug content; shorter Green Tea & Skinomic cards
+- [x] Skin Performance: 4 scores (Glass skin barrier merged)

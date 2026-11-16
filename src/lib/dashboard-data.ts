@@ -63,8 +63,7 @@ export const tewlTrend = [
 export const skinPerformance = [
   { label: "Brightening", value: 82 },
   { label: "Anti-aging", value: 71 },
-  { label: "Glass skin", value: 68 },
-  { label: "Barrier", value: 76 },
+  { label: "Glass skin barrier", value: 72 },
   { label: "Sebum / oil", value: 38, unit: "%" },
 ];
 
