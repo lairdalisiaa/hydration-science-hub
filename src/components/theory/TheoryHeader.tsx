@@ -15,16 +15,18 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
     <div className="flex flex-col gap-5">
       <div className="px-4 sm:px-6">
         <h1 className={cn("font-script text-5xl leading-[1.25]", dark ? "text-crimson-bright" : "text-crimson")}>Theory</h1>
-        <p className={cn("mt-1.5 max-w-2xl font-script text-3xl leading-[1.35]", dark ? "text-crimson-bright" : "text-crimson")}>
-          {theoryIntro}
-        </p>
-        <img
-          src={skinImg}
-          alt="Close-up of hydrated skin"
-          width={816}
-          height={816}
-          className="mt-4 size-20 rounded-full border-4 border-secondary object-cover sm:size-24 lg:ml-[114px]"
-        />
+        <div className="mt-3 flex items-center gap-4 sm:gap-6 lg:ml-[114px]">
+          <img
+            src={skinImg}
+            alt="Close-up of hydrated skin"
+            width={816}
+            height={816}
+            className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24"
+          />
+          <p className={cn("min-w-0 max-w-2xl font-script text-xl leading-[1.35] sm:text-2xl", dark ? "text-crimson-bright" : "text-crimson")}>
+            {theoryIntro}
+          </p>
+        </div>
       </div>
       <nav aria-label="Theory sections" className="grid grid-cols-2 gap-2 lg:grid-cols-4">
         {tabs.map((t) => (
