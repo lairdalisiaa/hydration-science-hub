@@ -31,7 +31,7 @@ function Index() {
         <ToolRail className="fixed left-[max(36px,calc((100vw-1400px)/2+12px))] top-1/2 z-20 hidden w-14 -translate-y-1/2 lg:flex" />
         <div className="min-w-0 flex-1">
         {/* Mobile: one column ordered by order-*. Desktop: three stacked columns sized to content. */}
-        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_2.4fr] lg:items-start">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_2.75fr] lg:items-start">
           <div className="contents lg:flex lg:flex-col lg:gap-4">
             <ExploreMarket className="order-2 lg:order-none" />
             <PartnerCard className="order-3 lg:order-none" />
