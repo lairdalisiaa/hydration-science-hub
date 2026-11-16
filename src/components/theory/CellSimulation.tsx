@@ -36,7 +36,7 @@ export function CellSimulation() {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="eyebrow text-secondary">Cell simulation · sample data</p>
-            <h2 className="mt-1 text-xl font-medium">Where Azelaic Acid goes in skin</h2>
+            <h2 className="mt-1 text-xl font-medium">Where {keyTakeaway.ingredient} goes in skin</h2>
           </div>
           <Segmented label="Product format" options={modes} value={mode} onChange={setMode} tone="ink" />
         </div>
@@ -118,14 +118,15 @@ export function CellSimulation() {
       <div className="grid gap-4 lg:grid-cols-[1fr_2fr]">
         <Panel>
           <SerifTitle>Performance Signal</SerifTitle>
+          <p className="eyebrow mt-2 text-[0.6rem] text-muted-foreground">EGCG · sample values & estimates</p>
           <ul className="mt-4 flex flex-col gap-4">
             {performanceSignal.map((p) => (
               <li key={p.label} className="text-sm">
-                <div className="mb-1.5 flex justify-between">
-                  <span>{p.label}</span>
-                  <span className="tabular">{p.value}%</span>
+                <div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="inline-flex items-center gap-1">{p.label} <InfoTip label={p.label}>{p.info}</InfoTip></span>
+                  <span className="tabular">{p.label === "TEWL" ? delivery.tewl : p.value} <span className="text-xs text-muted-foreground">{p.unit}</span></span>
                 </div>
-                <Bar value={p.value} />
+                <Bar value={p.label === "TEWL" ? gauge : p.meter} />
               </li>
             ))}
           </ul>

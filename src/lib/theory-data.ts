@@ -1,12 +1,12 @@
-// Theory pages: sample data for Azelaic Acid, taken from the mockups.
+// Cell Simulation uses EGCG; other theory tabs retain their independent sample datasets.
 
 export const theoryIntro =
   "What people buy and what people talk about are rarely the same products. Our theory measures the gap between the two, then uses formulation chemistry and bioinformatics to explain why one product earns the sale while another only earns the conversation.";
 
 export const keyTakeaway = {
-  ingredient: "Azelaic Acid",
-  formula: "C9H16O4",
-  text: "Strong signals across brightening, barrier support and oil control make it a candidate for market confirmation.",
+  ingredient: "Epigallocatechin gallate",
+  formula: "C22H18O11",
+  text: "EGCG supports antioxidant and barrier-focused routines. Effective at low levels but poorly soluble, its delivery depends on the formula.",
 };
 
 export const skinLayers = [
@@ -28,26 +28,26 @@ export const profileCards = [
     title: "Ingredient Profile",
     rows: [
       { label: "Toxicology", value: "Low irritation potential", info: "How likely the ingredient is to irritate skin at normal use levels." },
-      { label: "Genotoxicity", value: "Ames test: negative", info: "Lab screen for whether an ingredient damages DNA. Negative is what you want." },
-      { label: "Permeability", value: "Size efficiency: moderate", info: "How easily the molecule passes through the outer skin layer, based on its size." },
+      { label: "Genotoxicity", value: "Not assessed in this sample", info: "Safety conclusions require ingredient-specific testing." },
+      { label: "Permeability", value: "Limited passive delivery · formula-dependent", info: "EGCG's molecular size and polarity can limit passage through the outer skin layer." },
       { label: "TEWL", value: "5–15 g/m²/h in healthy skin, lower is better", info: "Trans-epidermal water loss: how much water escapes through the skin each hour." },
     ],
   },
   {
     title: "Product Overview",
     rows: [
-      { label: "pH", value: "Formula pH 4–6", info: "The acidity range the formula needs to keep the ingredient stable and active." },
-      { label: "Chemical class", value: "Dicarboxylic acid", info: "A small acid with two carboxyl groups, one at each end of the molecule." },
-      { label: "Melting point", value: "~106 °C", info: "Temperature at which the solid ingredient melts; matters for manufacturing." },
+      { label: "pH", value: "Sample formula pH 4–6", info: "Illustrative formula range; stability must be verified in the finished product." },
+      { label: "Chemical class", value: "Polyphenol · gallated catechin", info: "EGCG is a green tea catechin with an attached gallate group." },
+      { label: "Molecular weight", value: "458.37 g/mol", info: "Mass of one mole of EGCG molecules." },
       { label: "Solubility & boiling point", value: "Low water solubility; needs a suitable base", info: "Poorly soluble in water, so formulators dissolve it in glycols or use it as a suspension." },
     ],
   },
   {
     title: "Formulation Signal",
     rows: [
-      { label: "Safety concentration", value: "Low irritation up to 10%", info: "The highest level shown to stay comfortable on most skin." },
-      { label: "Receptor & enzyme efficiency", value: "IC50 12.4 µM · Ki 8.1 µM", info: "How little ingredient is needed to block its target enzyme. Lower numbers mean more potent." },
-      { label: "Vehicle-enhanced flux & log Kp", value: "log Kp −2.9 cm/h", info: "How quickly the ingredient moves into skin from the formula base." },
+      { label: "Sample concentration", value: "0.10–2.00%", info: "Illustrative formulation range, not a verified safety limit." },
+      { label: "Antioxidant activity", value: "Formula and assay dependent", info: "EGCG activity varies with stability, concentration and the test method." },
+      { label: "Vehicle-enhanced flux & log Kp", value: "log Kp −8.84 · model estimate", info: "Illustrative Potts–Guy estimate using sample logP 1.2; Kp is expressed in cm/h before taking its logarithm. Not a measured delivery rate." },
     ],
     note: "Safety, efficacy and stability together show whether a trend can become a real formula.",
   },
@@ -60,9 +60,11 @@ export const targetMechanisms = [
 ];
 
 export const performanceSignal = [
-  { label: "pKa", value: 92 },
-  { label: "pH", value: 84 },
-  { label: "Differentiation", value: 76 },
+  { label: "MW", value: 458.37, unit: "g/mol", meter: 76, info: "Molecular weight; meter reference 0–600 g/mol." },
+  { label: "pKa", value: 7.65, unit: "", meter: 55, info: "Sample dissociation constant; meter reference 0–14." },
+  { label: "Solubility", value: 27, unit: "/100 index", meter: 27, info: "Illustrative solubility index, not a measured concentration." },
+  { label: "log Kp", value: -8.84, unit: "model estimate", meter: 12, info: "Sample Potts–Guy estimate; log10 of Kp in cm/h. Meter reference −10 to 0." },
+  { label: "TEWL", value: 9.4, unit: "g/m²/h", meter: 29, info: "Sample routine water-loss reading, not an intrinsic ingredient property. Changes with product format; lower is better." },
 ];
 
 export const skinCompatibility = [
