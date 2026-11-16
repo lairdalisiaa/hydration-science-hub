@@ -113,9 +113,6 @@ export function EgcgOverview() {
             <div><dt className="eyebrow text-[0.55rem] text-ink-muted">Trending products</dt><dd className="tabular text-xl">{e.trendingProducts}</dd></div>
             <div><dt className="eyebrow text-[0.55rem] text-ink-muted">Top market</dt><dd className="text-xl">Global</dd></div>
           </dl>
-          <Button variant="blush" size="sm" className="mt-4 self-start rounded-full" asChild>
-            <Link to="/reports/eye-serum">Send to planner</Link>
-          </Button>
         </section>
         <Panel>
           <div className="flex items-center justify-between">
