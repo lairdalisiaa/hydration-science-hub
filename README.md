@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Hydration Science Hub
+
+this is a website where the homepage dashboard for a company skincare brand that focus on hydration rentention and the science specifics of a skincare routine. its publicly owned by a product experience agency so it is interested in the skincare market in general. im missing tewl graph and a few skin performance scores. id like to correct some fonts
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/14ec4482-f989-4d17-8533-fd2ac5deea54).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
