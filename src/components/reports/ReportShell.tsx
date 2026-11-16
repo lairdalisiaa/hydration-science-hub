@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { CalendarDays, Droplet, FileText, FlaskConical, TrendingUp } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { PageShell } from "@/components/site/PageShell";
+import { Button } from "@/components/ui/button";
 import { tewlTrend } from "@/lib/dashboard-data";
 import { marketStrip } from "@/lib/reports-data";
 import { cn } from "@/lib/utils";
@@ -14,7 +15,13 @@ const rail = [
   { to: "/reports/eye-serum", icon: CalendarDays, label: "Skincare guide" },
 ] as const;
 
-const chips = ["Market", "Top searches", "Skinomic focus", "Ingredients", "Goals"] as const;
+const chips = [
+  { label: "Market", to: "/" },
+  { label: "Top searches", to: "/" },
+  { label: "Skinomic focus", to: null },
+  { label: "Ingredients", to: "/skincare" },
+  { label: "Goals", to: "/" },
+] as const;
 
 /** Frame for report detail pages: market strip, live time bar and report tool rail. */
 export function ReportShell({ children }: { children: ReactNode }) {
@@ -45,7 +52,7 @@ export function ReportShell({ children }: { children: ReactNode }) {
 }
 
 function MarketStrip() {
-  const [chip, setChip] = useState<(typeof chips)[number]>("Market");
+  const [chip, setChip] = useState<string>("Market");
   return (
     <div className="grid gap-4 border-b border-border bg-card px-4 py-4 lg:grid-cols-[220px_1fr] lg:px-8">
       <div className="flex items-center gap-3 rounded-2xl bg-muted px-3 py-3">
@@ -70,10 +77,10 @@ function MarketStrip() {
           ))}
         </dl>
         <div role="group" aria-label="Market view" className="flex flex-wrap gap-1.5">
-          {chips.map((c) => (
-            <button key={c} type="button" aria-pressed={chip === c} onClick={() => setChip(c)} className={cn("rounded-full px-3 py-1 text-xs", chip === c ? "bg-secondary text-secondary-foreground" : "bg-muted text-muted-foreground hover:text-foreground")}>
-              {c}
-            </button>
+          {chips.map(({ label, to }) => (
+            <Button key={label} variant="ghost" asChild={to !== null} aria-pressed={to === null ? chip === label : undefined} onClick={to === null ? () => setChip(label) : undefined} className={cn("h-auto rounded-full px-3 py-1 text-xs font-normal", chip === label ? "bg-secondary text-secondary-foreground" : "bg-muted text-muted-foreground hover:text-foreground")}>
+              {to !== null ? <Link to={to}>{label}</Link> : label}
+            </Button>
           ))}
         </div>
       </div>
