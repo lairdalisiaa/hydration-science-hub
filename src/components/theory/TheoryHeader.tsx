@@ -22,9 +22,17 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
             height={816}
             className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24"
           />
-          <p className={cn("min-w-0 max-w-2xl font-script text-[14pt] font-normal capitalize leading-[1.35]", dark ? "text-crimson-bright" : "text-crimson")}>
-            {theoryIntro}
-          </p>
+          <div className="min-w-0 max-w-3xl">
+            <p className={cn("font-sans text-xs font-semibold uppercase", dark ? "text-crimson-bright" : "text-crimson")}>
+              Our theory
+            </p>
+            <h1 className={cn("mt-1 font-script text-[2rem] font-normal leading-tight sm:text-4xl", dark ? "text-crimson-bright" : "text-crimson")}>
+              Why one product earns the sale
+            </h1>
+            <p className={cn("mt-5 font-sans text-[14pt] font-normal leading-relaxed", dark ? "text-ink-foreground" : "text-foreground")}>
+              {theoryIntro}
+            </p>
+          </div>
         </div>
       </div>
       <nav aria-label="Theory sections" className="grid grid-cols-2 gap-2 lg:grid-cols-4">
