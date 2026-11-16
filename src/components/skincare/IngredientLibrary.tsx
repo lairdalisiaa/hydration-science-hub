@@ -10,7 +10,7 @@ const sorts = ["Trending", "Most searched", "A–Z"] as const satisfies readonly
 
 export function IngredientLibrary() {
   const [query, setQuery] = useState("");
-  const [concern, setConcern] = useState<Concern | "All">("All");
+  const [concern, setConcern] = useState<(typeof concerns)[number] | "All">("All");
   const [sort, setSort] = useState<LibrarySort>("Trending");
   const [view, setView] = useState<"Grid" | "List">("Grid");
   const shown = filterIngredients(libraryIngredients, query, concern, sort);

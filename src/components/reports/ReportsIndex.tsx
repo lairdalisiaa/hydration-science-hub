@@ -182,7 +182,7 @@ function ChipSet({ options, value, onToggle }: { options: string[]; value: strin
   );
 }
 
-function Stat({ label, value }: { label: string; value?: string | number }) {
+function Stat({ label, value }: { label: string; value?: string | number | undefined }) {
   return (
     <div>
       <p className="eyebrow text-[0.55rem] text-muted-foreground">{label}</p>
