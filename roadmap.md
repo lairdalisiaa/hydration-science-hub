@@ -37,5 +37,5 @@
 - [x] Article: show green tea in cleanser and gel cream routine steps
 - [x] Article: remove PDRN Explained from the next article card
 - [x] Article: replace related articles with one Coming soon entry
-- [ ] Article: capitalise descriptor as Hydration Science Hub
+- [x] Article: capitalise descriptor as Hydration Science Hub
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
