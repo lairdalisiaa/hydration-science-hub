@@ -12,7 +12,7 @@ export function WeeklySignal() {
         }}
         className="flex flex-col gap-3 rounded-3xl bg-card px-6 py-5 text-card-foreground shadow-soft sm:flex-row sm:items-center sm:justify-between"
       >
-        <h2 className="text-lg font-medium">Get the weekly signal</h2>
+        <h2 className="text-lg font-medium">Get weekly signals</h2>
         {sent ? (
           <p className="text-sm text-muted-foreground">Thanks — sign-ups open soon, we'll email you then.</p>
         ) : (
@@ -28,7 +28,7 @@ export function WeeklySignal() {
               className="h-10 min-w-0 flex-1 rounded-full border border-border bg-background px-4 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
             />
             <Button type="submit" variant="blush" className="h-10 rounded-full px-5">
-              Subscribe
+              Get weekly signals
             </Button>
           </div>
         )}
