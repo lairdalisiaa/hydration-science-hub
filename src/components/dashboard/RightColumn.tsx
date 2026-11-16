@@ -47,17 +47,15 @@ export function IngredientCard({ className }: { className?: string }) {
         </Button>
       </div>
       <div className="mt-4 grid flex-1 gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,1fr)]">
-        <img src={moleculeImg} alt="3D render of the EGCG molecule" width={768} height={896} loading="lazy" className="h-full min-h-48 w-full rounded-2xl object-cover" />
+        <img src={moleculeImg} alt="3D render of the EGCG molecule" width={768} height={896} loading="lazy" className="h-full max-h-56 min-h-40 w-full rounded-2xl object-cover" />
         <div className="flex flex-col gap-2 text-sm">
           <Stat label="pKa" value="7.65" />
           <Stat label="Optimal range" value="0.10–2.00%" />
           <Stat label="Penetration" value="80" bar={80} tone="ink" />
           <Stat label="Solubility" value="27" bar={27} tone="pink" />
         </div>
-        <div className="flex flex-col justify-between gap-3 rounded-2xl bg-card p-4 text-sm sm:col-span-2 xl:col-span-1">
-          <p className="text-muted-foreground">
-            The catechin doing most of the work in green tea. Effective at low levels but poorly soluble, so the formula around it matters as much as the percentage.
-          </p>
+        <div className="flex flex-col justify-center gap-3 rounded-2xl bg-card p-4 text-sm sm:col-span-2 xl:col-span-1">
+          <p className="text-muted-foreground">Effective at low levels but poorly soluble.</p>
           <Link to="/reports/egcg" className="inline-flex items-center gap-1 font-medium underline underline-offset-4">
             Full ingredient report <ArrowUpRight className="size-4" />
           </Link>
