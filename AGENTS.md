@@ -35,6 +35,7 @@ use the editor.
 - Every page wraps its body in `PageShell` (`src/components/site/`), which owns the header nav, page background and weekly sign-up strip, so site chrome changes happen once.
 - Non-home pages keep components in `src/components/<area>/` and display data in `src/lib/<area>-data.ts` (theory, article, ingredients, reports, products), mirroring the dashboard split so sample data can be swapped for live data in one place.
 - Report detail pages render inside `ReportShell` (market strip, live New York time bar, report icon rail); add new report routes to its rail rather than duplicating the frame.
+- EGCG icon sections are child routes under `reports.egcg.tsx`; its shared report header and Outlet keep identity and controls consistent without duplicating them.
 - Theory tabs are separate child routes of the `theory.tsx` layout, which switches the page to the ink theme for Trending Products.
 - The desktop homepage pairs the article/search column with the focus/ingredient column in a shared grid; the article photo takes remaining height so their bottom cards align without fixed card heights.
 - Articles browsing lives at /articles while /article retains the existing Green Tea detail page, so existing direct links continue to work.

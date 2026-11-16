@@ -20,6 +20,11 @@ import { Route as TheoryIndexRouteImport } from './routes/theory.index'
 import { Route as TheoryBioinformaticsRouteImport } from './routes/theory.bioinformatics'
 import { Route as TheoryTrendSignalRouteImport } from './routes/theory.trend-signal'
 import { Route as TheoryTrendingProductsRouteImport } from './routes/theory.trending-products'
+import { Route as ReportsEgcgIndexRouteImport } from './routes/reports.egcg.index'
+import { Route as ReportsEgcgBioinformaticsRouteImport } from './routes/reports.egcg.bioinformatics'
+import { Route as ReportsEgcgCellSimulationRouteImport } from './routes/reports.egcg.cell-simulation'
+import { Route as ReportsEgcgSkincareGuideRouteImport } from './routes/reports.egcg.skincare-guide'
+import { Route as ReportsEgcgTrendSignalRouteImport } from './routes/reports.egcg.trend-signal'
 import { Route as ReportsEyeSerumIndexRouteImport } from './routes/reports.eye-serum.index'
 import { Route as ReportsEyeSerumBioinformaticsRouteImport } from './routes/reports.eye-serum.bioinformatics'
 
@@ -78,6 +83,34 @@ const TheoryTrendingProductsRoute = TheoryTrendingProductsRouteImport.update({
   path: '/trending-products',
   getParentRoute: () => TheoryRoute,
 } as any)
+const ReportsEgcgIndexRoute = ReportsEgcgIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ReportsEgcgRoute,
+} as any)
+const ReportsEgcgBioinformaticsRoute =
+  ReportsEgcgBioinformaticsRouteImport.update({
+    id: '/bioinformatics',
+    path: '/bioinformatics',
+    getParentRoute: () => ReportsEgcgRoute,
+  } as any)
+const ReportsEgcgCellSimulationRoute =
+  ReportsEgcgCellSimulationRouteImport.update({
+    id: '/cell-simulation',
+    path: '/cell-simulation',
+    getParentRoute: () => ReportsEgcgRoute,
+  } as any)
+const ReportsEgcgSkincareGuideRoute =
+  ReportsEgcgSkincareGuideRouteImport.update({
+    id: '/skincare-guide',
+    path: '/skincare-guide',
+    getParentRoute: () => ReportsEgcgRoute,
+  } as any)
+const ReportsEgcgTrendSignalRoute = ReportsEgcgTrendSignalRouteImport.update({
+  id: '/trend-signal',
+  path: '/trend-signal',
+  getParentRoute: () => ReportsEgcgRoute,
+} as any)
 const ReportsEyeSerumIndexRoute = ReportsEyeSerumIndexRouteImport.update({
   id: '/reports/eye-serum/',
   path: '/reports/eye-serum/',
@@ -96,13 +129,18 @@ export interface FileRoutesByFullPath {
   '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
-  '/reports/egcg': typeof ReportsEgcgRoute
+  '/reports/egcg': typeof ReportsEgcgRouteWithChildren
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/egcg/bioinformatics': typeof ReportsEgcgBioinformaticsRoute
+  '/reports/egcg/cell-simulation': typeof ReportsEgcgCellSimulationRoute
+  '/reports/egcg/skincare-guide': typeof ReportsEgcgSkincareGuideRoute
+  '/reports/egcg/trend-signal': typeof ReportsEgcgTrendSignalRoute
   '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/egcg/': typeof ReportsEgcgIndexRoute
   '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesByTo {
@@ -110,13 +148,17 @@ export interface FileRoutesByTo {
   '/article': typeof ArticleRoute
   '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
-  '/reports/egcg': typeof ReportsEgcgRoute
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports': typeof ReportsIndexRoute
   '/theory': typeof TheoryIndexRoute
+  '/reports/egcg/bioinformatics': typeof ReportsEgcgBioinformaticsRoute
+  '/reports/egcg/cell-simulation': typeof ReportsEgcgCellSimulationRoute
+  '/reports/egcg/skincare-guide': typeof ReportsEgcgSkincareGuideRoute
+  '/reports/egcg/trend-signal': typeof ReportsEgcgTrendSignalRoute
   '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/egcg': typeof ReportsEgcgIndexRoute
   '/reports/eye-serum': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRoutesById {
@@ -126,13 +168,18 @@ export interface FileRoutesById {
   '/articles': typeof ArticlesRoute
   '/skincare': typeof SkincareRoute
   '/theory': typeof TheoryRouteWithChildren
-  '/reports/egcg': typeof ReportsEgcgRoute
+  '/reports/egcg': typeof ReportsEgcgRouteWithChildren
   '/theory/bioinformatics': typeof TheoryBioinformaticsRoute
   '/theory/trend-signal': typeof TheoryTrendSignalRoute
   '/theory/trending-products': typeof TheoryTrendingProductsRoute
   '/reports/': typeof ReportsIndexRoute
   '/theory/': typeof TheoryIndexRoute
+  '/reports/egcg/bioinformatics': typeof ReportsEgcgBioinformaticsRoute
+  '/reports/egcg/cell-simulation': typeof ReportsEgcgCellSimulationRoute
+  '/reports/egcg/skincare-guide': typeof ReportsEgcgSkincareGuideRoute
+  '/reports/egcg/trend-signal': typeof ReportsEgcgTrendSignalRoute
   '/reports/eye-serum/bioinformatics': typeof ReportsEyeSerumBioinformaticsRoute
+  '/reports/egcg/': typeof ReportsEgcgIndexRoute
   '/reports/eye-serum/': typeof ReportsEyeSerumIndexRoute
 }
 export interface FileRouteTypes {
@@ -149,7 +196,12 @@ export interface FileRouteTypes {
     | '/theory/trending-products'
     | '/reports/'
     | '/theory/'
+    | '/reports/egcg/bioinformatics'
+    | '/reports/egcg/cell-simulation'
+    | '/reports/egcg/skincare-guide'
+    | '/reports/egcg/trend-signal'
     | '/reports/eye-serum/bioinformatics'
+    | '/reports/egcg/'
     | '/reports/eye-serum/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -157,13 +209,17 @@ export interface FileRouteTypes {
     | '/article'
     | '/articles'
     | '/skincare'
-    | '/reports/egcg'
     | '/theory/bioinformatics'
     | '/theory/trend-signal'
     | '/theory/trending-products'
     | '/reports'
     | '/theory'
+    | '/reports/egcg/bioinformatics'
+    | '/reports/egcg/cell-simulation'
+    | '/reports/egcg/skincare-guide'
+    | '/reports/egcg/trend-signal'
     | '/reports/eye-serum/bioinformatics'
+    | '/reports/egcg'
     | '/reports/eye-serum'
   id:
     | '__root__'
@@ -178,7 +234,12 @@ export interface FileRouteTypes {
     | '/theory/trending-products'
     | '/reports/'
     | '/theory/'
+    | '/reports/egcg/bioinformatics'
+    | '/reports/egcg/cell-simulation'
+    | '/reports/egcg/skincare-guide'
+    | '/reports/egcg/trend-signal'
     | '/reports/eye-serum/bioinformatics'
+    | '/reports/egcg/'
     | '/reports/eye-serum/'
   fileRoutesById: FileRoutesById
 }
@@ -188,7 +249,7 @@ export interface RootRouteChildren {
   ArticlesRoute: typeof ArticlesRoute
   SkincareRoute: typeof SkincareRoute
   TheoryRoute: typeof TheoryRouteWithChildren
-  ReportsEgcgRoute: typeof ReportsEgcgRoute
+  ReportsEgcgRoute: typeof ReportsEgcgRouteWithChildren
   ReportsIndexRoute: typeof ReportsIndexRoute
   ReportsEyeSerumBioinformaticsRoute: typeof ReportsEyeSerumBioinformaticsRoute
   ReportsEyeSerumIndexRoute: typeof ReportsEyeSerumIndexRoute
@@ -273,6 +334,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheoryTrendingProductsRouteImport
       parentRoute: typeof TheoryRoute
     }
+    '/reports/egcg/': {
+      id: '/reports/egcg/'
+      path: '/'
+      fullPath: '/reports/egcg/'
+      preLoaderRoute: typeof ReportsEgcgIndexRouteImport
+      parentRoute: typeof ReportsEgcgRoute
+    }
+    '/reports/egcg/bioinformatics': {
+      id: '/reports/egcg/bioinformatics'
+      path: '/bioinformatics'
+      fullPath: '/reports/egcg/bioinformatics'
+      preLoaderRoute: typeof ReportsEgcgBioinformaticsRouteImport
+      parentRoute: typeof ReportsEgcgRoute
+    }
+    '/reports/egcg/cell-simulation': {
+      id: '/reports/egcg/cell-simulation'
+      path: '/cell-simulation'
+      fullPath: '/reports/egcg/cell-simulation'
+      preLoaderRoute: typeof ReportsEgcgCellSimulationRouteImport
+      parentRoute: typeof ReportsEgcgRoute
+    }
+    '/reports/egcg/skincare-guide': {
+      id: '/reports/egcg/skincare-guide'
+      path: '/skincare-guide'
+      fullPath: '/reports/egcg/skincare-guide'
+      preLoaderRoute: typeof ReportsEgcgSkincareGuideRouteImport
+      parentRoute: typeof ReportsEgcgRoute
+    }
+    '/reports/egcg/trend-signal': {
+      id: '/reports/egcg/trend-signal'
+      path: '/trend-signal'
+      fullPath: '/reports/egcg/trend-signal'
+      preLoaderRoute: typeof ReportsEgcgTrendSignalRouteImport
+      parentRoute: typeof ReportsEgcgRoute
+    }
     '/reports/eye-serum/': {
       id: '/reports/eye-serum/'
       path: '/reports/eye-serum'
@@ -307,13 +403,33 @@ const TheoryRouteChildren: TheoryRouteChildren = {
 const TheoryRouteWithChildren =
   TheoryRoute._addFileChildren(TheoryRouteChildren)
 
+interface ReportsEgcgRouteChildren {
+  ReportsEgcgBioinformaticsRoute: typeof ReportsEgcgBioinformaticsRoute
+  ReportsEgcgCellSimulationRoute: typeof ReportsEgcgCellSimulationRoute
+  ReportsEgcgSkincareGuideRoute: typeof ReportsEgcgSkincareGuideRoute
+  ReportsEgcgTrendSignalRoute: typeof ReportsEgcgTrendSignalRoute
+  ReportsEgcgIndexRoute: typeof ReportsEgcgIndexRoute
+}
+
+const ReportsEgcgRouteChildren: ReportsEgcgRouteChildren = {
+  ReportsEgcgBioinformaticsRoute: ReportsEgcgBioinformaticsRoute,
+  ReportsEgcgCellSimulationRoute: ReportsEgcgCellSimulationRoute,
+  ReportsEgcgSkincareGuideRoute: ReportsEgcgSkincareGuideRoute,
+  ReportsEgcgTrendSignalRoute: ReportsEgcgTrendSignalRoute,
+  ReportsEgcgIndexRoute: ReportsEgcgIndexRoute,
+}
+
+const ReportsEgcgRouteWithChildren = ReportsEgcgRoute._addFileChildren(
+  ReportsEgcgRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArticleRoute: ArticleRoute,
   ArticlesRoute: ArticlesRoute,
   SkincareRoute: SkincareRoute,
   TheoryRoute: TheoryRouteWithChildren,
-  ReportsEgcgRoute: ReportsEgcgRoute,
+  ReportsEgcgRoute: ReportsEgcgRouteWithChildren,
   ReportsIndexRoute: ReportsIndexRoute,
   ReportsEyeSerumBioinformaticsRoute: ReportsEyeSerumBioinformaticsRoute,
   ReportsEyeSerumIndexRoute: ReportsEyeSerumIndexRoute,

@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { ReportShell } from "@/components/reports/ReportShell";
-import { EgcgOverview } from "@/components/reports/EgcgOverview";
+import { EgcgReportHeader } from "@/components/reports/EgcgReportHeader";
 
 export const Route = createFileRoute("/reports/egcg")({
   head: () => ({
@@ -19,7 +19,8 @@ export const Route = createFileRoute("/reports/egcg")({
 function EgcgReportPage() {
   return (
     <ReportShell>
-      <EgcgOverview />
+      <EgcgReportHeader />
+      <Outlet />
     </ReportShell>
   );
 }

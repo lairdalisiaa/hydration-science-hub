@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 
 const rail = [
   { to: "/reports/egcg", icon: FileText, label: "Ingredient overview" },
-  { to: "/theory/trend-signal", icon: TrendingUp, label: "Trend signal" },
-  { to: "/reports/eye-serum/bioinformatics", icon: FlaskConical, label: "Product bioinformatics" },
-  { to: "/theory", icon: Droplet, label: "Cell simulation" },
-  { to: "/reports/eye-serum", icon: CalendarDays, label: "Skincare guide" },
+  { to: "/reports/egcg/trend-signal", icon: TrendingUp, label: "Trend signal" },
+  { to: "/reports/egcg/bioinformatics", icon: FlaskConical, label: "Product bioinformatics" },
+  { to: "/reports/egcg/cell-simulation", icon: Droplet, label: "Cell simulation" },
+  { to: "/reports/egcg/skincare-guide", icon: CalendarDays, label: "Skincare guide" },
 ] as const;
 
 const chips = [
@@ -46,6 +46,13 @@ export function ReportShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className="min-w-0">{children}</div>
+        <nav aria-label="Mobile report sections" className="mt-4 flex flex-wrap gap-2 md:hidden">
+          {rail.map(({ to, icon: Icon, label }) => (
+            <Button key={to} variant="outline" size="icon" asChild>
+              <Link to={to} aria-label={label} title={label}><Icon className="size-4" /></Link>
+            </Button>
+          ))}
+        </nav>
       </main>
     </PageShell>
   );

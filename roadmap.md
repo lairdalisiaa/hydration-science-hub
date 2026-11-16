@@ -1,4 +1,5 @@
 # Roadmap
+- [x] EGCG report: dedicated pages for all five icons with one shared report header
 - [x] Report pages: vertical icon toolbar fixed at centre-left, matching the homepage
 - [x] EGCG: email field above Subscribe matching the reference
 
