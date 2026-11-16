@@ -36,7 +36,7 @@ export function TewlTrend() {
                 <stop offset="100%" stopColor="var(--primary)" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <ReferenceArea y1={5} y2={15} fill="var(--secondary)" fillOpacity={0.08} />
+            <ReferenceArea y1={5} y2={15} fill="var(--secondary)" fillOpacity={0.14} />
             <CartesianGrid stroke="var(--ink-raised)" vertical={false} />
             <XAxis dataKey="week" tickLine={false} axisLine={false} tick={{ fill: "var(--ink-muted)", fontSize: 11, fontFamily: "var(--font-mono)" }} />
             <YAxis domain={[10, 20]} ticks={[10, 15, 20]} tickLine={false} axisLine={false} tick={{ fill: "var(--ink-muted)", fontSize: 11, fontFamily: "var(--font-mono)" }} />

@@ -9,9 +9,9 @@ export function SkinPerformance() {
         <span className="eyebrow text-muted-foreground">This week</span>
       </div>
       <p className="mt-1 text-sm text-muted-foreground">0–100 scores across the New York panel.</p>
-      <div className="mt-5 grid flex-1 grid-cols-3 content-center gap-x-2 gap-y-5">
+      <div className="mt-5 flex flex-1 flex-wrap content-center justify-center gap-x-6 gap-y-5">
         {skinPerformance.map((s) => (
-          <div key={s.label} className="flex flex-col items-center gap-2 text-center">
+          <div key={s.label} className="flex w-20 flex-col items-center gap-2 text-center">
             <ScoreRing value={s.value} size={68} stroke={6}>
               <span className="tabular text-base font-medium">
                 {s.value}

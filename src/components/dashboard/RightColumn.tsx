@@ -65,7 +65,7 @@ function Stat({ label, value, bar, tone }: { label: string; value: string; bar?:
     <div className="rounded-xl bg-card px-3 py-2">
       <div className="flex items-center justify-between gap-2">
         <span>{label}</span>
-        <span className="tabular">{value}</span>
+        <span className="tabular whitespace-nowrap">{value}</span>
       </div>
       {bar !== undefined && (
         <div className="mt-1.5 h-1 rounded-full bg-muted">
