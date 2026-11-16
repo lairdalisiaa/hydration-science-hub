@@ -15,7 +15,6 @@ import {
   keyActives,
   morningRoutine,
   nightRoutine,
-  otherEyeCreams,
   pathways,
   scheduleCategories,
 } from "@/lib/reports-data";
@@ -161,7 +160,7 @@ export function EyeSerumGuide() {
         </Link>
       </Panel>
 
-      <div className="grid gap-4 lg:grid-cols-[1fr_1.2fr]">
+      <div>
         <Panel>
           <h2 className="font-medium">Product Interactions</h2>
           <ul className="mt-2 flex flex-col divide-y divide-border">
@@ -172,23 +171,6 @@ export function EyeSerumGuide() {
                   <p className="text-xs text-muted-foreground">{x.note}</p>
                 </div>
                 <span className={cn("rounded-full px-2.5 py-0.5 text-xs", x.ok ? "bg-positive-soft text-positive" : "bg-negative-soft text-negative")}>{x.verdict}</span>
-              </li>
-            ))}
-          </ul>
-        </Panel>
-        <Panel>
-          <h2 className="font-medium">
-            Product Category <span className="text-sm font-normal text-muted-foreground">· other eye creams</span>
-          </h2>
-          <ul className="mt-3 grid grid-cols-3 gap-2">
-            {otherEyeCreams.map((p) => (
-              <li key={p.name} className="text-sm">
-                <div className="bg-ingredient h-16 rounded-xl" aria-hidden />
-                <p className="mt-1.5 font-medium leading-tight">{p.name}</p>
-                <p className="flex justify-between text-xs text-muted-foreground">
-                  <span>{p.price}</span>
-                  <span className="tabular">{p.score}/100</span>
-                </p>
               </li>
             ))}
           </ul>
