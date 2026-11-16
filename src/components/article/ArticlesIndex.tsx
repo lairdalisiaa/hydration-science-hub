@@ -4,7 +4,7 @@ import { ArrowUpRight, FileText, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { article, articleCategories, articlePreviews, filterArticlePreviews, type ArticleCategory } from "@/lib/article-data";
+import { article, articleCategories, filterArticlePreviews, type ArticleCategory } from "@/lib/article-data";
 import { cn } from "@/lib/utils";
 import heroImg from "@/assets/green-tea-glass-skin.jpg";
 
@@ -59,17 +59,7 @@ export function ArticlesIndex() {
         </div>
       </section>
 
-      <section className="mt-8 pb-8" aria-labelledby="browse-title">
-        <h2 id="browse-title" className="text-xl font-medium">Browse All</h2>
-        {results.length === 0 ? <p role="status" className="py-8 text-sm text-muted-foreground">No articles found.</p> : <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {results.map((item) => <article key={item.id} className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft backdrop-blur-xl">
-            {item.available ? <Link to="/article" className="group block">
-              <img src={heroImg} alt="Green tea and skincare serum" width={1024} height={640} loading="lazy" className="aspect-[16/10] w-full object-cover" />
-              <div className="p-4"><p className="font-mono text-[10px] uppercase text-primary">{item.label}</p><h3 className="mt-2 font-medium group-hover:underline">{item.title}</h3><p className="mt-3 text-xs text-muted-foreground">{article.readTime} · {article.date}</p></div>
-            </Link> : <><div className="grid aspect-[16/10] place-items-center bg-muted"><FileText className="size-7 text-muted-foreground" aria-hidden /></div><div className="p-4"><p className="font-mono text-[10px] uppercase text-primary">{item.label}</p><h3 className="mt-2 font-medium">Coming soon</h3></div></>}
-          </article>)}
-        </div>}
-      </section>
+      {results.length === 0 && <p role="status" className="py-8 text-sm text-muted-foreground">No articles found.</p>}
     </main>
   );
 }
