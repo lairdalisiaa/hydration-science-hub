@@ -2,6 +2,19 @@ import { describe, expect, it } from "vitest";
 import { eyeSerum, featuredReport, howToGuides, reports } from "./reports-data";
 
 describe("report availability", () => {
+  it("lists exactly 1 product for EGCG", () => {
+    expect(reports.find((r) => r.title === "Epigallocatechin Gallate")?.products).toBe(1);
+  });
+
+  it("keeps the EGCG signal at 78", () => {
+    expect(reports.find((r) => r.title === "Epigallocatechin Gallate")?.signal).toBe(78);
+    expect(featuredReport.signal).toBe(78);
+  });
+
+  it("lists 0 readers for EGCG", () => {
+    expect(reports.find((r) => r.title === "Epigallocatechin Gallate")?.readers).toBe("0");
+  });
+
   it("only offers the EGCG report to open", () => {
     expect(reports.filter((r) => r.to).map((r) => [r.title, r.to])).toEqual([
       ["Epigallocatechin Gallate", "/reports/egcg"],
