@@ -23,7 +23,7 @@ export const featuredReport = { title: "EGCG Ingredient Overview", published: "1
 
 // Sample report index (Week 46).
 export const reports: ReportEntry[] = [
-  { title: "Epigallocatechin Gallate", summary: "Green-tea catechin for antioxidant and soothing care", types: ["Ingredient overview", "Bioinformatics", "Trend signal"], concerns: ["Soothing", "Brightening"], evidence: "High", status: "Published", date: "16 Nov 2026", signal: 78, readers: "1.2K", products: 128, to: "/reports/egcg" },
+  { title: "Epigallocatechin Gallate", summary: "Green-tea catechin for antioxidant and soothing care", types: ["Ingredient overview", "Bioinformatics", "Trend signal"], concerns: ["Soothing", "Brightening"], evidence: "High", status: "Published", date: "16 Nov 2026", signal: 78, readers: "0", products: 1, to: "/reports/egcg" },
   { title: "PDRN", summary: "", types: ["Trend signal"], concerns: ["Hydration", "Firming"], evidence: "Medium", status: "Coming soon" },
   { title: "Azelaic Acid", summary: "", types: ["Ingredient overview", "Trend signal"], concerns: ["Brightening", "Clarifying"], evidence: "High", status: "Coming soon" },
   { title: "Caffeine 5% + EGCG Eye Serum", summary: "", types: ["Skincare guide", "Product analysis", "Bioinformatics"], concerns: ["Firming", "Soothing"], evidence: "Medium", status: "Coming soon" },
