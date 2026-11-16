@@ -18,6 +18,9 @@ describe("related articles availability", () => {
 });
 
 describe("article library", () => {
+  it("credits Addottee as the writer", () => {
+    expect(article.author.name).toBe("Addottee");
+  });
   it("uses the corrected article date", () => {
     expect(article.date).toBe("16 Nov 2026");
   });
