@@ -17,7 +17,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
         <img src={skinImg} alt="Close-up of hydrated skin" width={816} height={816} className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24" />
         <div>
           <p className="font-display text-4xl font-extrabold leading-none tracking-tight">addottee.</p>
-          <p className={cn("font-script text-5xl leading-[1.1]", dark ? "text-crimson-bright" : "text-crimson")}>theory</p>
+          <p className={cn("mt-1.5 font-script text-5xl leading-[1.25]", dark ? "text-crimson-bright" : "text-crimson")}>theory</p>
         </div>
       </div>
       <p className={cn("max-w-2xl px-2 text-sm", dark ? "text-ink-muted" : "text-muted-foreground")}>{theoryIntro}</p>
