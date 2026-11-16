@@ -15,7 +15,7 @@ const tools = [
 
 export function ToolRail({ className }: { className?: string }) {
   return (
-    <nav aria-label="Dashboard tools" className={cn("mx-auto flex w-full max-w-xl justify-between gap-6 rounded-2xl bg-card px-6 py-2 shadow-soft", className)}>
+    <nav aria-label="Dashboard tools" className={cn("flex flex-col gap-5 rounded-2xl bg-card px-2 py-4 shadow-soft", className)}>
       {tools.map(({ icon: Icon, label }, i) => (
         <Link
           key={label}
