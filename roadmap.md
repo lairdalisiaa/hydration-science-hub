@@ -3,6 +3,7 @@
 - [x] Home: Skin Performance scores in one horizontal row on desktop
 - [x] Home: EGCG ingredient card widened to sit under Skinomic Focus + Goals tracker
 - [x] Home: "How well skin is holding water" chart → line graph, oxidation (y) vs chelation (x)
+- [x] Home: Skin Performance title → red Pinyon Script
 - [x] Header tabs link to real pages
 - [x] Theory page with 4 tabs (Cell Simulation, Ingredient Trend Signal, Bioinformatics, Trending Products)
 - [x] Article page (Green Tea for Glass Skin)
