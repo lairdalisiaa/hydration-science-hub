@@ -14,3 +14,8 @@
 - [x] Home: live NY time pill, aligned card heights, newsletter card, new score names & goals, TEWL→Theory button, centred desktop toolbar, mobile side menu & card order
 - [x] Desktop home: cards hug content; shorter Green Tea & Skinomic cards
 - [x] Skin Performance: 4 scores (Glass skin barrier merged)
+- [x] Home: toolbar vertical, fixed at centre-left of the screen on desktop
+- [x] Home: swap New York Top Searches / Green Tea for Glass Skin positions
+- [x] Home: EGCG card shortened to one line + report link
+- [x] Home: featured article card made taller
+- [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
