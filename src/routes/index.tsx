@@ -31,14 +31,15 @@ function Index() {
         <ToolRail className="fixed left-[max(36px,calc((100vw-1400px)/2+12px))] top-1/2 z-20 hidden w-14 -translate-y-1/2 lg:flex" />
         <div className="min-w-0 flex-1">
         {/* Mobile: one column ordered by order-*. Desktop: three stacked columns sized to content. */}
-        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_1fr_1.4fr] lg:items-start">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[1fr_2.4fr] lg:items-start">
           <div className="contents lg:flex lg:flex-col lg:gap-4">
             <ExploreMarket className="order-2 lg:order-none" />
             <PartnerCard className="order-3 lg:order-none" />
           </div>
-          <div className="contents lg:flex lg:flex-col lg:gap-4">
+          <div className="contents lg:grid lg:grid-cols-[1fr_1.4fr] lg:items-stretch lg:gap-4">
+          <div className="contents lg:flex lg:min-h-0 lg:flex-col lg:gap-4">
             <LocationPill className="order-1 lg:order-none" />
-            <FeaturedArticle className="order-5 lg:order-none" />
+            <FeaturedArticle className="order-5 lg:order-none lg:flex-1" />
             <TopSearches className="order-4 lg:order-none" />
           </div>
           <div className="contents lg:flex lg:flex-col lg:gap-4">
@@ -47,6 +48,7 @@ function Index() {
               <GoalsRail className="order-7 lg:order-none lg:mt-8 lg:shrink-0" />
             </div>
             <IngredientCard className="order-8 lg:order-none" />
+          </div>
           </div>
         </div>
         <div className="mt-4 flex flex-col gap-4">

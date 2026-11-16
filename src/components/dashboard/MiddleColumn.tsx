@@ -7,9 +7,9 @@ import articleImg from "@/assets/green-tea-glass-skin.jpg";
 
 export function FeaturedArticle({ className }: { className?: string }) {
   return (
-    <article className={cn("rounded-3xl bg-card p-3 shadow-soft", className)}>
-      <div className="relative overflow-hidden rounded-2xl">
-        <img src={articleImg} alt="Green tea leaves and a serum dropper on glass" width={1024} height={640} className="aspect-square w-full object-cover" />
+    <article className={cn("rounded-3xl bg-card p-3 shadow-soft lg:flex lg:min-h-0 lg:flex-col", className)}>
+      <div className="relative overflow-hidden rounded-2xl lg:min-h-40 lg:flex-1">
+        <img src={articleImg} alt="Green tea leaves and a serum dropper on glass" width={1024} height={640} className="aspect-square w-full object-cover lg:absolute lg:inset-0 lg:h-full lg:aspect-auto" />
         <span className="eyebrow absolute left-3 top-3 rounded-md bg-secondary px-2 py-1 text-secondary-foreground">Featured article</span>
       </div>
       <div className="px-2 pb-2 pt-3">
