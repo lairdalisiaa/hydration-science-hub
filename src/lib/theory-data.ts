@@ -212,21 +212,21 @@ export const funnel = [
 ];
 
 export const scanner = {
-  code: "AZELAIC.SYS",
-  name: "Azelaic acid",
-  formula: "C9H16O4",
-  structure: "HOOC-(CH2)7-COOH",
+  code: "EGCG.SYS",
+  name: "Epigallocatechin gallate",
+  formula: "C22H18O11",
+  structure: "C22H18O11",
   rings: [
-    { label: "pKa", value: "4.55", fill: 65 },
-    { label: "LogP", value: "1.57", fill: 45 },
-    { label: "MW", value: "188.2", fill: 80 },
+    { label: "pKa", value: "7.65", fill: 55 },
+    { label: "LogP", value: "1.2", fill: 24 },
+    { label: "MW · g/mol", value: "458.37", fill: 76 },
   ],
-  chiral: "None",
-  class: "Dicarboxylic acid",
+  chiral: "2 stereocentres",
+  class: "Gallated catechin",
   redox: [34, 52, 46, 70, 64, 88, 66, 42],
   atoms: [
-    ["C", 9],
-    ["H", 16],
-    ["O", 4],
+    ["C", 22],
+    ["H", 18],
+    ["O", 11],
   ] as const,
 };

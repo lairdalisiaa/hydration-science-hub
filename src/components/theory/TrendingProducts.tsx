@@ -6,7 +6,7 @@ import { Formula } from "@/components/site/ui";
 import { ScoreRing } from "@/components/dashboard/ScoreRing";
 import { funnel, scanner } from "@/lib/theory-data";
 import { trendingProducts, type ProductCategory } from "@/lib/products-data";
-import moleculeImg from "@/assets/azelaic-molecule.jpg";
+import moleculeImg from "@/assets/egcg-molecule.jpg";
 
 const filters = ["All", "Serum", "Cleanser", "Moisturizer", "Lip"] as const satisfies readonly ("All" | ProductCategory)[];
 
@@ -61,19 +61,20 @@ export function TrendingProducts() {
             ))}
           </ul>
           <dl className="mt-4 flex flex-col divide-y divide-ink-raised font-mono text-xs">
-            <div className="flex justify-between py-2"><dt className="text-ink-muted">CHIRAL</dt><dd>{scanner.chiral}</dd></div>
-            <div className="flex justify-between py-2"><dt className="text-ink-muted">CLASS</dt><dd>{scanner.class}</dd></div>
+            <div className="flex justify-between gap-3 py-2"><dt className="text-ink-muted">CHIRAL</dt><dd className="text-right">{scanner.chiral}</dd></div>
+            <div className="flex justify-between gap-3 py-2"><dt className="text-ink-muted">CLASS</dt><dd className="text-right">{scanner.class}</dd></div>
           </dl>
+          <p className="mt-2 text-[0.65rem] text-ink-muted">pKa and LogP are sample estimates; meters use reference scales.</p>
         </div>
         <div className="relative min-h-56 overflow-hidden rounded-2xl">
-          <img src={moleculeImg} alt="3D render of the Azelaic Acid molecule" width={1024} height={640} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={moleculeImg} alt="Illustrative render of the Epigallocatechin gallate molecule" width={768} height={896} loading="lazy" className="absolute inset-0 h-full w-full object-contain" />
           <span className="absolute left-3 top-3 rounded bg-ink-raised px-2 py-1 font-mono text-xs">
             <Formula value={scanner.structure} />
           </span>
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex-1 rounded-2xl bg-ink-raised p-3">
-            <p className="eyebrow text-[0.6rem] text-ink-muted">Redox orbital</p>
+            <p className="eyebrow text-[0.6rem] text-ink-muted">Redox orbital · sample</p>
             <div className="mt-3 flex h-24 items-end gap-1.5">
               {scanner.redox.map((v, i) => (
                 <span key={i} className="flex-1 rounded-sm bg-secondary" style={{ height: `${v}%` }} />

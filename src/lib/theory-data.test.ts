@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deliveryModes, keyTakeaway, performanceSignal, signalCards, synergies, trendIngredient, trendStats } from "./theory-data";
+import { deliveryModes, keyTakeaway, performanceSignal, scanner, signalCards, synergies, trendIngredient, trendStats } from "./theory-data";
 
 describe("EGCG cell simulation sample", () => {
   it("uses epigallocatechin gallate with its molecular formula", () => {
@@ -41,5 +41,14 @@ describe("Key synergy ingredient relationships", () => {
       expect(synergy.partner.length).toBeGreaterThan(0);
       expect(synergy.partner).not.toBe(synergy.ingredient);
     }
+  });
+});
+
+describe("Ingredient scanner", () => {
+  it("scans Epigallocatechin gallate with its molecular composition and mass", () => {
+    expect(scanner.name).toBe("Epigallocatechin gallate");
+    expect(scanner.formula).toBe("C22H18O11");
+    expect(scanner.atoms).toEqual([["C", 22], ["H", 18], ["O", 11]]);
+    expect(scanner.rings.find((ring) => ring.label === "MW · g/mol")?.value).toBe("458.37");
   });
 });

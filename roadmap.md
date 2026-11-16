@@ -26,4 +26,5 @@
 - [x] Theory header: photo indented to start after the "n" in "Cell Simulation"; description opens with "our theory" in the script font
 - [x] Theory Ingredient Trend Signal: show trend data for Epigallocatechin gallate
 - [x] Theory Bioinformatics: Key Synergies pair EGCG with other ingredients, with sample-evidence caveat
+- [x] Theory Trending Products: Ingredient Scanner uses EGCG molecular details and imagery
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
