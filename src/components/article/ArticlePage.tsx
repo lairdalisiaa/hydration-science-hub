@@ -66,9 +66,9 @@ export function ArticlePage() {
           <div className="flex items-center gap-3 text-sm">
             <span className="size-9 rounded-full bg-blush" aria-hidden />
             <div>
-              <p className="font-medium">{article.author.name}</p>
+              <p className="font-medium">Written by {article.author.name}</p>
               <p className="text-xs text-muted-foreground">
-                {article.author.role} · {article.readTime} · {article.date}
+                {article.readTime} · {article.date}
               </p>
             </div>
           </div>
@@ -210,13 +210,13 @@ export function ArticlePage() {
             <div className="flex items-center gap-3 rounded-2xl bg-card p-4">
               <span className="size-12 shrink-0 rounded-full bg-blush" aria-hidden />
               <div>
-                <p className="font-medium">{article.author.name}</p>
+                <p className="font-medium">Written by {article.author.name}</p>
                 <p className="text-xs text-muted-foreground">{article.author.bio}</p>
               </div>
             </div>
             <div className="rounded-2xl bg-card p-4">
               <p className="eyebrow text-[0.6rem] text-muted-foreground">Next article · coming soon</p>
-              <p className="mt-1 font-medium">PDRN Explained: Why This Ingredient Is Everywhere</p>
+              <p className="mt-1 font-medium">PDRN Explained</p>
             </div>
           </div>
         </article>

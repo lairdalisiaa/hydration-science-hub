@@ -3,7 +3,7 @@ export const article = {
   breadcrumb: ["Articles", "Ingredient Intelligence"],
   title: "Green Tea for Glass Skin",
   dek: "Why a familiar tea-leaf antioxidant is showing up in the move from instant glow to hydrated, resilient, translucent-looking skin.",
-  author: { name: "Albert Neilsen", role: "Cosmetic Bioscientist", bio: "Cosmetic Bioscientist. Writes Addottee's ingredient intelligence reports." },
+  author: { name: "addottee", bio: "Ingredient intelligence by addottee." },
   readTime: "3 min read",
   date: "7 Aug 2026",
 };
