@@ -9,7 +9,7 @@ export function FeaturedArticle({ className }: { className?: string }) {
   return (
     <article className={cn("rounded-3xl bg-card p-3 shadow-soft", className)}>
       <div className="relative overflow-hidden rounded-2xl">
-        <img src={articleImg} alt="Green tea leaves and a serum dropper on glass" width={1024} height={640} className="aspect-[16/7] w-full object-cover" />
+        <img src={articleImg} alt="Green tea leaves and a serum dropper on glass" width={1024} height={640} className="aspect-[4/3] w-full object-cover" />
         <span className="eyebrow absolute left-3 top-3 rounded-md bg-secondary px-2 py-1 text-secondary-foreground">Featured article</span>
       </div>
       <div className="px-2 pb-2 pt-3">
