@@ -17,6 +17,9 @@
 - [x] Home: toolbar vertical, fixed at centre-left of the screen on desktop
 - [x] Home: swap New York Top Searches / Green Tea for Glass Skin positions
 - [x] Home: EGCG card shortened to one line + report link
-- [x] Home: featured article card made taller (photo now square)
+- [x] Home: article photo fitted to align Top Searches with the EGCG card on desktop
+- [x] Home: restore readable Skinomic Focus tiles without crowded labels and scores
 - [x] Home: goals card dropped below the Skinomic Focus top
+- [x] Home: make the Goals card smaller
+- [x] Home: reduce the Wrinkles label size
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)

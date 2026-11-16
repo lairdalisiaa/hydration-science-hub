@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Droplet, FlaskConical, Globe, Home, LayoutGrid, Plus, Search } from "lucide-react";
 import { goals } from "@/lib/dashboard-data";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { ScoreRing } from "./ScoreRing";
 
 const tools = [
@@ -36,19 +37,19 @@ export function ToolRail({ className }: { className?: string }) {
 
 export function GoalsRail({ className }: { className?: string }) {
   return (
-    <aside className={cn("flex items-center gap-4 self-start rounded-full bg-ink p-3 text-ink-foreground lg:flex-col lg:py-4", className)}>
+    <aside className={cn("flex items-center gap-2 self-start rounded-full bg-ink p-2.5 text-ink-foreground lg:flex-col lg:py-3", className)}>
       <span className="eyebrow text-[0.6rem] text-ink-muted">Goals</span>
       {goals.map((g) => (
         <div key={g.label} className="flex flex-col items-center gap-1 text-center">
-          <ScoreRing value={g.value} size={48} stroke={5} tone="ink">
-            <span className="tabular text-sm">{g.value}</span>
+          <ScoreRing value={g.value} size={40} stroke={4} tone="ink">
+            <span className="tabular text-xs">{g.value}</span>
           </ScoreRing>
           <span className="max-w-14 text-[0.65rem] leading-tight">{g.label}</span>
         </div>
       ))}
-      <button type="button" aria-label="Add goal" className="grid size-11 place-items-center rounded-full bg-secondary text-secondary-foreground">
+      <Button type="button" variant="secondary" size="icon" aria-label="Add goal" className="size-8 rounded-full">
         <Plus className="size-4" />
-      </button>
+      </Button>
     </aside>
   );
 }

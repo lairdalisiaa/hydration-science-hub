@@ -36,3 +36,4 @@ use the editor.
 - Non-home pages keep components in `src/components/<area>/` and display data in `src/lib/<area>-data.ts` (theory, article, ingredients, reports, products), mirroring the dashboard split so sample data can be swapped for live data in one place.
 - Report detail pages render inside `ReportShell` (market strip, live New York time bar, report icon rail); add new report routes to its rail rather than duplicating the frame.
 - Theory tabs are separate child routes of the `theory.tsx` layout, which switches the page to the ink theme for Trending Products.
+- The desktop homepage pairs the article/search column with the focus/ingredient column in a shared grid; the article photo takes remaining height so their bottom cards align without fixed card heights.
