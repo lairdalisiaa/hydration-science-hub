@@ -14,7 +14,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-start gap-4 px-4 sm:items-center sm:gap-6 sm:px-6">
-        <img src={skinImg} alt="Close-up of hydrated skin" width={816} height={816} className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24" />
+        <img src={skinImg} alt="Close-up of hydrated skin" width={816} height={816} className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24 lg:ml-[114px]" />
         <div className="min-w-0">
           <h1 className={cn("font-script text-5xl leading-[1.25]", dark ? "text-crimson-bright" : "text-crimson")}>Theory</h1>
           <p className={cn("mt-1.5 max-w-2xl text-sm", dark ? "text-ink-muted" : "text-muted-foreground")}>{theoryIntro}</p>
