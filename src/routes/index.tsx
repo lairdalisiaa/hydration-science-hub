@@ -47,7 +47,7 @@ function Index() {
               <SkinomicFocus className="order-6 lg:order-none lg:flex-1" />
               <GoalsRail className="order-7 lg:order-none lg:mt-8 lg:shrink-0" />
             </div>
-            <IngredientCard className="order-8 lg:order-none" />
+            <IngredientCard className="order-8 lg:order-none lg:flex-1" />
           </div>
           </div>
         </div>
