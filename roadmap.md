@@ -20,5 +20,5 @@
 - [x] Home: article photo fitted to align Top Searches with the EGCG card on desktop
 - [x] Home: restore readable Skinomic Focus tiles without crowded labels and scores
 - [x] Home: goals card dropped below the Skinomic Focus top
-- [ ] Home: make the Goals card smaller
+- [x] Home: make the Goals card smaller
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
