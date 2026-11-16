@@ -17,7 +17,10 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
         <img src={skinImg} alt="Close-up of hydrated skin" width={816} height={816} className="size-20 shrink-0 rounded-full border-4 border-secondary object-cover sm:size-24 lg:ml-[114px]" />
         <div className="min-w-0">
           <h1 className={cn("font-script text-5xl leading-[1.25]", dark ? "text-crimson-bright" : "text-crimson")}>Theory</h1>
-          <p className={cn("mt-1.5 max-w-2xl text-sm", dark ? "text-ink-muted" : "text-muted-foreground")}>{theoryIntro}</p>
+          <p className={cn("mt-1.5 max-w-2xl text-sm", dark ? "text-ink-muted" : "text-muted-foreground")}>
+            <span className={cn("font-script text-2xl leading-none", dark ? "text-crimson-bright" : "text-crimson")}>our theory</span>{" "}
+            {theoryIntro}
+          </p>
         </div>
       </div>
       <nav aria-label="Theory sections" className="grid grid-cols-2 gap-2 lg:grid-cols-4">
