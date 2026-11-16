@@ -24,9 +24,9 @@ export const skinomicFocus = [
 ];
 
 export const goals = [
-  { value: 75, label: "Weekly report" },
-  { value: 57, label: "7 hubs" },
-  { value: 40, label: "Monthly review" },
+  { value: 100, label: "Weekly reports" },
+  { value: 50, label: "Distinctive hubs" },
+  { value: 75, label: "TEWL score" },
 ];
 
 export const ticker = [
@@ -61,11 +61,11 @@ export const tewlTrend = [
 ];
 
 export const skinPerformance = [
-  { label: "Hydration", value: 62, unit: "%" },
-  { label: "Barrier", value: 76 },
   { label: "Brightening", value: 82 },
-  { label: "Soothing", value: 64 },
-  { label: "Oil", value: 38, unit: "%" },
+  { label: "Anti-aging", value: 71 },
+  { label: "Glass skin", value: 68 },
+  { label: "Barrier", value: 76 },
+  { label: "Sebum / oil", value: 38, unit: "%" },
 ];
 
 // Sample data: oxidation left in the formula at each chelation level (New York panel).

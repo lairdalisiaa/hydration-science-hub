@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { ExploreMarket } from "@/components/dashboard/ExploreMarket";
-import { MiddleColumn } from "@/components/dashboard/MiddleColumn";
+import { ExploreMarket, PartnerCard } from "@/components/dashboard/ExploreMarket";
+import { FeaturedArticle, TopSearches } from "@/components/dashboard/MiddleColumn";
+import { LocationPill } from "@/components/dashboard/LocationPill";
 import { IngredientCard, SkinomicFocus } from "@/components/dashboard/RightColumn";
 import { GoalsRail, ToolRail } from "@/components/dashboard/Rails";
 import { TewlTrend } from "@/components/dashboard/TewlTrend";
@@ -26,15 +27,19 @@ function Index() {
   return (
     <PageShell footer={<Ticker />}>
       <main className="px-4 py-6 lg:px-8">
-        <div className="grid gap-4 lg:grid-cols-[56px_1fr_1fr_1.3fr_76px] lg:grid-rows-[auto_1fr]">
-          <ToolRail className="lg:row-span-2" />
-          <ExploreMarket className="lg:row-span-2" />
-          <MiddleColumn className="lg:row-span-2" />
-          <SkinomicFocus className="lg:col-start-4 lg:row-start-1" />
-          <GoalsRail className="lg:col-start-5 lg:row-start-1" />
-          <IngredientCard className="lg:col-span-2 lg:col-start-4 lg:row-start-2" />
-          <SkinPerformance className="lg:col-span-4 lg:col-start-2" />
-          <TewlTrend className="lg:col-span-4 lg:col-start-2" />
+        <ToolRail className="mb-4 hidden lg:flex" />
+        {/* DOM order = mobile order; desktop placement is explicit. */}
+        <div className="grid gap-4 lg:grid-cols-[1fr_1fr_1.3fr_76px] lg:grid-rows-[auto_1fr_auto]">
+          <LocationPill className="lg:col-start-2 lg:row-start-1" />
+          <ExploreMarket className="lg:col-start-1 lg:row-span-2 lg:row-start-1" />
+          <PartnerCard className="lg:col-start-1 lg:row-start-3" />
+          <TopSearches className="lg:col-start-2 lg:row-start-3" />
+          <FeaturedArticle className="lg:col-start-2 lg:row-start-2" />
+          <SkinomicFocus className="lg:col-start-3 lg:row-span-2 lg:row-start-1" />
+          <GoalsRail className="lg:col-start-4 lg:row-span-2 lg:row-start-1" />
+          <IngredientCard className="lg:col-span-2 lg:col-start-3 lg:row-start-3" />
+          <SkinPerformance className="lg:col-span-4" />
+          <TewlTrend className="lg:col-span-4" />
         </div>
       </main>
     </PageShell>

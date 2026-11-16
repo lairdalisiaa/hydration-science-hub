@@ -1,9 +1,11 @@
-import { Droplet, FlaskConical, Globe, LayoutGrid, Plus, Search } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Droplet, FlaskConical, Globe, Home, LayoutGrid, Plus, Search } from "lucide-react";
 import { goals } from "@/lib/dashboard-data";
 import { cn } from "@/lib/utils";
 import { ScoreRing } from "./ScoreRing";
 
 const tools = [
+  { icon: Home, label: "Home" },
   { icon: LayoutGrid, label: "Dashboard" },
   { icon: Globe, label: "Markets" },
   { icon: Search, label: "Searches" },
@@ -13,19 +15,20 @@ const tools = [
 
 export function ToolRail({ className }: { className?: string }) {
   return (
-    <nav aria-label="Dashboard tools" className={cn("flex gap-2 self-start rounded-2xl bg-card p-2 shadow-soft lg:flex-col", className)}>
+    <nav aria-label="Dashboard tools" className={cn("mx-auto flex w-full max-w-xl justify-between gap-6 rounded-2xl bg-card px-6 py-2 shadow-soft", className)}>
       {tools.map(({ icon: Icon, label }, i) => (
-        <button
+        <Link
           key={label}
-          type="button"
+          to="/"
           aria-label={label}
+          title={label}
           className={cn(
             "grid size-10 place-items-center rounded-xl transition-colors",
             i === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground",
           )}
         >
           <Icon className="size-4" />
-        </button>
+        </Link>
       ))}
     </nav>
   );
