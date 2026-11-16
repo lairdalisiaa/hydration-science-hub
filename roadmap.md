@@ -24,5 +24,5 @@
 - [x] Home: reduce the Wrinkles label size
 - [x] Theory Cell Simulation: EGCG sample with MW, pKa, solubility, log Kp and format-linked TEWL meters
 - [x] Theory header: photo indented to start after the "n" in "Cell Simulation"; description opens with "our theory" in the script font
-- [ ] Theory Ingredient Trend Signal: show trend data for Epigallocatechin gallate
+- [x] Theory Ingredient Trend Signal: show trend data for Epigallocatechin gallate
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
