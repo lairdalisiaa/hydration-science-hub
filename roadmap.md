@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Article phone: refine mockup card sizing, reading progress, author credit, typography spacing, and paired routine tiles without desktop changes
 - [x] Theory phone: white backgrounds for the first three sections and reference-matched section heading typography
 - [x] Home: separate compact phone layout from desktop, with shared data and swipeable widgets from the mobile mockup
 - [x] EGCG report list: 1 product, 78 signal, 0 readers
