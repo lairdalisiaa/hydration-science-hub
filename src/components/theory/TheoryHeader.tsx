@@ -50,7 +50,7 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
           >
             {({ isActive }) => (
               <>
-                <span className={cn("font-mono text-xs", isActive ? "text-primary" : dark ? "text-ink-muted" : "text-muted-foreground")}>{t.n}</span>
+                <span className={cn("font-mono text-xs text-secondary", isActive ? "lg:text-primary" : dark ? "lg:text-ink-muted" : "lg:text-muted-foreground")}>{t.n}</span>
                 {t.label}
               </>
             )}
