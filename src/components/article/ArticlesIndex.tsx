@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { article, articleCategories, filterArticlePreviews, type ArticleCategory } from "@/lib/article-data";
 import { cn } from "@/lib/utils";
 import heroImg from "@/assets/green-tea-glass-skin.jpg";
+import { MobileArticlesIndex } from "./MobileArticlesIndex";
 
 export function ArticlesIndex() {
   const [query, setQuery] = useState("");
@@ -36,7 +37,8 @@ export function ArticlesIndex() {
         </div>
       </header>
 
-      <section className="mt-9" aria-labelledby="trending-title">
+      <MobileArticlesIndex query={query} category={category} sort={sort} />
+      <section className="mt-9 hidden lg:block" aria-labelledby="trending-title">
         <h2 id="trending-title" className="text-xl font-medium">Trending</h2>
         <div className={cn("mt-4 grid gap-5", featured && upcoming.length > 0 && "lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]")}>
           {featured && <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft backdrop-blur-xl">

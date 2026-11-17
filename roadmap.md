@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Restore the earlier full Green Tea detail page and apply the phone browsing layout to Articles with Coming soon reports
 - [x] Restore Green Tea article phone layout to the version before the latest article styling change
 - [x] Theory phone: white backgrounds for the first three sections and reference-matched section heading typography
 - [x] Home: separate compact phone layout from desktop, with shared data and swipeable widgets from the mobile mockup
