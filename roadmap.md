@@ -51,5 +51,5 @@
 - [x] Article: replace related articles with one Coming soon entry
 - [x] Article: capitalise descriptor as Hydration Science Hub
 - [x] Home phone: swap Green Tea and Explore Market; Goals beside newsletter
-- [ ] Phone layouts for other pages (awaiting which page first)
+- [x] Phone check of all pages: fixed bioinformatics report overflow
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)

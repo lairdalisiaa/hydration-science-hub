@@ -125,12 +125,12 @@ export function EyeSerumBioinformatics() {
         </ul>
       </Panel>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
         <section className="rounded-3xl bg-ink p-5 text-ink-foreground">
           <p className="eyebrow text-[0.6rem] text-secondary">Product analysis</p>
           <dl className="mt-2 flex flex-col divide-y divide-ink-raised text-sm">
             {productAnalysis.map(([k, v]) => (
-              <div key={k} className="grid grid-cols-[130px_1fr] gap-2 py-2.5">
+              <div key={k} className="grid grid-cols-[110px_minmax(0,1fr)] break-words sm:grid-cols-[130px_1fr] gap-2 py-2.5">
                 <dt className="text-ink-muted">{k}</dt>
                 <dd>{v}</dd>
               </div>
