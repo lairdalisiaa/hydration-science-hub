@@ -16,8 +16,8 @@ const nav = [
 export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
   const [open, setOpen] = useState(false);
   return (
-    <header className={cn("flex items-center justify-between gap-4 border-b border-border px-6 py-4 lg:px-8", tone === "ink" ? "bg-ink text-ink-foreground" : "bg-card")}>
-      <Link to="/" className="font-display text-3xl font-extrabold tracking-tight">
+    <header className={cn("flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-4 lg:flex-nowrap lg:gap-4 lg:px-8", tone === "ink" ? "bg-ink text-ink-foreground" : "bg-card")}>
+      <Link to="/" className="order-2 font-display text-2xl font-extrabold lg:order-none lg:text-3xl">
         addottee.
       </Link>
       <nav aria-label="Main" className="hidden gap-1 rounded-full bg-muted p-1 lg:flex">
@@ -33,13 +33,13 @@ export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
           </Link>
         ))}
       </nav>
-      <div className="flex items-center gap-2">
-        <Button variant="blush" className="rounded-full px-5" asChild>
+      <div className="contents lg:flex lg:items-center lg:gap-2">
+        <Button variant="blush" className="order-3 rounded-full px-4 lg:order-none lg:px-5" asChild>
           <a href="#weekly-signal">Subscribe</a>
         </Button>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="rounded-full lg:hidden" aria-label="Open menu">
+            <Button variant="ink" size="icon" className="order-1 size-10 rounded-full lg:hidden" aria-label="Open menu">
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
@@ -62,6 +62,9 @@ export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
           </SheetContent>
         </Sheet>
       </div>
+      <nav aria-label="Phone pages" className="order-4 flex w-full rounded-full bg-muted p-1 lg:hidden">
+        {nav.map(item => <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} className="flex-1 rounded-full px-1 py-2 text-center text-xs text-muted-foreground" activeProps={{ className: "bg-card font-semibold text-foreground shadow-sm" }}>{item.to === "/reports" ? "Reports" : item.label}</Link>)}
+      </nav>
     </header>
   );
 }

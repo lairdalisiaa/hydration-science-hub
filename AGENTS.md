@@ -31,6 +31,7 @@ use the editor.
 
 ## Project rules
 - Homepage dashboard sections live in `src/components/dashboard/`, with display data in `src/lib/dashboard-data.ts` so it can later be swapped for live data in one place.
+- Split device-specific presentation into small desktop/mobile layout components selected with CSS visibility at the existing lg breakpoint; reuse shared section components and data modules, never copy full routes or datasets, so phone edits cannot alter the desktop arrangement.
 - TEWL band logic lives in `src/lib/tewl.ts` (tested in `tewl.test.ts`); components never hardcode band cutoffs.
 - Every page wraps its body in `PageShell` (`src/components/site/`), which owns the header nav, page background and weekly sign-up strip, so site chrome changes happen once.
 - Non-home pages keep components in `src/components/<area>/` and display data in `src/lib/<area>-data.ts` (theory, article, ingredients, reports, products), mirroring the dashboard split so sample data can be swapped for live data in one place.

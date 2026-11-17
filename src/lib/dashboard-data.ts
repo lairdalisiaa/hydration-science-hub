@@ -29,6 +29,19 @@ export const goals = [
   { value: 75, label: "TEWL score" },
 ];
 
+export const featuredIngredient = {
+  name: "Epigallocatechin gallate",
+  shortName: "EGCG",
+  role: "Active",
+  evidence: "High (Human RCT)",
+  products: 1,
+  pKa: "7.65",
+  optimalRange: "0.10–2.00%",
+  penetration: 80,
+  solubility: 27,
+  summary: "Effective at low levels but poorly soluble.",
+};
+
 export const ticker = [
   { sym: "HERA", change: 22.0 },
   { sym: "RHDE", change: 16.2 },
