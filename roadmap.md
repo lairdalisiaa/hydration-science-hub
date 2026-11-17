@@ -62,3 +62,6 @@
 - [x] Articles phone: swipeable categories
 - [x] Skincare phone: fixed search box, swipeable filters, two-column coming-soon cards
 - [x] Phone layouts from mockup: Theory (4 tabs), Article, Skincare
+- [x] EGCG report: vertical left toolbar on phone (bottom bar removed); phone layouts for all sections
+- [ ] EGCG report fonts pass (pending user direction)
+- [x] Homepage desktop toolbar icons link to pages

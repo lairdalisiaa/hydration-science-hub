@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EgcgOverview } from "@/components/reports/EgcgOverview";
+import { MobileEgcgOverview } from "@/components/reports/MobileEgcgReport";
 
 export const Route = createFileRoute("/reports/egcg/")({
   head: () => ({ meta: [
@@ -10,5 +11,5 @@ export const Route = createFileRoute("/reports/egcg/")({
     { property: "og:type", content: "article" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
-  component: EgcgOverview,
+  component: () => (<><div className="hidden lg:block"><EgcgOverview /></div><MobileEgcgOverview /></>),
 });

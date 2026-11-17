@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CellSimulation } from "@/components/theory/CellSimulation";
+import { MobileCellSimulation } from "@/components/theory/MobileTheory";
 
 export const Route = createFileRoute("/reports/egcg/cell-simulation")({
   head: () => ({ meta: [
@@ -10,5 +11,5 @@ export const Route = createFileRoute("/reports/egcg/cell-simulation")({
     { property: "og:type", content: "article" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
-  component: CellSimulation,
+  component: () => (<><div className="hidden lg:block"><CellSimulation /></div><MobileCellSimulation /></>),
 });

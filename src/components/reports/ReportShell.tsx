@@ -27,10 +27,9 @@ const chips = [
 export function ReportShell({ children }: { children: ReactNode }) {
   return (
     <PageShell>
-      <MarketStrip />
-      <TimeBar />
-      <main className="px-4 py-6 md:pl-28 lg:pr-8">
-        <nav aria-label="Report sections" className="fixed left-[max(36px,calc((100vw-1400px)/2+12px))] top-1/2 z-20 hidden w-14 -translate-y-1/2 flex-col gap-5 rounded-2xl bg-card px-2 py-4 shadow-soft md:flex">
+      <div className="hidden lg:block"><MarketStrip /><TimeBar /></div>
+      <main className="py-6 pl-[4.25rem] pr-4 lg:pl-28 lg:pr-8">
+        <nav aria-label="Report sections" className="fixed left-2 top-1/2 z-30 flex w-12 -translate-y-1/2 flex-col gap-3 rounded-2xl bg-card px-1.5 py-3 shadow-soft lg:left-[max(36px,calc((100vw-1400px)/2+12px))] lg:w-14 lg:gap-5 lg:px-2 lg:py-4">
           {rail.map(({ to, icon: Icon, label }) => (
             <Link
               key={to}
@@ -38,7 +37,7 @@ export function ReportShell({ children }: { children: ReactNode }) {
               aria-label={label}
               title={label}
               activeOptions={{ exact: true }}
-              className="grid size-10 place-items-center rounded-xl bg-muted text-muted-foreground transition-colors hover:text-foreground"
+              className="grid size-9 place-items-center rounded-xl lg:size-10 bg-muted text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "!bg-primary !text-primary-foreground" }}
             >
               <Icon className="size-4" />
@@ -46,13 +45,6 @@ export function ReportShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className="min-w-0">{children}</div>
-        <nav aria-label="Mobile report sections" className="mt-4 flex flex-wrap gap-2 md:hidden">
-          {rail.map(({ to, icon: Icon, label }) => (
-            <Button key={to} variant="outline" size="icon" asChild>
-              <Link to={to} aria-label={label} title={label}><Icon className="size-4" /></Link>
-            </Button>
-          ))}
-        </nav>
       </main>
     </PageShell>
   );

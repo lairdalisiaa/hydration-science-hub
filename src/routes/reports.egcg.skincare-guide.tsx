@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EyeSerumGuide } from "@/components/reports/EyeSerumGuide";
+import { MobileEyeSerumGuide } from "@/components/reports/MobileEgcgReport";
 
 export const Route = createFileRoute("/reports/egcg/skincare-guide")({
   head: () => ({ meta: [
@@ -10,5 +11,5 @@ export const Route = createFileRoute("/reports/egcg/skincare-guide")({
     { property: "og:type", content: "article" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
-  component: EyeSerumGuide,
+  component: () => (<><div className="hidden lg:block"><EyeSerumGuide /></div><MobileEyeSerumGuide /></>),
 });

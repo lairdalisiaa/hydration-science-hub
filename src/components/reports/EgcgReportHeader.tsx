@@ -9,9 +9,9 @@ export function EgcgReportHeader() {
   return (
     <header className="mb-4 flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4">
       <div className="flex items-center gap-3">
-        <span className="size-11 shrink-0 rounded-full bg-secondary" aria-hidden />
+        <span className="hidden size-11 shrink-0 rounded-full bg-secondary lg:block" aria-hidden />
         <div>
-          <h1 className="text-3xl font-medium">{egcgOverview.name}</h1>
+          <h1 className="text-3xl font-medium"><span className="lg:hidden">Epigallocatechin <span className="font-script font-normal text-crimson">gallate</span></span><span className="hidden lg:inline">{egcgOverview.name}</span></h1>
           <p className="font-mono text-xs text-muted-foreground">{egcgOverview.code} · <Formula value={egcgOverview.formula} /></p>
         </div>
       </div>

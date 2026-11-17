@@ -6,21 +6,21 @@ import { Button } from "@/components/ui/button";
 import { ScoreRing } from "./ScoreRing";
 
 const tools = [
-  { icon: Home, label: "Home" },
-  { icon: LayoutGrid, label: "Dashboard" },
-  { icon: Globe, label: "Markets" },
-  { icon: Search, label: "Searches" },
-  { icon: FlaskConical, label: "Ingredients" },
-  { icon: Droplet, label: "Hydration" },
-];
+  { icon: Home, label: "Home", to: "/" },
+  { icon: LayoutGrid, label: "Theory", to: "/theory" },
+  { icon: Globe, label: "Trending products", to: "/theory/trending-products" },
+  { icon: Search, label: "Articles", to: "/articles" },
+  { icon: FlaskConical, label: "Ingredients", to: "/skincare" },
+  { icon: Droplet, label: "EGCG report", to: "/reports/egcg" },
+] as const;
 
 export function ToolRail({ className }: { className?: string }) {
   return (
     <nav aria-label="Dashboard tools" className={cn("flex flex-col gap-5 rounded-2xl bg-card px-2 py-4 shadow-soft", className)}>
-      {tools.map(({ icon: Icon, label }, i) => (
+      {tools.map(({ icon: Icon, label, to }, i) => (
         <Link
           key={label}
-          to="/"
+          to={to}
           aria-label={label}
           title={label}
           className={cn(
