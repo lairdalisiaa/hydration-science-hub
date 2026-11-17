@@ -251,13 +251,6 @@ export function ArticlePage() {
               ))}
             </ul>
           </Panel>
-          <div className="rounded-3xl bg-ink p-5 text-ink-foreground">
-            <p className="eyebrow text-[0.6rem] text-secondary">Plan with it</p>
-            <p className="mt-1 text-lg font-medium leading-snug">Add a green tea product to your routine</p>
-            <Button variant="blush" size="sm" className="mt-3 rounded-full" asChild>
-              <Link to="/reports/eye-serum">Send to planner</Link>
-            </Button>
-          </div>
         </aside>
       </div>
     </main>
