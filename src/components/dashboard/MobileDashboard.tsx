@@ -44,14 +44,14 @@ export function MobileDashboard() {
           <div className="flex flex-wrap items-center gap-2"><ScoreRing value={peak.score} size={60}><span className="tabular font-semibold">{peak.score}</span></ScoreRing><div><p className="text-sm font-semibold">{peak.concern}</p><p className="text-xs text-muted-foreground">12-mo demand</p></div></div>
         </div>}
       </div>
-      <FeaturedArticle className="backdrop-blur-xl [&_img]:aspect-[4/3]" />
+      <ExploreMarket className="backdrop-blur-xl [&_li]:py-0 [&_li>div.relative]:py-2 [&_li:first-child]:py-2" />
       <WidgetCarousel title={<>Top <span className="font-script text-2xl font-normal text-crimson">searches</span></>} count={topSearches.length}>
         {topSearches.map((item, index) => <article key={item.brand} className="flex h-40 w-40 shrink-0 snap-start flex-col justify-between rounded-3xl bg-card p-4 shadow-soft backdrop-blur-xl">
           <div className="flex items-start justify-between gap-2"><span className="tabular text-3xl">{String(index + 1).padStart(2, "0")}</span><span className={cn("tabular rounded-md px-1.5 py-1 text-xs font-semibold", item.change >= 0 ? "bg-positive-soft text-positive" : "bg-negative-soft text-negative")}>{item.change >= 0 ? "+" : ""}{item.change}%</span></div>
           <div><h3 className="text-sm font-semibold">{item.brand}</h3><p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{item.product}</p></div>
         </article>)}
       </WidgetCarousel>
-      <ExploreMarket className="backdrop-blur-xl [&_li]:py-0 [&_li>div.relative]:py-2 [&_li:first-child]:py-2" />
+      <FeaturedArticle className="backdrop-blur-xl [&_img]:aspect-[4/3]" />
       <WidgetCarousel title={<>Skinomic <span className="font-script text-2xl font-normal text-crimson">focus</span></>} count={skinomicFocus.length}>
         {skinomicFocus.map((item, index) => <article key={item.concern} className={cn("flex h-40 w-40 shrink-0 snap-start flex-col rounded-3xl p-4 shadow-soft", index === 0 ? "bg-ink text-ink-foreground" : "bg-card backdrop-blur-xl")}>
           <h3 className="eyebrow">{item.concern}</h3><p className="tabular mt-auto text-4xl font-semibold">{item.score}</p><p className={cn("mt-2 text-xs italic", index === 0 ? "text-ink-muted" : "text-muted-foreground")}>“{item.query}”</p>
@@ -64,8 +64,10 @@ export function MobileDashboard() {
           <p className="mt-3 text-xs text-muted-foreground">{featuredIngredient.summary}</p><Button variant="link" size="sm" className="mt-2 h-auto whitespace-normal p-0 text-xs" asChild><Link to="/reports/egcg">Full ingredient report <ArrowUpRight className="size-3 shrink-0" /></Link></Button>
         </div>
       </section>
-      <section className="rounded-3xl bg-ink p-4 text-ink-foreground"><h2 className="eyebrow text-secondary">Goals</h2><div className="mt-4 grid grid-cols-3 gap-2">{goals.map(goal => <div key={goal.label} className="flex flex-col items-center gap-2 text-center"><ScoreRing value={goal.value} size={48} tone="ink"><span className="tabular text-xs">{goal.value}%</span></ScoreRing><p className="text-xs text-ink-muted">{goal.label}</p></div>)}</div></section>
-      <PartnerCard />
+      <div className="grid grid-cols-2 gap-3">
+        <section className="rounded-3xl bg-ink p-4 text-ink-foreground"><h2 className="eyebrow text-secondary">Goals</h2><div className="mt-3 flex flex-col gap-2">{goals.map(goal => <div key={goal.label} className="flex items-center gap-2"><ScoreRing value={goal.value} size={40} tone="ink"><span className="tabular text-[0.6rem]">{goal.value}%</span></ScoreRing><p className="min-w-0 text-xs text-ink-muted">{goal.label}</p></div>)}</div></section>
+        <PartnerCard className="p-4 [&_h3]:text-base [&_p.text-sm]:text-xs" />
+      </div>
       <SkinPerformance className="[&_ul]:grid [&_ul]:grid-cols-4 [&_ul]:gap-x-1 [&_li]:w-auto [&_li>span]:text-xs [&_h2]:text-3xl" />
       <TewlTrend />
     </div>

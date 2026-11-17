@@ -50,4 +50,6 @@
 - [x] Article: remove PDRN Explained from the next article card
 - [x] Article: replace related articles with one Coming soon entry
 - [x] Article: capitalise descriptor as Hydration Science Hub
+- [x] Home phone: swap Green Tea and Explore Market; Goals beside newsletter
+- [ ] Phone layouts for other pages (awaiting which page first)
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
