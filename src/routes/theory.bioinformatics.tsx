@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Bioinformatics } from "@/components/theory/Bioinformatics";
+import { MobileBioinformatics } from "@/components/theory/MobileTheory";
 
 export const Route = createFileRoute("/theory/bioinformatics")({
   head: () => ({
@@ -12,5 +13,5 @@ export const Route = createFileRoute("/theory/bioinformatics")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Bioinformatics,
+  component: () => (<><div className="hidden lg:block"><Bioinformatics /></div><MobileBioinformatics /></>),
 });

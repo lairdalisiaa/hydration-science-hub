@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePage } from "@/components/article/ArticlePage";
+import { MobileArticle } from "@/components/article/MobileArticle";
 import { PageShell } from "@/components/site/PageShell";
 
 export const Route = createFileRoute("/article")({
@@ -15,7 +16,8 @@ export const Route = createFileRoute("/article")({
   }),
   component: () => (
     <PageShell>
-      <ArticlePage />
+      <div className="hidden lg:block"><ArticlePage /></div>
+      <MobileArticle />
     </PageShell>
   ),
 });

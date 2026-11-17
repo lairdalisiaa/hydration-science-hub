@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TrendingProducts } from "@/components/theory/TrendingProducts";
+import { MobileTrendingProducts } from "@/components/theory/MobileTheory";
 
 export const Route = createFileRoute("/theory/trending-products")({
   head: () => ({
@@ -12,5 +13,5 @@ export const Route = createFileRoute("/theory/trending-products")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: TrendingProducts,
+  component: () => (<><div className="hidden lg:block"><TrendingProducts /></div><MobileTrendingProducts /></>),
 });

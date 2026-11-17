@@ -22,7 +22,7 @@ describe("App routing", () => {
     ["/articles", "/articles"],
     ["/skincare", "/skincare"],
     ["/reports", "/reports/"],
-    ["/reports/egcg", "/reports/egcg"],
+    ["/reports/egcg", "/reports/egcg/"],
     ["/reports/eye-serum", "/reports/eye-serum/"],
     ["/reports/eye-serum/bioinformatics", "/reports/eye-serum/bioinformatics"],
   ])("matches a page for %s", (path, routeId) => {

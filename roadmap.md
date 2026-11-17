@@ -56,3 +56,4 @@
 - [x] Theory phone: swipeable section tabs
 - [x] Articles phone: swipeable categories
 - [x] Skincare phone: fixed search box, swipeable filters, two-column coming-soon cards
+- [x] Phone layouts from mockup: Theory (4 tabs), Article, Skincare

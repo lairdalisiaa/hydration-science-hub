@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CellSimulation } from "@/components/theory/CellSimulation";
+import { MobileCellSimulation } from "@/components/theory/MobileTheory";
 
 export const Route = createFileRoute("/theory/")({
   head: () => ({
@@ -12,5 +13,5 @@ export const Route = createFileRoute("/theory/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: CellSimulation,
+  component: () => (<><div className="hidden lg:block"><CellSimulation /></div><MobileCellSimulation /></>),
 });

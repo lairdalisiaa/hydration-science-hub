@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
+import { MobileSkincare } from "@/components/skincare/MobileSkincare";
 import { IngredientLibrary } from "@/components/skincare/IngredientLibrary";
 
 export const Route = createFileRoute("/skincare")({
@@ -19,7 +20,8 @@ export const Route = createFileRoute("/skincare")({
 function SkincarePage() {
   return (
     <PageShell>
-      <IngredientLibrary />
+      <div className="hidden lg:block"><IngredientLibrary /></div>
+      <MobileSkincare />
     </PageShell>
   );
 }

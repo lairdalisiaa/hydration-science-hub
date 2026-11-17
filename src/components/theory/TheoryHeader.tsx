@@ -13,7 +13,7 @@ const tabs = [
 export function TheoryHeader({ dark }: { dark: boolean }) {
   return (
     <div className="flex flex-col gap-5">
-      <div className="px-4 sm:px-6">
+      <div className={cn("rounded-3xl p-4 shadow-soft backdrop-blur-xl sm:px-6 lg:rounded-none lg:bg-transparent lg:p-0 lg:px-6 lg:shadow-none lg:backdrop-blur-none", dark ? "bg-ink-raised" : "bg-card")}>
         <div className="flex items-center gap-4 sm:gap-6 lg:ml-[114px]">
           <img
             src={skinImg}

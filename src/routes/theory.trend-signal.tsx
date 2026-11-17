@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TrendSignal } from "@/components/theory/TrendSignal";
+import { MobileTrendSignal } from "@/components/theory/MobileTheory";
 
 export const Route = createFileRoute("/theory/trend-signal")({
   head: () => ({
@@ -12,5 +13,5 @@ export const Route = createFileRoute("/theory/trend-signal")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: TrendSignal,
+  component: () => (<><div className="hidden lg:block"><TrendSignal /></div><MobileTrendSignal /></>),
 });

@@ -40,3 +40,4 @@ use the editor.
 - Theory tabs are separate child routes of the `theory.tsx` layout, which switches the page to the ink theme for Trending Products.
 - The desktop homepage pairs the article/search column with the focus/ingredient column in a shared grid; the article photo takes remaining height so their bottom cards align without fixed card heights.
 - Articles browsing lives at /articles while /article retains the existing Green Tea detail page, so existing direct links continue to work.
+- Shared phone-only building blocks (cards, swipe rows) live in `src/components/site/mobile.tsx`; page-specific phone layouts sit beside their desktop components as Mobile*.tsx.
