@@ -43,3 +43,4 @@ use the editor.
 - Keep the full Green Tea detail layout on both devices; mobile Articles browsing reuses shared article data for its preview sections and Keep reading row, without a separate reports section.
 - Shared phone-only building blocks (cards, swipe rows) live in `src/components/site/mobile.tsx`; page-specific phone layouts sit beside their desktop components as Mobile*.tsx.
 - Mobile carousel typography is opt-in per layout so reference-specific Theory headings do not change other pages or desktop presentation.
+- Reports & Guides uses a dedicated mobile layout reading shared report availability and filters; counts derive from that data rather than mockup totals.

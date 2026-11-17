@@ -1,4 +1,5 @@
 # Roadmap
+- [x] Reports & Guides phone: mockup featured report, published/filter tiles, report and guide swipe rows; preserve desktop and availability
 - [x] Articles phone: add reference intro, takeaways, quote and routine tiles before Keep reading; include Green Tea in that row and remove Upcoming reports
 - [x] Restore the earlier full Green Tea detail page and apply the phone browsing layout to Articles with Coming soon reports
 - [x] Restore Green Tea article phone layout to the version before the latest article styling change

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { ReportsIndex } from "@/components/reports/ReportsIndex";
+import { MobileReportsIndex } from "@/components/reports/MobileReportsIndex";
 
 export const Route = createFileRoute("/reports/")({
   head: () => ({
@@ -19,7 +20,8 @@ export const Route = createFileRoute("/reports/")({
 function ReportsPage() {
   return (
     <PageShell>
-      <ReportsIndex />
+      <div className="hidden lg:block"><ReportsIndex /></div>
+      <MobileReportsIndex />
     </PageShell>
   );
 }
