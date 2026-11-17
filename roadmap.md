@@ -53,3 +53,6 @@
 - [x] Home phone: swap Green Tea and Explore Market; Goals beside newsletter
 - [x] Phone check of all pages: fixed bioinformatics report overflow
 - [ ] Connect homepage dashboard sections to live data (replace sample values in src/lib/dashboard-data.ts)
+- [x] Theory phone: swipeable section tabs
+- [x] Articles phone: swipeable categories
+- [x] Skincare phone: fixed search box, swipeable filters, two-column coming-soon cards

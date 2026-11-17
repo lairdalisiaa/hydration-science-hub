@@ -31,7 +31,7 @@ export function ArticlesIndex() {
             <SelectContent><SelectItem value="recent">Recently Added</SelectItem><SelectItem value="title">Title A–Z</SelectItem></SelectContent>
           </Select>
         </div>
-        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Article categories">
+        <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 [&>*]:shrink-0" role="group" aria-label="Article categories">
           {articleCategories.map((item) => <Button key={item} variant="outline" size="sm" aria-pressed={category === item} onClick={() => setCategory(item)} className={cn("rounded-full px-5 shadow-none", category === item && "border-primary text-primary")}>{item}</Button>)}
         </div>
       </header>

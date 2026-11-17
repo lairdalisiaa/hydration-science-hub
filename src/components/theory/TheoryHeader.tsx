@@ -32,14 +32,14 @@ export function TheoryHeader({ dark }: { dark: boolean }) {
           </div>
         </div>
       </div>
-      <nav aria-label="Theory sections" className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+      <nav aria-label="Theory sections" className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] lg:mx-0 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0">
         {tabs.map((t) => (
           <Link
             key={t.to}
             to={t.to}
             activeOptions={{ exact: true }}
             className={cn(
-              "flex items-center gap-3 rounded-full border px-4 py-2.5 text-sm font-medium transition-colors",
+              "flex shrink-0 snap-start items-center gap-3 whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-medium transition-colors lg:whitespace-normal",
               dark ? "border-ink-raised bg-ink-raised/50 hover:bg-ink-raised" : "border-border bg-card hover:bg-muted",
             )}
             activeProps={{

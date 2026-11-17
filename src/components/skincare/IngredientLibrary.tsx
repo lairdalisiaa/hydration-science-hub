@@ -22,7 +22,7 @@ export function IngredientLibrary() {
       <p className="mt-1 text-muted-foreground">Epigallocatechin gallate · more ingredients coming soon.</p>
 
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-        <label className="flex h-11 flex-1 items-center gap-2 rounded-full border border-border bg-card px-4">
+        <label className="flex h-11 shrink-0 items-center sm:flex-1 gap-2 rounded-full border border-border bg-card px-4">
           <Search className="size-4 text-muted-foreground" />
           <span className="sr-only">Search ingredients</span>
           <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by ingredient, function or concern" className="h-full flex-1 bg-transparent text-sm outline-none" />
@@ -37,7 +37,7 @@ export function IngredientLibrary() {
         </label>
       </div>
 
-      <div role="group" aria-label="Filter by concern" className="mt-3 flex flex-wrap gap-1.5">
+      <div role="group" aria-label="Filter by concern" className="-mx-4 mt-3 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 [&>*]:shrink-0">
         {(["All", ...concerns] as const).map((c) => (
           <button
             key={c}
@@ -62,9 +62,9 @@ export function IngredientLibrary() {
       {shown.length === 0 ? (
         <p className="mt-4 rounded-3xl bg-card p-10 text-center text-sm text-muted-foreground">No ingredients match "{query}".</p>
       ) : view === "Grid" ? (
-        <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-3 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {shown.map((i) => (
-            <li key={i.name}>
+            <li key={i.name} className={i.comingSoon ? undefined : "col-span-2 sm:col-span-1"}>
               <IngredientCard item={i} />
             </li>
           ))}
@@ -98,7 +98,7 @@ function IngredientCard({ item: i }: { item: LibraryIngredient }) {
       <FormulaTile formula="Coming soon" />
       <p className="mt-3 font-medium leading-tight">{i.name}</p>
       <p className="mt-2 text-xs text-muted-foreground">Coming soon</p>
-      <div className="mt-auto grid grid-cols-3 gap-2 border-t border-border pt-2">
+      <div className="mt-auto hidden grid-cols-3 gap-2 border-t border-border pt-2 sm:grid">
         <Metric label="Searches" value="Coming soon" />
         <Metric label="Saves" value="Coming soon" />
         <Metric label="Products" value="Coming soon" />
