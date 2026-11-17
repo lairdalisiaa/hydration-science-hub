@@ -23,7 +23,7 @@ export function MobileCellSimulation() {
       <section className="rounded-3xl bg-ink p-4 text-ink-foreground">
         <div className="flex items-center justify-between gap-2"><MobileEyebrow className="text-secondary">Cell simulation</MobileEyebrow>
           <div className="flex rounded-full bg-ink-raised p-0.5 text-[0.65rem]">{(Object.keys(deliveryModes) as DeliveryMode[]).map(m => <button key={m} onClick={() => setMode(m)} className={cn("rounded-full px-2 py-1", m === mode ? "bg-secondary text-secondary-foreground" : "text-ink-muted")}>{m}</button>)}</div></div>
-        <p className="mt-2 font-script text-3xl text-crimson-bright">where it goes in skin</p>
+        <p className="mt-2 font-serif text-[26px] font-normal italic leading-[1.05] text-theory-heading-ink">where it goes in skin</p>
         <ol className="mt-3 flex flex-col gap-1.5 text-xs">{skinLayers.map((l, i) => <li key={l.name} className={cn("flex items-center justify-between rounded-xl px-3 py-3", i === 0 ? "bg-ink-raised" : "bg-ink-raised/60")}><span>{l.name}</span>{i === d.layer ? <span className="size-3 rounded-full border-2 border-crimson-bright bg-ink-foreground" /> : <span className="font-mono text-ink-muted">{l.detail}</span>}</li>)}</ol>
         <p className="mt-2 text-xs text-ink-muted">{d.label}</p>
       </section>
@@ -31,13 +31,13 @@ export function MobileCellSimulation() {
         <MobileCard><MobileEyebrow>TEWL</MobileEyebrow><p className="tabular mt-6 text-4xl">{d.tewl}<span className="ml-1 text-xs text-muted-foreground">g/m²/h</span></p><p className="mt-1 text-xs text-muted-foreground">Lower is better</p></MobileCard>
         <MobileCard className="bg-ingredient"><MobileEyebrow>pKa signal</MobileEyebrow><div className="mt-4 flex items-center gap-2"><ScoreRing value={55} size={56}><span className="tabular text-sm font-semibold">7.65</span></ScoreRing><p className="text-xs">Sample estimate</p></div></MobileCard>
       </div>
-      <MobileCarousel title="Ingredient" script="profile" count={profileCards.length}>
-        {profileCards.map(c => <MobileCard key={c.title} className="w-72"><p className="font-script text-2xl text-crimson">{c.title}</p><dl className="mt-2 flex flex-col gap-2 text-xs">{c.rows.map(r => <div key={r.label} className="border-t border-border pt-2"><dt className="eyebrow text-[0.6rem] text-muted-foreground">{r.label}</dt><dd className="mt-0.5">{r.value}</dd></div>)}</dl></MobileCard>)}
+      <MobileCarousel typography="theory-mockup" title="Ingredient" script="profile" count={profileCards.length}>
+        {profileCards.map(c => <MobileCard key={c.title} className="w-72"><p className="font-serif text-[30px] font-normal italic leading-[1.05] text-theory-heading-soft">{c.title}</p><dl className="mt-2 flex flex-col gap-2 text-xs">{c.rows.map(r => <div key={r.label} className="border-t border-border pt-2"><dt className="eyebrow text-[0.6rem] text-muted-foreground">{r.label}</dt><dd className="mt-0.5">{r.value}</dd></div>)}</dl></MobileCard>)}
       </MobileCarousel>
-      <MobileCarousel title="Performance" script="signal" count={performanceSignal.length}>
+      <MobileCarousel typography="theory-mockup" title="Performance" script="signal" count={performanceSignal.length}>
         {performanceSignal.map(p => <MobileCard key={p.label} className="flex w-36 flex-col items-center gap-2 text-center"><ScoreRing value={p.meter} size={64}><span className="tabular text-xs font-semibold">{p.value}</span></ScoreRing><p className="text-xs font-medium">{p.label}</p><p className="text-[0.6rem] text-muted-foreground">{p.unit}</p></MobileCard>)}
       </MobileCarousel>
-      <MobileCarousel title="Target" script="mechanisms" count={targetMechanisms.length}>
+      <MobileCarousel typography="theory-mockup" title="Target" script="mechanisms" count={targetMechanisms.length}>
         {targetMechanisms.map(m => <MobileCard key={m.target} className="flex h-40 w-40 flex-col justify-between bg-ingredient"><p className="eyebrow text-[0.6rem]">{m.layer}</p><p className="text-sm font-semibold">{m.target}</p></MobileCard>)}
       </MobileCarousel>
     </div>
@@ -50,7 +50,7 @@ export function MobileTrendSignal() {
   return (
     <div className={wrap}>
       <MobileCard><p className="text-lg font-semibold">{trendIngredient.name}</p><p className="font-mono text-xs text-muted-foreground">{trendIngredient.short} · {trendIngredient.family}</p></MobileCard>
-      <MobileCarousel title="Trend" script="at a glance" count={trendStats.length}>
+      <MobileCarousel typography="theory-mockup" title="Trend" script="at a glance" count={trendStats.length}>
         {trendStats.map(s => <MobileCard key={s.eyebrow} className="flex h-40 w-40 flex-col justify-between"><p className="eyebrow text-[0.6rem]">{s.eyebrow}</p><div><p className={cn("text-3xl font-semibold", s.positive && "text-positive")}>{s.value}</p><p className="mt-1 text-[0.65rem] text-muted-foreground">{s.note}</p></div></MobileCard>)}
       </MobileCarousel>
       <MobileCard>
@@ -61,7 +61,7 @@ export function MobileTrendSignal() {
         <MobileCard className="flex flex-col items-center"><MobileEyebrow className="self-start">Signal score</MobileEyebrow><ScoreRing value={signalScore.total} size={84} tone="ink" className="mt-3"><span className="tabular text-2xl font-semibold">{signalScore.total}</span></ScoreRing></MobileCard>
         <MobileCard className="bg-ingredient"><MobileEyebrow>What it means</MobileEyebrow><p className="mt-3 line-clamp-6 text-xs">{trendMeaning}</p></MobileCard>
       </div>
-      <MobileCarousel title="Signal" script="breakdown" count={signalCards.length}>
+      <MobileCarousel typography="theory-mockup" title="Signal" script="breakdown" count={signalCards.length}>
         {signalCards.map(c => <MobileCard key={c.title} className="w-64"><p className="font-semibold">{c.title}</p><p className="text-xs text-muted-foreground">{c.note}</p><dl className="mt-2 text-xs">{c.rows.map(([k, v]) => <div key={k} className="flex justify-between border-t border-border py-1.5"><dt className="text-muted-foreground">{k}</dt><dd className="font-semibold">{v}</dd></div>)}</dl></MobileCard>)}
       </MobileCarousel>
     </div>
@@ -77,14 +77,14 @@ export function MobileBioinformatics() {
       </div>
       <MobileCard><MobileEyebrow>Activity profile</MobileEyebrow><ul className="mt-3 flex flex-col gap-2 text-xs">{activityProfile.map(a => <li key={a.label} className="grid grid-cols-[minmax(0,1fr)_80px_44px] items-center gap-2"><span className="min-w-0">{a.label}</span><span className="h-1 rounded-full bg-muted"><span className="block h-full rounded-full bg-primary" style={{ width: `${a.value}%` }} /></span><span className="text-right text-muted-foreground">{a.level}</span></li>)}</ul></MobileCard>
       <section className="relative overflow-hidden rounded-3xl"><img src={moleculeImg} alt="EGCG molecule" width={768} height={896} loading="lazy" className="aspect-square w-full object-cover" /><span className="absolute left-3 top-3 rounded-md bg-ink px-2 py-1 font-mono text-[0.6rem] text-ink-foreground">SAMPLE · INGREDIENT RELATIONSHIPS</span><p className="absolute bottom-3 left-4 font-script text-3xl text-crimson">EGCG, mapped</p></section>
-      <MobileCarousel title="Pathways" script="& outcomes" count={mechanisms.length}>
+      <MobileCarousel typography="theory-mockup" title="Pathways" script="& outcomes" count={mechanisms.length}>
         {mechanisms.map((m, i) => <MobileCard key={m.name} className="flex h-44 w-40 flex-col"><p className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</p><p className="mt-1 font-semibold">{m.name}</p><p className="text-[0.65rem] text-muted-foreground">{m.code}</p><span className="mt-auto self-start rounded-full bg-blush px-2 py-1 text-[0.65rem]">→ {m.outcome}</span></MobileCard>)}
       </MobileCarousel>
-      <MobileCarousel title="Key" script="synergies" count={synergies.length}>
+      <MobileCarousel typography="theory-mockup" title="Key" script="synergies" count={synergies.length}>
         {synergies.map(s => <MobileCard key={s.partner} className="w-60"><p className="font-mono text-[0.65rem] text-muted-foreground">EGCG</p><p className="font-semibold">+ {s.partner}</p><p className="mt-1 text-xs text-muted-foreground">{s.note}</p></MobileCard>)}
       </MobileCarousel>
       <p className="-mt-2 text-[0.65rem] text-muted-foreground">Illustrative pairings, not clinically verified.</p>
-      <MobileCarousel title="Literature" script="evidence" count={literature.length}>
+      <MobileCarousel typography="theory-mockup" title="Literature" script="evidence" count={literature.length}>
         {literature.map(l => <MobileCard key={l.kind} className="flex h-40 w-40 flex-col justify-between"><p className="eyebrow text-[0.6rem]">{l.kind}</p><div><p className="tabular text-4xl font-semibold">{l.count}</p><p className="text-[0.65rem] text-muted-foreground">{l.note}</p></div></MobileCard>)}
       </MobileCarousel>
     </div>

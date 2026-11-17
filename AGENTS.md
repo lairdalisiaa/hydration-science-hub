@@ -41,3 +41,4 @@ use the editor.
 - The desktop homepage pairs the article/search column with the focus/ingredient column in a shared grid; the article photo takes remaining height so their bottom cards align without fixed card heights.
 - Articles browsing lives at /articles while /article retains the existing Green Tea detail page, so existing direct links continue to work.
 - Shared phone-only building blocks (cards, swipe rows) live in `src/components/site/mobile.tsx`; page-specific phone layouts sit beside their desktop components as Mobile*.tsx.
+- Mobile carousel typography is opt-in per layout so reference-specific Theory headings do not change other pages or desktop presentation.

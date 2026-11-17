@@ -9,7 +9,7 @@ export const Route = createFileRoute("/theory")({
 function TheoryLayout() {
   const dark = useRouterState({ select: (s) => s.location.pathname.startsWith("/theory/trending-products") });
   return (
-    <PageShell tone={dark ? "ink" : "light"}>
+    <PageShell tone={dark ? "ink" : "light"} className={dark ? "" : "theory-mobile-paper"}>
       <main className="flex flex-col gap-5 px-4 py-6 lg:px-8">
         <TheoryHeader dark={dark} />
         <Outlet />
