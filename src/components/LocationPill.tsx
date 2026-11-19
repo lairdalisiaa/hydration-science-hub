@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LocationPill from "@/components/LocationPill";
+<LocationPill />
 
 const CITIES = ["New York", "London"] as const;
 type City = (typeof CITIES)[number];
