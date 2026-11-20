@@ -52,6 +52,10 @@ export function ExploreMarket({ className }: { className?: string }) {
     </li>
   );
 })}
+      </ul>
+    </section>
+  );
+}
 
 export function PartnerCard({ className }: { className?: string }) {
   return (
