@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { featuredIngredient, goals, skinomicFocus, topSearches } from "@/lib/dashboard-data";
+import { featuredIngredient, goals } from "@/lib/dashboard-data";
 import { cn } from "@/lib/utils";
 import moleculeImg from "@/assets/egcg-molecule.jpg";
 import { ExploreMarket, PartnerCard } from "./ExploreMarket";
@@ -11,6 +11,8 @@ import { LocationPill } from "./LocationPill";
 import { ScoreRing } from "./ScoreRing";
 import { SkinPerformance } from "./SkinPerformance";
 import { TewlTrend } from "./TewlTrend";
+import { getFocus, getTopSearches } from "@/lib/market-data";
+import { useMarket } from "./market-context";
 
 function WidgetCarousel({ title, count, children }: { title: ReactNode; count: number; children: ReactNode }) {
   return (
@@ -25,6 +27,9 @@ function WidgetCarousel({ title, count, children }: { title: ReactNode; count: n
 }
 
 export function MobileDashboard() {
+  const { city } = useMarket();
+  const topSearches = getTopSearches(city);
+  const skinomicFocus = getFocus(city);
   const topSearch = topSearches[0];
   const peak = skinomicFocus.reduce<(typeof skinomicFocus)[number] | undefined>((best, item) => !best || item.score > best.score ? item : best, undefined);
   return (
