@@ -14,34 +14,44 @@ export function ExploreMarket({ className }: { className?: string }) {
       </div>
       <p className="mt-1 text-sm text-muted-foreground">Where else it's heating up, relative to New York.</p>
       <ul className="mt-4 flex flex-col gap-1.5">
-        {hubs.map((h, i) =>
-          i === 0 ? (
-            <li
-  key={h.city}
-  onClick={() => setCity(h.city)}
-  className={cn("flex cursor-pointer items-center justify-between rounded-xl bg-ink px-4 py-4 text-sm text-ink-foreground", city === h.city && "ring-2 ring-primary")}
->
-              <span>{h.city}</span>
-              <span className="tabular">{h.share}%</span>
-            </li>
-          ) : (
-            <li
-  key={h.city}
-  onClick={() => setCity(h.city)}
-  className={cn("relative cursor-pointer overflow-hidden rounded-xl bg-muted text-sm", city === h.city && "ring-2 ring-primary")}
->
-              <div className="absolute inset-y-0 left-0 bg-blush" style={{ width: `${h.share}%` }} />
-              <div className="relative flex items-center justify-between px-4 py-4">
-                <span>{h.city}</span>
-                <span className="tabular">{h.share}%</span>
-              </div>
-            </li>
-          ),
+        {hubs.map((h, i) => {
+  const selected = city === h.city;
+  const badge = (
+    <span className="flex items-center gap-2">
+      <span className="tabular">{h.share}%</span>
+      <span
+        className={cn(
+          "flex size-5 items-center justify-center rounded-full",
+          selected ? "bg-primary text-primary-foreground" : "invisible",
         )}
-      </ul>
-    </section>
+      >
+        <Check className="size-3" strokeWidth={3} />
+      </span>
+    </span>
   );
-}
+  return i === 0 ? (
+    <li
+      key={h.city}
+      onClick={() => setCity(h.city)}
+      className="flex cursor-pointer items-center justify-between rounded-xl bg-ink px-4 py-4 text-sm text-ink-foreground"
+    >
+      <span>{h.city}</span>
+      {badge}
+    </li>
+  ) : (
+    <li
+      key={h.city}
+      onClick={() => setCity(h.city)}
+      className="relative cursor-pointer overflow-hidden rounded-xl bg-muted text-sm"
+    >
+      <div className="absolute inset-y-0 left-0 bg-blush" style={{ width: `${h.share}%` }} />
+      <div className="relative flex items-center justify-between px-4 py-4">
+        <span>{h.city}</span>
+        {badge}
+      </div>
+    </li>
+  );
+})}
 
 export function PartnerCard({ className }: { className?: string }) {
   return (
