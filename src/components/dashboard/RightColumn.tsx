@@ -7,8 +7,6 @@ import { useMarket } from "./market-context";
 import { cn } from "@/lib/utils";
 import moleculeImg from "@/assets/egcg-molecule.jpg";
 
-  const { city } = useMarket();
-  const skinomicFocus = getFocus(city);
 export function SkinomicFocus({ className }: { className?: string }) {
   const { city } = useMarket();
   const skinomicFocus = getFocus(city);
