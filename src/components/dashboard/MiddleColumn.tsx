@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { topSearches } from "@/lib/dashboard-data";
+import { getTopSearches } from "@/lib/market-data";
+import { useMarket } from "./market-context";
 import { article } from "@/lib/article-data";
 import { cn } from "@/lib/utils";
 import articleImg from "@/assets/green-tea-glass-skin.jpg";
@@ -31,10 +32,12 @@ export function FeaturedArticle({ className }: { className?: string }) {
 }
 
 export function TopSearches({ className }: { className?: string }) {
+  const { city } = useMarket();
+  const topSearches = getTopSearches(city);
   return (
     <section className={cn("flex flex-col rounded-3xl bg-card p-5 shadow-soft", className)}>
       <div className="flex items-start justify-between gap-2">
-        <h2 className="text-xl font-medium leading-tight">New York Top Searches</h2>
+        <h2 className="text-xl font-medium leading-tight">{city} Top Searches</h2>
         <span className="shrink-0 pt-1 text-xs text-muted-foreground">vs prior week</span>
       </div>
       <p className="text-sm text-muted-foreground">Who's getting all the attention.</p>
