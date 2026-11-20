@@ -7,6 +7,8 @@ import { useMarket } from "./market-context";
 import { cn } from "@/lib/utils";
 import moleculeImg from "@/assets/egcg-molecule.jpg";
 
+  const { city } = useMarket();
+  const skinomicFocus = getFocus(city);
 export function SkinomicFocus({ className }: { className?: string }) {
   return (
     <section className={cn("rounded-3xl bg-card p-5 shadow-soft", className)}>
