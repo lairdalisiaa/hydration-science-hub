@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function Ticker() {
   const items = [...ticker, ...ticker];
   return (
-    <div className="flex items-stretch overflow-hidden border-t-2 border-primary bg-ink font-mono text-xs text-ink-foreground">
+    <div className="fixed inset-x-0 bottom-0 z-40 flex items-stretch overflow-hidden border-t-2 border-primary bg-ink font-mono text-xs text-ink-foreground">
       <span className="z-10 flex shrink-0 items-center gap-2 rounded-r-full bg-secondary px-5 py-3 text-secondary-foreground">
         <span className="size-1.5 animate-pulse rounded-full bg-primary" /> LIVE
       </span>
