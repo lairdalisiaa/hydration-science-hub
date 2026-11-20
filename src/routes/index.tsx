@@ -4,14 +4,7 @@ import { DesktopDashboard } from "@/components/dashboard/DesktopDashboard";
 import { MobileDashboard } from "@/components/dashboard/MobileDashboard";
 import { Ticker } from "@/components/dashboard/Ticker";
 
-    <MarketProvider>
-      <PageShell footer={<Ticker />}>
-        <main className="pb-14">
-          <DesktopDashboard />
-          <MobileDashboard />
-        </main>
-      </PageShell>
-    </MarketProvider>
+import { MarketProvider } from "@/components/dashboard/market-context";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -28,11 +21,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-        <PageShell footer={<Ticker />}>
-      <main className="pb-14">
-        <DesktopDashboard />
-        <MobileDashboard />
-      </main>
-    </PageShell>
+    <MarketProvider>
+      <PageShell footer={<Ticker />}>
+        <main className="pb-14">
+          <DesktopDashboard />
+          <MobileDashboard />
+        </main>
+      </PageShell>
+    </MarketProvider>
   );
 }
