@@ -21,10 +21,10 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <PageShell footer={<Ticker />}>
-      <main>
+      <main className="pb-14">
         <DesktopDashboard />
         <MobileDashboard />
-      </main>
+      <main className="pb-14">
     </PageShell>
   );
 }
