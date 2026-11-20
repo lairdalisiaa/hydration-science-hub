@@ -1,25 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const CITIES = ["New York", "London"];
+const CITIES = [
+  { name: "New York", tz: "America/New_York" },
+  { name: "London", tz: "Europe/London" },
+] as const;
 
-export default function LocationPill() {
-  const [city, setCity] = useState(CITIES[0]);
+export function LocationPill({ className }: { className?: string }) {
+  const [cityName, setCityName] = useState<string>(CITIES[0].name);
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setNow(new Date());
+    const id = setInterval(() => setNow(new Date()), 30_000);
+    return () => clearInterval(id);
+  }, []);
+
+  const city = CITIES.find((c) => c.name === cityName) ?? CITIES[0];
+  const date = now ? now.toLocaleDateString("en-US", { timeZone: city.tz, weekday: "short", month: "short", day: "numeric" }) : "—";
+  const time = now ? now.toLocaleTimeString("en-US", { timeZone: city.tz, hour: "numeric", minute: "2-digit" }) : "";
 
   return (
-    <label className="relative inline-flex items-center rounded-full border border-black/10 bg-[#f5f5f5] px-5 py-3 text-lg text-neutral-900">
-      <span aria-hidden className="mr-2">📍</span>
-      <span>{city}</span>
-      <span aria-hidden className="ml-3 text-sm">▾</span>
+    <div
+      className={cn(
+        "relative flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-2xl bg-card px-4 py-3 shadow-soft focus-within:ring-2 focus-within:ring-primary/40",
+        className,
+      )}
+    >
+      <span className="flex items-center gap-3 text-sm font-medium">
+        <span className="size-3.5 rounded-sm bg-primary" /> {city.name}
+        <ChevronDown aria-hidden className="size-3.5 opacity-60" />
+      </span>
+      <span className="tabular flex items-center gap-2 whitespace-nowrap text-xs text-muted-foreground">
+        <span className="size-1.5 animate-pulse rounded-full bg-positive" />
+        {date} · {time}
+      </span>
       <select
         aria-label="Choose location"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
+        value={cityName}
+        onChange={(e) => setCityName(e.target.value)}
         className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
       >
         {CITIES.map((c) => (
-          <option key={c} value={c}>{c}</option>
+          <option key={c.name} value={c.name}>{c.name}</option>
         ))}
       </select>
-    </label>
+    </div>
   );
 }
