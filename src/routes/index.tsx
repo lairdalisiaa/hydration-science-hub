@@ -4,6 +4,14 @@ import { DesktopDashboard } from "@/components/dashboard/DesktopDashboard";
 import { MobileDashboard } from "@/components/dashboard/MobileDashboard";
 import { Ticker } from "@/components/dashboard/Ticker";
 
+    <MarketProvider>
+      <PageShell footer={<Ticker />}>
+        <main className="pb-14">
+          <DesktopDashboard />
+          <MobileDashboard />
+        </main>
+      </PageShell>
+    </MarketProvider>
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
