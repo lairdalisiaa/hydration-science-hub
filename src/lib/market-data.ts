@@ -57,5 +57,57 @@ export const cityFocus: Record<string, Focus[]> = {
   ],
 };
 
+export const cityTopSearches: Record<string, TopSearch[]> = {
+  "New York": [
+    { brand: "CeraVe", product: "Hydrating Facial Cleanser", change: 8.4 },
+    { brand: "Rhode", product: "Peptide Lip Treatment", change: 16.2 },
+    { brand: "La Roche-Posay", product: "Toleriane Double Repair Moisturizer", change: 5.1 },
+    { brand: "Rare Beauty", product: "Soft Pinch Liquid Blush", change: -3.8 },
+    { brand: "Charlotte Tilbury", product: "Hollywood Flawless Filter", change: -6.5 },
+  ],
+  Frankfurt: [
+    { brand: "La Roche-Posay", product: "Toleriane Double Repair Moisturizer", change: 7.3 },
+    { brand: "CeraVe", product: "Hydrating Facial Cleanser", change: 4.5 },
+    { brand: "The Ordinary", product: "Niacinamide 10% + Zinc 1%", change: -2.9 },
+    { brand: "Paula's Choice", product: "Skin Perfecting 2% BHA Liquid", change: 11.8 },
+    { brand: "Bioderma", product: "Sensibio H2O Micellar Water", change: -4.1 },
+  ],
+  Madrid: [
+    { brand: "Rare Beauty", product: "Soft Pinch Liquid Blush", change: 14.5 },
+    { brand: "CeraVe", product: "Hydrating Facial Cleanser", change: 9.2 },
+    { brand: "La Roche-Posay", product: "Toleriane Double Repair Moisturizer", change: 6.0 },
+    { brand: "Sol de Janeiro", product: "Brazilian Bum Bum Cream", change: -5.4 },
+    { brand: "The Ordinary", product: "Niacinamide 10% + Zinc 1%", change: 3.7 },
+  ],
+  Paris: [
+    { brand: "La Roche-Posay", product: "Toleriane Double Repair Moisturizer", change: 6.8 },
+    { brand: "Dior", product: "Addict Lip Glow Oil", change: 12.4 },
+    { brand: "Chanel", product: "Les Beiges Water-Fresh Tint", change: -4.2 },
+    { brand: "Bioderma", product: "Sensibio H2O Micellar Water", change: 3.1 },
+    { brand: "CeraVe", product: "Hydrating Facial Cleanser", change: -2.8 },
+  ],
+  Tokyo: [
+    { brand: "Cosrx", product: "Advanced Snail 96 Mucin Power Essence", change: 15.3 },
+    { brand: "Anua", product: "Heartleaf 77% Soothing Toner", change: 18.7 },
+    { brand: "Beauty of Joseon", product: "Relief Sun Rice + Probiotics SPF 50", change: 9.4 },
+    { brand: "Torriden", product: "Dive-In Low Molecular Hyaluronic Serum", change: 21.0 },
+    { brand: "Shiseido", product: "Ultimune Power Infusing Serum", change: -5.6 },
+  ],
+  "Hong Kong": [
+    { brand: "Laneige", product: "Lip Sleeping Mask", change: 7.8 },
+    { brand: "Dior", product: "Addict Lip Glow Oil", change: 11.2 },
+    { brand: "Beauty of Joseon", product: "Relief Sun Rice + Probiotics SPF 50", change: 14.6 },
+    { brand: "Charlotte Tilbury", product: "Hollywood Flawless Filter", change: -3.5 },
+    { brand: "Rare Beauty", product: "Soft Pinch Liquid Blush", change: 5.9 },
+  ],
+  Korea: [
+    { brand: "Anua", product: "Heartleaf 77% Soothing Toner", change: 24.1 },
+    { brand: "Beauty of Joseon", product: "Relief Sun Rice + Probiotics SPF 50", change: 19.5 },
+    { brand: "Medicube", product: "Zero Pore Pad 2.0", change: 16.8 },
+    { brand: "Torriden", product: "Dive-In Low Molecular Hyaluronic Serum", change: 22.4 },
+    { brand: "Cosrx", product: "Advanced Snail 96 Mucin Power Essence", change: -4.3 },
+  ],
+};
+
 export const getTopSearches = (city: string): TopSearch[] => cityTopSearches[city] ?? topSearches;
 export const getFocus = (city: string): Focus[] => cityFocus[city] ?? skinomicFocus;
