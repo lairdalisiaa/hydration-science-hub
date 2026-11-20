@@ -19,7 +19,7 @@ type Props = {
 export function PageShell({ children, footer, signup = true, className, tone = "light", headerTone = "light" }: Props) {
   return (
     <div className="min-h-screen bg-muted/40 lg:p-6">
-      <div className="mx-auto max-w-[1400px] overflow-hidden bg-background lg:rounded-3xl lg:shadow-soft">
+      <div className="mx-auto max-w-[1400px] overflow-clip bg-background lg:rounded-3xl lg:shadow-soft">
         <SiteHeader tone={headerTone} />
         <div className={cn(tone === "ink" ? "bg-page-ink text-ink-foreground" : "bg-page", className)}>
           {children}
