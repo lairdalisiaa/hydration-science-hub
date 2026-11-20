@@ -20,11 +20,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <PageShell footer={<Ticker />}>
+        <PageShell footer={<Ticker />}>
       <main className="pb-14">
         <DesktopDashboard />
         <MobileDashboard />
-      <main>
+      </main>
     </PageShell>
   );
 }
