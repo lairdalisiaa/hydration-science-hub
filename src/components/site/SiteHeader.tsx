@@ -16,7 +16,7 @@ const nav = [
 export function SiteHeader({ tone = "light" }: { tone?: "light" | "ink" }) {
   const [open, setOpen] = useState(false);
   return (
-    <header className={cn("flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-4 lg:flex-nowrap lg:gap-4 lg:px-8", tone === "ink" ? "bg-ink text-ink-foreground" : "bg-card")}>
+   <header className={cn("sticky top-0 z-40 backdrop-blur flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-4 lg:flex-nowrap lg:gap-4 lg:px-8", tone === "ink" ? "bg-ink text-ink-foreground" : "bg-card")}>
       <Link to="/" className="order-2 font-display text-2xl font-extrabold lg:order-none lg:text-3xl">
         addottee.
       </Link>
