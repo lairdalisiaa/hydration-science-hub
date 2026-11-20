@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { featuredIngredient, skinomicFocus } from "@/lib/dashboard-data";
+import { featuredIngredient } from "@/lib/dashboard-data";
+import { getFocus } from "@/lib/market-data";
+import { useMarket } from "./market-context";
 import { cn } from "@/lib/utils";
 import moleculeImg from "@/assets/egcg-molecule.jpg";
 
