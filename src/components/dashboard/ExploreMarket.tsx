@@ -1,10 +1,11 @@
-const { city, setCity } = useMarket();
+import { useMarket } from "./market-context";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hubs } from "@/lib/dashboard-data";
 
 export function ExploreMarket({ className }: { className?: string }) {
+  const { city, setCity } = useMarket();
   return (
     <section className={cn("rounded-3xl bg-card p-5 shadow-soft", className)}>
       <div className="flex items-baseline justify-between">
@@ -24,7 +25,11 @@ export function ExploreMarket({ className }: { className?: string }) {
               <span className="tabular">{h.share}%</span>
             </li>
           ) : (
-            <li key={h.city} className="relative overflow-hidden rounded-xl bg-muted text-sm">
+            <li
+  key={h.city}
+  onClick={() => setCity(h.city)}
+  className={cn("relative cursor-pointer overflow-hidden rounded-xl bg-muted text-sm", city === h.city && "ring-2 ring-primary")}
+>
               <div className="absolute inset-y-0 left-0 bg-blush" style={{ width: `${h.share}%` }} />
               <div className="relative flex items-center justify-between px-4 py-4">
                 <span>{h.city}</span>
