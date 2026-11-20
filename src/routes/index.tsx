@@ -24,7 +24,7 @@ function Index() {
       <main className="pb-14">
         <DesktopDashboard />
         <MobileDashboard />
-      <main className="pb-14">
+      <main>
     </PageShell>
   );
 }
