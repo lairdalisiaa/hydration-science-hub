@@ -1,6 +1,6 @@
 import { useMarket } from "./market-context";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hubs } from "@/lib/dashboard-data";
 
