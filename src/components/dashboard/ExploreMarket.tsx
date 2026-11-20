@@ -1,3 +1,4 @@
+const { city, setCity } = useMarket();
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +15,11 @@ export function ExploreMarket({ className }: { className?: string }) {
       <ul className="mt-4 flex flex-col gap-1.5">
         {hubs.map((h, i) =>
           i === 0 ? (
-            <li key={h.city} className="flex items-center justify-between rounded-xl bg-ink px-4 py-4 text-sm text-ink-foreground">
+            <li
+  key={h.city}
+  onClick={() => setCity(h.city)}
+  className={cn("flex cursor-pointer items-center justify-between rounded-xl bg-ink px-4 py-4 text-sm text-ink-foreground", city === h.city && "ring-2 ring-primary")}
+>
               <span>{h.city}</span>
               <span className="tabular">{h.share}%</span>
             </li>
